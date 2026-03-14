@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c3a4m83d0v0ta"]
+[gd_scene format=3 uid="uid://c3a4m83d0v0ta"]
 
 [ext_resource type="Script" uid="uid://c0fbpi30brfcm" path="res://scripts/man_player.gd" id="1_mptrd"]
 [ext_resource type="Texture2D" uid="uid://eporl0q6mvkf" path="res://art/characters/man back.png" id="3_wc5mi"]
@@ -146,20 +146,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="man_player" type="CharacterBody2D"]
+[node name="man_player" type="CharacterBody2D" unique_id=1216528816]
 script = ExtResource("1_mptrd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=475039255]
 y_sort_enabled = true
 position = Vector2(1, -5)
 shape = SubResource("CircleShape2D_mptrd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20465144]
 sprite_frames = SubResource("SpriteFrames_b6leb")
 animation = &"front_walk"
 offset = Vector2(0, -15)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=952091903]
 position = Vector2(112, 61)
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
