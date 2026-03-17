@@ -146,6 +146,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xo2o"]
+radius = 28.01785
+
 [node name="man_player" type="CharacterBody2D" unique_id=1216528816]
 script = ExtResource("1_mptrd")
 
@@ -170,3 +173,9 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="AreaDetector" type="Area2D" parent="." unique_id=196563930]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1058546544]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_7xo2o")
