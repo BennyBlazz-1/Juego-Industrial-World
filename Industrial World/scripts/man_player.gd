@@ -7,6 +7,8 @@ func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
 func _physics_process(delta):
+	if GameManager.is_dialogue_active:
+		return
 	man_player_movement(delta)
 
 func man_player_movement(delta):

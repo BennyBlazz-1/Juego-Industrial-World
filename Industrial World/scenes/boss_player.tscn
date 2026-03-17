@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dr6kq4nl5a4k4" path="res://art/characters/boss back.png" id="2_uyb3b"]
 [ext_resource type="Texture2D" uid="uid://ivirnawqb63r" path="res://art/characters/boss front.png" id="3_pp6mn"]
 [ext_resource type="Texture2D" uid="uid://dg317pt0rcodm" path="res://art/characters/right boss.png" id="4_f7ejg"]
+[ext_resource type="Script" uid="uid://cn4j36fyg53xw" path="res://scripts/area_2d.gd" id="5_pp6mn"]
+[ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="6_pp6mn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5i7dm"]
+radius = 15.033297
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qemse"]
 atlas = ExtResource("2_uyb3b")
@@ -143,16 +148,83 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5i7dm"]
-radius = 15.033297
+[sub_resource type="CircleShape2D" id="CircleShape2D_pp6mn"]
+radius = 25.019993
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7ejg"]
+atlas = ExtResource("6_pp6mn")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf2ve"]
+atlas = ExtResource("6_pp6mn")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwpsr"]
+atlas = ExtResource("6_pp6mn")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwiso"]
+atlas = ExtResource("6_pp6mn")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atxue"]
+atlas = ExtResource("6_pp6mn")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjqxk"]
+atlas = ExtResource("6_pp6mn")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwibq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7ejg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf2ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwpsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwiso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atxue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjqxk")
+}],
+"loop": true,
+"name": &"exclamation",
+"speed": 5.0
+}]
 
 [node name="boss_player" type="CharacterBody2D" unique_id=1361553851]
 script = ExtResource("1_5i7dm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747549180]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_5i7dm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1166426166]
 sprite_frames = SubResource("SpriteFrames_yf2ve")
 animation = &"front_idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747549180]
-position = Vector2(0, 5)
-shape = SubResource("CircleShape2D_5i7dm")
+[node name="Area2D" type="Area2D" parent="." unique_id=205150318]
+script = ExtResource("5_pp6mn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1222736071]
+shape = SubResource("CircleShape2D_pp6mn")
+
+[node name="ExclamationMark" type="AnimatedSprite2D" parent="Area2D" unique_id=1867003721]
+position = Vector2(1.1920929e-07, -36)
+scale = Vector2(0.06768799, 0.06768799)
+sprite_frames = SubResource("SpriteFrames_gwibq")
+animation = &"exclamation"
+frame_progress = 0.27455541
+speed_scale = 2.0
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
