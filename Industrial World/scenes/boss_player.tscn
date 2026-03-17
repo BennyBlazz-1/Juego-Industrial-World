@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://sh4gih8l7i1t"]
+[gd_scene format=3 uid="uid://sh4gih8l7i1t"]
 
 [ext_resource type="Script" uid="uid://3vpb1xmbb4xm" path="res://scripts/boss_player.gd" id="1_5i7dm"]
 [ext_resource type="Texture2D" uid="uid://dr6kq4nl5a4k4" path="res://art/characters/boss back.png" id="2_uyb3b"]
@@ -143,11 +143,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="boss_player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_5i7dm"]
+radius = 15.033297
+
+[node name="boss_player" type="CharacterBody2D" unique_id=1361553851]
 script = ExtResource("1_5i7dm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1166426166]
 sprite_frames = SubResource("SpriteFrames_yf2ve")
 animation = &"front_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747549180]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_5i7dm")
