@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba0tx80j8lvne"
-path="res://.godot/imported/Piso.png-2b4a3e14299b2585247635a162898ea3.ctex"
+uid="uid://dpd5suy6es1ue"
+path="res://.godot/imported/Muros.png-173cc97ec5db296e8ba6352e82c9fe68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tilesets/Piso.png"
-dest_files=["res://.godot/imported/Piso.png-2b4a3e14299b2585247635a162898ea3.ctex"]
+source_file="res://art/tilesets/Muros.png"
+dest_files=["res://.godot/imported/Muros.png-173cc97ec5db296e8ba6352e82c9fe68.ctex"]
 
 [params]
 

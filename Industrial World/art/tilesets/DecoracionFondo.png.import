@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba0tx80j8lvne"
-path="res://.godot/imported/Piso.png-2b4a3e14299b2585247635a162898ea3.ctex"
+uid="uid://cbibhnxv2skfj"
+path="res://.godot/imported/DecoracionFondo.png-5b93643dfc704ff8eb3c0e31e47095e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tilesets/Piso.png"
-dest_files=["res://.godot/imported/Piso.png-2b4a3e14299b2585247635a162898ea3.ctex"]
+source_file="res://art/tilesets/DecoracionFondo.png"
+dest_files=["res://.godot/imported/DecoracionFondo.png-5b93643dfc704ff8eb3c0e31e47095e1.ctex"]
 
 [params]
 
