@@ -162,7 +162,7 @@ sprite_frames = SubResource("SpriteFrames_b6leb")
 animation = &"front_walk"
 offset = Vector2(0, -15)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=952091903]
+[node name="world_camera" type="Camera2D" parent="." unique_id=952091903]
 position = Vector2(112, 61)
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
@@ -173,6 +173,12 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="ysort_camera" type="Camera2D" parent="." unique_id=2044068723]
+limit_left = 13
+limit_top = 19
+limit_right = 1265
+limit_bottom = 887
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=196563930]
 
