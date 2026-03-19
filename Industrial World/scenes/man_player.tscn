@@ -174,7 +174,7 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="ysort_camera" type="Camera2D" parent="." unique_id=2044068723]
+[node name="bodega_camera" type="Camera2D" parent="." unique_id=2044068723]
 limit_left = 13
 limit_top = 19
 limit_right = 1265

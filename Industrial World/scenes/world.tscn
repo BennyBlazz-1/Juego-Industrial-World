@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://cv5tttfu7etlc" path="res://art/tilesets/edificio2_2.png" id="15_ts3gi"]
 [ext_resource type="Texture2D" uid="uid://cc781n16ro77i" path="res://art/tilesets/edificio2_3.png" id="16_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://sh4gih8l7i1t" path="res://scenes/boss_player.tscn" id="21_7iits"]
+[ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
+
+[sub_resource type="GDScript" id="GDScript_oo54l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
 texture = ExtResource("2_k0juu")
@@ -317,9 +320,13 @@ sources/21 = SubResource("TileSetAtlasSource_x2olw")
 sources/22 = SubResource("TileSetAtlasSource_817gm")
 sources/23 = SubResource("TileSetAtlasSource_ggc52")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpybi"]
+size = Vector2(37, 35)
+
 [node name="world" type="Node2D" unique_id=1874219532]
 y_sort_enabled = true
 position = Vector2(0, 1)
+script = SubResource("GDScript_oo54l")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2074267783]
 y_sort_enabled = true
@@ -335,7 +342,7 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(2424839, 13, 1, 2621449, 13, 1, 2621490, 13, 1, 2359346, 13, 1, 2228254, 13, 1, 2031634, 13, 1, 1900558, 13, 1, 1441811, 13, 1, 1376270, 13, 1, 1769506, 13, 1, 1507358, 13, 1, 852000, 13, 1, 524311, 13, 1, 786435, 13, 1, 1376261, 13, 1, 131084, 13, 1, 589872, 13, 1, 327732, 13, 1, 1114158, 13, 1, 1769512, 786436, 10, 1900581, 786435, 16, 1966117, 786435, 16, 1835045, 786435, 16, 1769509, 786435, 16, 1769515, 786435, 16, 1835051, 786435, 16, 1900587, 786435, 16, 1966123, 786435, 16, 1048611, 1114115, 18, 917512, 1114115, 18, 2162730, 1114115, 18, 1114163, 131080, 16, -65487, 131080, 16, -65485, 131080, 16, -65483, 131080, 16, 131111, 131080, 16, 39, 131080, 16, 65577, 131080, 16, 44, 131080, 16, 196651, 13, 1, 196653, 13, 1, 1900544, 720904, 10, 1900546, 720904, 268435466, 1769476, 720904, 268435466, 1769474, 720904, 10, 1966083, 131080, 16, 2490369, 131080, 16, 2424833, 131080, 16, 2359297, 131080, 16, 2293761, 131080, 16, 2490422, 131080, 16, 2293813, 131080, 16, 2097206, 131080, 16, 1900597, 131080, 16, 1703990, 131080, 16, 1572916, 131080, 16, 1441846, 131080, 16, 2097197, 1179651, 17, 2097198, 1179651, 17, 852011, 1179651, 17, 786449, 1179651, 17, -65535, 131080, 16, -65533, 131080, 16, -65531, 131080, 16, 32, 131080, 16, 16, 131080, 16, 262145, 131080, 16, 720897, 131080, 16, 1048577, 131080, 16, 1376257, 131080, 16, 458756, 131080, 16, 458779, 131080, 16, 458794, 131080, 16, 589857, 131080, 16, 327692, 131080, 16, 1507339, 131080, 16, 1835035, 131080, 16, 1703953, 131080, 16, 1703967, 131080, 16, 2162721, 131080, 16, 2097166, 131080, 16, 262198, 131080, 16, 10, 131080, 16, 262148, 13, 1, 458760, 13, 1, 589844, 131080, 16, 851995, 131080, 16, 1441837, 327693, 0, 1835055, 13, 1, 2228261, 327693, 0, 1376293, 327693, 0, 2162715, 327693, 0, 1310736, 327693, 0, 1179652, 327693, 0, 2162738, 327693, 0, 393265, 327693, 0, 393251, 327693, 0, 393238, 327693, 0, 1376283, 327693, 0, 2490373, 327693, 0, 131093, 131080, 3, 131094, 131080, 3, 131095, 131080, 3, 131096, 131080, 3, 131097, 131080, 3, 131098, 131080, 3, 131099, 131080, 3, 131100, 131080, 3, 2162696, 131080, 3, 2162697, 131080, 3, 2162698, 131080, 3, 720950, 131080, 3, 720949, 131080, 3, 720908, 65550, 2, 786470, 65551, 17)
 
 [node name="man_player" parent="." unique_id=1947100739 instance=ExtResource("10_w7kh3")]
-position = Vector2(199, 177)
+position = Vector2(214, 544)
 
 [node name="collisions" type="StaticBody2D" parent="." unique_id=661130436]
 
@@ -346,4 +353,14 @@ polygon = PackedVector2Array(1, 112, 266, 112, 274, 102, 274, 0, 1198, 0, 1199, 
 polygon = PackedVector2Array(1555, 465, 1772, 465, 1778, 471, 1779, 680, 1772, 688, 1554, 688, 1552, 669)
 
 [node name="boss_player" parent="." unique_id=1361553851 instance=ExtResource("21_7iits")]
-position = Vector2(506, 415)
+position = Vector2(513, 432)
+
+[node name="area_scene1" type="Area2D" parent="." unique_id=1311739337]
+script = ExtResource("22_oo54l")
+next_scene_path = "res://scenes/bodega.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1614754670]
+position = Vector2(399.5, 433.5)
+shape = SubResource("RectangleShape2D_kpybi")
+
+[connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]

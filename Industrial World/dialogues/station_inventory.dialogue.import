@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c2dy0xa8p4u2f"
+path="res://.godot/imported/station_inventory.dialogue-de1e5727bede10ac93dfc2f65524519f.tres"
+
+[deps]
+
+source_file="res://dialogues/station_inventory.dialogue"
+dest_files=["res://.godot/imported/station_inventory.dialogue-de1e5727bede10ac93dfc2f65524519f.tres"]
+
+[params]
+
+defaults=true
