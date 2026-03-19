@@ -1,7 +1,73 @@
 ~ start
 
-System: Training complete.
-System: You finished the first warehouse induction.
-System: Return to the exit.
+System: Final Test Station
+
+System: Question 1.
+System: What is raw material?
+
+- Material used to make a product
+	set GameManager.level1_score += 1
+	System: Correct.
+
+- A delivery truck
+	System: Not correct.
+
+- A final report
+	System: Not correct.
+
+System: Question 2.
+System: What does inventory mean?
+
+- A warehouse door
+	System: Not correct.
+
+- Stock of materials or finished product
+	set GameManager.level1_score += 1
+	System: Correct.
+
+- A worker break time
+	System: Not correct.
+
+System: Question 3.
+System: What is a packing list used for?
+
+- To repair machines
+	System: Not correct.
+
+- To hire workers
+	System: Not correct.
+
+- To check shipment contents
+	set GameManager.level1_score += 1
+	System: Correct.
+
+System: Question 4.
+System: What do work instructions do?
+
+- They explain how to do a task
+	set GameManager.level1_score += 1
+	System: Correct.
+
+- They move inventory automatically
+	System: Not correct.
+
+- They replace safety rules
+	System: Not correct.
+
+set GameManager.level1_exam_taken = true
+
+if GameManager.level1_score >= GameManager.level1_pass_score
+	set GameManager.level1_passed = true
+	set GameManager.level1_finished = true
+	System: Level passed.
+	System: You completed Building 1 successfully.
+	System: You can now leave the warehouse.
+
+else
+	set GameManager.level1_passed = false
+	set GameManager.level1_finished = false
+	System: Level not passed.
+	System: Review the stations and try again later.
+	System: You can now leave the warehouse.
 
 => END

@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if is_player_close and Input.is_action_just_pressed("ui_accept") and not GameManager.is_dialogue_active:
-		if GameManager.level1_all_stations_done and complete_dialogue != null and not GameManager.level1_finished:
+		if GameManager.level1_all_stations_done and complete_dialogue != null and not GameManager.level1_exam_taken:
 			opened_here = true
 			DialogueManager.show_dialogue_balloon(complete_dialogue, "start")
 
@@ -40,7 +40,4 @@ func _on_dialogue_started(dialogue):
 func _on_dialogue_ended(dialogue):
 	await get_tree().create_timer(0.2).timeout
 	GameManager.is_dialogue_active = false
-
-	if opened_here:
-		opened_here = false
-		GameManager.level1_finished = true
+	opened_here = false
