@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c87vs02gq5c2q"
+path="res://.godot/imported/station_work_instructions.dialogue-3139960ea61ba031efcdaae849c16e4e.tres"
+
+[deps]
+
+source_file="res://dialogues/station_work_instructions.dialogue"
+dest_files=["res://.godot/imported/station_work_instructions.dialogue-3139960ea61ba031efcdaae849c16e4e.tres"]
+
+[params]
+
+defaults=true

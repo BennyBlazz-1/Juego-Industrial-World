@@ -1,0 +1,47 @@
+~ start
+
+System: Station: Work Instructions
+
+System: Question 1.
+System: What are work instructions?
+
+- Steps that explain how to do a task
+	set GameManager.level1_score += 1
+	System: Correct.
+
+- A shipping invoice
+	System: Not correct.
+
+- A type of raw material
+	System: Not correct.
+
+System: Question 2.
+System: Who uses work instructions?
+
+- Only visitors
+	System: Not correct.
+
+- Only drivers outside the plant
+	System: Not correct.
+
+- Operators and workers during a process
+	set GameManager.level1_score += 1
+	System: Correct.
+
+System: Question 3.
+System: Why are work instructions important?
+
+- They replace all materials
+	System: Not correct.
+
+- They help do the job correctly
+	set GameManager.level1_score += 1
+	System: Correct.
+
+- They close the warehouse
+	System: Not correct.
+
+System: Station complete.
+System: Next station location: To your left, in the center
+
+=> END
