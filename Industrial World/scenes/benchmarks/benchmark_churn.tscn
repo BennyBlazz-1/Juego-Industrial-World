@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bf66tgh724n12"]
+
+[ext_resource type="Script" uid="uid://bywm8vfntxcei" path="res://scripts/benchmarks/benchmark_churn.gd" id="1_nwylr"]
+[ext_resource type="PackedScene" uid="uid://c3a4m83d0v0ta" path="res://scenes/man_player.tscn" id="2_5d0ow"]
+[ext_resource type="PackedScene" uid="uid://dfqw7tngguvij" path="res://scenes/benchmarks/benchmark_hud.tscn" id="3_eqwoq"]
+
+[node name="benchmark_churn" type="Node2D" unique_id=1059867991]
+script = ExtResource("1_nwylr")
+
+[node name="EnvironmentContainer" type="Node2D" parent="." unique_id=707447289]
+
+[node name="NPCContainer" type="Node2D" parent="." unique_id=305996371]
+
+[node name="PropContainer" type="Node2D" parent="." unique_id=747006382]
+
+[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("2_5d0ow")]
+
+[node name="BenchmarkHUD" parent="." unique_id=728101754 instance=ExtResource("3_eqwoq")]

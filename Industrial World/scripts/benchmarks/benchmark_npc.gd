@@ -1,32 +1,32 @@
 extends CharacterBody2D
 
 @export var speed: float = 70.0
-@export var min_change_time: float = 0.8
+@export var min_change_time: float = 0.7
 @export var max_change_time: float = 1.8
-@export var movement_rect: Rect2 = Rect2(Vector2.ZERO, Vector2(2400, 1400))
+@export var movement_rect: Rect2 = Rect2(Vector2(0, 0), Vector2(2400, 1400))
 
 var direction: Vector2 = Vector2.RIGHT
-var change_timer: float = 0.0
+var change_direction_timer: float = 0.0
 var current_dir: String = "right"
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	randomize()
-	_choose_new_direction()
+	choose_new_direction()
 
 func _physics_process(delta: float) -> void:
-	change_timer -= delta
+	change_direction_timer -= delta
 
-	if change_timer <= 0.0:
-		_choose_new_direction()
+	if change_direction_timer <= 0.0:
+		choose_new_direction()
 
 	velocity = direction * speed
 	move_and_slide()
-	_keep_inside_bounds()
-	_update_animation()
+	keep_inside_bounds()
+	update_animation()
 
-func _choose_new_direction() -> void:
+func choose_new_direction() -> void:
 	var dirs := [
 		Vector2.RIGHT,
 		Vector2.LEFT,
@@ -39,9 +39,9 @@ func _choose_new_direction() -> void:
 	]
 
 	direction = dirs[randi() % dirs.size()]
-	change_timer = randf_range(min_change_time, max_change_time)
+	change_direction_timer = randf_range(min_change_time, max_change_time)
 
-func _keep_inside_bounds() -> void:
+func keep_inside_bounds() -> void:
 	var pos := global_position
 	var min_pos := movement_rect.position
 	var max_pos := movement_rect.position + movement_rect.size
@@ -68,9 +68,9 @@ func _keep_inside_bounds() -> void:
 	global_position = pos
 
 	if bounced:
-		change_timer = randf_range(min_change_time, max_change_time)
+		change_direction_timer = randf_range(min_change_time, max_change_time)
 
-func _update_animation() -> void:
+func update_animation() -> void:
 	if abs(direction.x) > abs(direction.y):
 		current_dir = "right" if direction.x > 0 else "left"
 	else:

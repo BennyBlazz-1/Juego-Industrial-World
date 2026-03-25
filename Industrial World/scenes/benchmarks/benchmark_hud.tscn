@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dfqw7tngguvij"]
+
+[ext_resource type="Script" uid="uid://ds6osn418x4xh" path="res://scripts/benchmarks/benchmark_hud.gd" id="1_j0ch5"]
+
+[node name="BenchmarkHUD" type="CanvasLayer" unique_id=728101754]
+script = ExtResource("1_j0ch5")

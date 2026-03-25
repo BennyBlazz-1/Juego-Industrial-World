@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bs6ptp7aysa1h"]
+
+[ext_resource type="Script" uid="uid://cicgjcxmpm75p" path="res://scripts/benchmarks/benchmark_integrated.gd" id="1_lrkne"]
+[ext_resource type="PackedScene" uid="uid://b64e05uddypg3" path="res://scenes/benchmarks/world_benchmark_chunk.tscn" id="2_neqgc"]
+[ext_resource type="PackedScene" uid="uid://cey7on6c00tvu" path="res://scenes/benchmarks/level1_benchmark_chunk.tscn" id="3_1sx6s"]
+[ext_resource type="PackedScene" uid="uid://c3a4m83d0v0ta" path="res://scenes/man_player.tscn" id="4_fnx6b"]
+[ext_resource type="PackedScene" uid="uid://dfqw7tngguvij" path="res://scenes/benchmarks/benchmark_hud.tscn" id="5_elsc8"]
+
+[node name="benchmark_integrated" type="Node2D" unique_id=2082698981]
+script = ExtResource("1_lrkne")
+world_chunk_scene = ExtResource("2_neqgc")
+level1_chunk_scene = ExtResource("3_1sx6s")
+
+[node name="WorldChunkContainer" type="Node2D" parent="." unique_id=408322419]
+
+[node name="Level1ChunkContainer" type="Node2D" parent="." unique_id=670882590]
+
+[node name="DynamicObstacleContainer" type="Node2D" parent="." unique_id=962667646]
+
+[node name="DynamicPropContainer" type="Node2D" parent="." unique_id=1071084015]
+
+[node name="DynamicAreaContainer" type="Node2D" parent="." unique_id=52654400]
+
+[node name="DynamicNPCContainer" type="Node2D" parent="." unique_id=1090918742]
+
+[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("4_fnx6b")]
+
+[node name="BenchmarkHUD" parent="." unique_id=728101754 instance=ExtResource("5_elsc8")]
