@@ -11,7 +11,7 @@ func _physics_process(delta):
 		return
 	man_player_movement(delta)
 
-func man_player_movement(delta):
+unc man_player_movement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
