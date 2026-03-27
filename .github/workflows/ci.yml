@@ -1,4 +1,4 @@
-name: CI - Industrial World Godot Validation
+name: CI - Industrial World DevOps Practice
 
 on:
   push:
@@ -7,106 +7,36 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate-godot-project:
+  devops-practice:
     runs-on: ubuntu-latest
 
     env:
-      GODOT_VERSION: "4.6.1"
-      GODOT_STATUS: "stable"
-      GODOT_VERSION_FULL: "4.6.1.stable"
       PROJECT_PATH: "./Industrial World"
-      RELEASE_PATH: "./release"
-      GODOT_DIR: "./godot"
-      GODOT_BINARY: "./godot/Godot_v4.6.1-stable_linux.x86_64"
+      RELEASE_PATH: "release"
 
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar dependencias
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y unzip wget
+      - name: Dar permisos de ejecución a scripts
+        run: chmod +x devops/scripts/*.sh
 
-      - name: Preparar carpetas de trabajo
-        run: |
-          mkdir -p "$RELEASE_PATH/logs"
-          mkdir -p "$RELEASE_PATH/build/web"
-          mkdir -p "$GODOT_DIR"
+      - name: Generar entorno de liberación
+        run: bash devops/scripts/setup_release_env.sh "$RELEASE_PATH"
 
-      - name: Verificar estructura mínima del proyecto
-        run: |
-          test -f "$PROJECT_PATH/project.godot"
-          test -d "$PROJECT_PATH/scripts"
-          test -d "$PROJECT_PATH/scenes"
+      - name: Ejecutar pruebas básicas
+        run: bash devops/scripts/run_smoke_tests.sh "$PROJECT_PATH" "$RELEASE_PATH"
 
-      - name: Descargar Godot 4.6.1
-        run: |
-          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-${GODOT_STATUS}/Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64.zip" -O "$GODOT_DIR/godot.zip"
-          unzip -q "$GODOT_DIR/godot.zip" -d "$GODOT_DIR"
-          chmod +x "$GODOT_BINARY"
+      - name: Verificar artefactos mínimos
+        run: bash devops/scripts/verify_release_artifacts.sh "$RELEASE_PATH"
 
-      - name: Instalar export templates de Godot
-        run: |
-          mkdir -p "$HOME/.local/share/godot/export_templates/${GODOT_VERSION_FULL}"
-          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-${GODOT_STATUS}/Godot_v${GODOT_VERSION}-${GODOT_STATUS}_export_templates.tpz" -O "$GODOT_DIR/export_templates.tpz"
-          unzip -q "$GODOT_DIR/export_templates.tpz" -d "$GODOT_DIR/export_templates"
-          cp -r "$GODOT_DIR/export_templates/templates/"* "$HOME/.local/share/godot/export_templates/${GODOT_VERSION_FULL}/"
+      - name: Generar estructura de despliegue
+        run: bash devops/scripts/export_web.sh "$PROJECT_PATH" "$RELEASE_PATH"
 
-      - name: Validar sintaxis de scripts GDScript
-        shell: bash
-        run: |
-          set -euo pipefail
+      - name: Preparar paquete final de despliegue
+        run: bash devops/scripts/prepare_pages_bundle.sh "$RELEASE_PATH"
 
-          LOG_FILE="$RELEASE_PATH/logs/gdscript_check.log"
-          : > "$LOG_FILE"
-
-          mapfile -d '' gd_files < <(find "$PROJECT_PATH" -type f -name "*.gd" -print0)
-
-          if [ "${#gd_files[@]}" -eq 0 ]; then
-            echo "No se encontraron archivos .gd" | tee -a "$LOG_FILE"
-            exit 1
-          fi
-
-          for file in "${gd_files[@]}"; do
-            rel_path="${file#"$PROJECT_PATH"/}"
-            echo "Validando: res://$rel_path" | tee -a "$LOG_FILE"
-            "$GODOT_BINARY" --headless --path "$PROJECT_PATH" --script "res://$rel_path" --check-only 2>&1 | tee -a "$LOG_FILE"
-          done
-
-      - name: Importar recursos del proyecto
-        run: |
-          "$GODOT_BINARY" --headless --path "$PROJECT_PATH" --import 2>&1 | tee "$RELEASE_PATH/logs/import.log"
-
-      - name: Abrir el proyecto en modo headless
-        run: |
-          "$GODOT_BINARY" --headless --path "$PROJECT_PATH" --quit 2>&1 | tee "$RELEASE_PATH/logs/project_open.log"
-
-      - name: Exportar preset Web si existe
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          if [ -f "$PROJECT_PATH/export_presets.cfg" ] && grep -q 'name="Web"' "$PROJECT_PATH/export_presets.cfg"; then
-            echo "Preset Web detectado. Iniciando exportación..." | tee "$RELEASE_PATH/logs/export_web.log"
-            "$GODOT_BINARY" --headless --path "$PROJECT_PATH" --export-release "Web" "$GITHUB_WORKSPACE/release/build/web/index.html" 2>&1 | tee -a "$RELEASE_PATH/logs/export_web.log"
-          else
-            echo "No existe export_presets.cfg con preset Web. Se omite la exportación." | tee "$RELEASE_PATH/logs/export_web.log"
-          fi
-
-      - name: Verificar artefactos generados
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          test -d "$RELEASE_PATH/logs"
-
-          if [ -f "$PROJECT_PATH/export_presets.cfg" ] && grep -q 'name="Web"' "$PROJECT_PATH/export_presets.cfg"; then
-            test -f "$RELEASE_PATH/build/web/index.html"
-          fi
-
-      - name: Subir logs y artefactos
-        if: always()
+      - name: Subir artefactos de evidencia
         uses: actions/upload-artifact@v4
         with:
           name: evidencia-devops-industrial-world
