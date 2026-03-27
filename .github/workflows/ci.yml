@@ -1,0 +1,43 @@
+name: CI - Industrial World DevOps Practice
+
+on:
+  push:
+    branches:
+      - devops-entrega
+  workflow_dispatch:
+
+jobs:
+  devops-practice:
+    runs-on: ubuntu-latest
+
+    env:
+      PROJECT_PATH: "./Industrial World"
+      RELEASE_PATH: "release"
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Dar permisos de ejecución a scripts
+        run: chmod +x devops/scripts/*.sh
+
+      - name: Generar entorno de liberación
+        run: bash devops/scripts/setup_release_env.sh "$RELEASE_PATH"
+
+      - name: Ejecutar pruebas básicas
+        run: bash devops/scripts/run_smoke_tests.sh "$PROJECT_PATH" "$RELEASE_PATH"
+
+      - name: Verificar artefactos mínimos
+        run: bash devops/scripts/verify_release_artifacts.sh "$RELEASE_PATH"
+
+      - name: Generar estructura de despliegue
+        run: bash devops/scripts/export_web.sh "$PROJECT_PATH" "$RELEASE_PATH"
+
+      - name: Preparar paquete final de despliegue
+        run: bash devops/scripts/prepare_pages_bundle.sh "$RELEASE_PATH"
+
+      - name: Subir artefactos de evidencia
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencia-devops-industrial-world
+          path: release/
