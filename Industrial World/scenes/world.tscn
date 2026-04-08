@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cc781n16ro77i" path="res://art/tilesets/edificio2_3.png" id="16_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://sh4gih8l7i1t" path="res://scenes/boss_player.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
+[ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="24_ctatt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
 texture = ExtResource("2_k0juu")
@@ -385,5 +386,10 @@ next_scene_path = "res://scenes/bodega.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1614754670]
 position = Vector2(399.5, 433.5)
 shape = SubResource("RectangleShape2D_kpybi")
+
+[node name="Music World" type="AudioStreamPlayer" parent="." unique_id=685613529]
+stream = ExtResource("24_ctatt")
+autoplay = true
+parameters/looping = false
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]

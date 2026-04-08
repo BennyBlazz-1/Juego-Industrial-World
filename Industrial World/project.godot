@@ -22,6 +22,7 @@ config/icon="res://art/icon.svg"
 
 DialogueManager="*uid://c3rodes2l3gxb"
 GameManager="*uid://dyl1u02lmu1oj"
+MusicManager="*uid://bdgoadrb2tj01"
 
 [dialogue_manager]
 
