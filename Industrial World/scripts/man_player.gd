@@ -7,16 +7,19 @@ var current_dir = "none"
 @onready var bodega_camera: Camera2D = $bodega_camera
 
 func _ready():
+	add_to_group("player")
 	$AnimatedSprite2D.play("front_idle")
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	call_deferred("update_current_camera")
 
 func _physics_process(delta):
 	if GameManager.is_dialogue_active:
+		velocity = Vector2.ZERO
+		play_anim(0)
 		return
 	man_player_movement(delta)
 
-func man_player_movement(delta):
+func man_player_movement(_delta):
 	var input_vector: Vector2 = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_right"):

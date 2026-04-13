@@ -181,6 +181,7 @@ limit_left = 13
 limit_top = 42
 limit_right = 1270
 limit_bottom = 887
+limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true

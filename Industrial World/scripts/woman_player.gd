@@ -1,90 +1,96 @@
 extends CharacterBody2D
 
-@export var speed: float = 70.0
-@export var min_change_time: float = 0.8
-@export var max_change_time: float = 1.8
-@export var movement_rect: Rect2 = Rect2(Vector2.ZERO, Vector2(2400, 1400))
+const speed = 200
+var current_dir = "none"
 
-var direction: Vector2 = Vector2.RIGHT
-var change_timer: float = 0.0
-var current_dir: String = "right"
+@onready var world_camera: Camera2D = $world_camera
+@onready var bodega_camera: Camera2D = $bodega_camera
 
-@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+func _ready():
+	add_to_group("player")
+	$AnimatedSprite2D.play("front_idle")
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	call_deferred("update_current_camera")
 
-func _ready() -> void:
-	randomize()
-	_choose_new_direction()
+func _physics_process(_delta):
+	if GameManager.is_dialogue_active:
+		velocity = Vector2.ZERO
+		play_anim(0)
+		return
+	woman_player_movement()
 
-func _physics_process(delta: float) -> void:
-	change_timer -= delta
+func woman_player_movement():
+	var input_vector: Vector2 = Vector2.ZERO
 
-	if change_timer <= 0.0:
-		_choose_new_direction()
+	if Input.is_action_pressed("ui_right"):
+		current_dir = "right"
+		input_vector.x = 1
+	elif Input.is_action_pressed("ui_left"):
+		current_dir = "left"
+		input_vector.x = -1
+	elif Input.is_action_pressed("ui_down"):
+		current_dir = "down"
+		input_vector.y = 1
+	elif Input.is_action_pressed("ui_up"):
+		current_dir = "up"
+		input_vector.y = -1
 
-	velocity = direction * speed
+	velocity = input_vector * speed
 	move_and_slide()
-	_keep_inside_bounds()
-	_update_animation()
 
-func _choose_new_direction() -> void:
-	var dirs := [
-		Vector2.RIGHT,
-		Vector2.LEFT,
-		Vector2.UP,
-		Vector2.DOWN,
-		Vector2(1, 1).normalized(),
-		Vector2(-1, 1).normalized(),
-		Vector2(1, -1).normalized(),
-		Vector2(-1, -1).normalized()
-	]
+	var moved_distance: float = get_position_delta().length()
 
-	direction = dirs[randi() % dirs.size()]
-	change_timer = randf_range(min_change_time, max_change_time)
-
-func _keep_inside_bounds() -> void:
-	var pos := global_position
-	var min_pos := movement_rect.position
-	var max_pos := movement_rect.position + movement_rect.size
-	var bounced := false
-
-	if pos.x < min_pos.x:
-		pos.x = min_pos.x
-		direction.x = abs(direction.x)
-		bounced = true
-	elif pos.x > max_pos.x:
-		pos.x = max_pos.x
-		direction.x = -abs(direction.x)
-		bounced = true
-
-	if pos.y < min_pos.y:
-		pos.y = min_pos.y
-		direction.y = abs(direction.y)
-		bounced = true
-	elif pos.y > max_pos.y:
-		pos.y = max_pos.y
-		direction.y = -abs(direction.y)
-		bounced = true
-
-	global_position = pos
-
-	if bounced:
-		change_timer = randf_range(min_change_time, max_change_time)
-
-func _update_animation() -> void:
-	if abs(direction.x) > abs(direction.y):
-		current_dir = "right" if direction.x > 0 else "left"
+	if input_vector == Vector2.ZERO:
+		play_anim(0)
+	elif moved_distance > 0.01:
+		play_anim(1)
 	else:
-		current_dir = "down" if direction.y > 0 else "up"
+		velocity = Vector2.ZERO
+		play_anim(0)
 
-	if current_dir == "right":
+func play_anim(movement):
+	var dir = current_dir
+	var anim = $AnimatedSprite2D
+
+	if dir == "right":
 		anim.flip_h = false
-		anim.play("side_walk")
-	elif current_dir == "left":
+		if movement == 1:
+			anim.play("side_walk")
+		else:
+			anim.play("side_idle")
+
+	if dir == "left":
 		anim.flip_h = true
-		anim.play("side_walk")
-	elif current_dir == "down":
+		if movement == 1:
+			anim.play("side_walk")
+		else:
+			anim.play("side_idle")
+
+	if dir == "down":
 		anim.flip_h = true
-		anim.play("front_walk")
-	elif current_dir == "up":
+		if movement == 1:
+			anim.play("front_walk")
+		else:
+			anim.play("front_idle")
+
+	if dir == "up":
 		anim.flip_h = true
-		anim.play("back_walk")
+		if movement == 1:
+			anim.play("back_walk")
+		else:
+			anim.play("back_idle")
+
+func update_current_camera() -> void:
+	var current_scene: Node = get_tree().current_scene
+	if current_scene == null:
+		return
+
+	world_camera.enabled = false
+	bodega_camera.enabled = false
+
+	if current_scene.scene_file_path == "res://scenes/world.tscn":
+		world_camera.enabled = true
+		world_camera.make_current()
+	elif current_scene.scene_file_path == "res://scenes/bodega.tscn":
+		bodega_camera.enabled = true
+		bodega_camera.make_current()

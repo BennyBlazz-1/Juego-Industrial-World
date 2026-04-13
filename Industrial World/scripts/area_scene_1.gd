@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if is_changing_scene:
 		return
 
-	if body.name != "man_player":
+	if not body.is_in_group("player"):
 		return
 
 	if require_level1_exam_taken:

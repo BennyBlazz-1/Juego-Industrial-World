@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b5mw5w013p5t6" path="res://art/characters/woman front.png" id="3_id0qw"]
 [ext_resource type="Texture2D" uid="uid://bhvmw1efpbrig" path="res://art/characters/right woman.png" id="4_oqint"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypfef"]
+radius = 13.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2idkc"]
 atlas = ExtResource("2_kq2ny")
 region = Rect2(0, 0, 128, 192)
@@ -143,11 +146,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kq2ny"]
+radius = 28.01785
+
 [node name="woman_player" type="CharacterBody2D" unique_id=1320361330]
 script = ExtResource("1_ypfef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=862704066]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_ypfef")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=267642294]
 sprite_frames = SubResource("SpriteFrames_veuuu")
 animation = &"front_idle"
+
+[node name="world_camera" type="Camera2D" parent="." unique_id=2133453618]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1790
+limit_bottom = 1305
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="bodega_camera" type="Camera2D" parent="." unique_id=62397812]
+zoom = Vector2(1.5, 1.5)
+limit_left = 13
+limit_top = 42
+limit_right = 1270
+limit_bottom = 887
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="AreaDetector" type="Area2D" parent="." unique_id=2124508450]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=135833260]
+shape = SubResource("CircleShape2D_kq2ny")
