@@ -382,6 +382,7 @@ position = Vector2(513, 432)
 [node name="area_scene1" type="Area2D" parent="." unique_id=1311739337]
 script = ExtResource("22_oo54l")
 next_scene_path = "res://scenes/bodega.tscn"
+target_spawn_name = "bodega_from_world"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1614754670]
 position = Vector2(399.5, 433.5)
@@ -390,5 +391,8 @@ shape = SubResource("RectangleShape2D_kpybi")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2137625041]
 
 [node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("24_ctatt")]
+
+[node name="spawn_from_bodega" type="Marker2D" parent="." unique_id=1956853760]
+position = Vector2(401, 469)
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
