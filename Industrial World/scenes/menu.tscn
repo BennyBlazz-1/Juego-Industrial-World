@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://crac5efwn8wle"]
+[gd_scene format=3 uid="uid://c1txttdsrxapu"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_4ytvr"]
-[ext_resource type="Texture2D" path="res://art/tilesets/menuimg.png" id="2_g3eks"]
-[ext_resource type="FontFile" path="res://art/tilesets/Kenney Blocks.ttf" id="3_v86rl"]
-[ext_resource type="Texture2D" path="res://art/tilesets/Fiery orange pixel art button (1).png" id="4_13sgg"]
-[ext_resource type="Texture2D" path="res://art/tilesets/Pixel art red glowing button (1).png" id="5_i6lef"]
+[ext_resource type="Script" uid="uid://d00lujwjw28a1" path="res://menu.gd" id="1_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://bv6oanf68rrv8" path="res://art/tilesets/menuimg.png" id="2_g3eks"]
+[ext_resource type="FontFile" uid="uid://cpivt87dnykic" path="res://art/tilesets/Kenney Blocks.ttf" id="3_v86rl"]
+[ext_resource type="Texture2D" uid="uid://1d4r7p57auh3" path="res://art/tilesets/Fiery orange pixel art button (1).png" id="4_13sgg"]
+[ext_resource type="Texture2D" uid="uid://3ax75bqqbc24" path="res://art/tilesets/Pixel art red glowing button (1).png" id="5_i6lef"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
 texture = ExtResource("4_13sgg")

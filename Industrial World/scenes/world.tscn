@@ -22,8 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://cv5tttfu7etlc" path="res://art/tilesets/edificio2_2.png" id="15_ts3gi"]
 [ext_resource type="Texture2D" uid="uid://cc781n16ro77i" path="res://art/tilesets/edificio2_3.png" id="16_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://sh4gih8l7i1t" path="res://scenes/boss_player.tscn" id="21_7iits"]
-[ext_resource type="Script" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
-[ext_resource type="PackedScene" uid="uid://dsgkbm0yb0mtx" path="res://scenes/woman_player.tscn" id="24_ctatt"]
+[ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
+[ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="24_ctatt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
 texture = ExtResource("2_k0juu")
@@ -365,8 +365,8 @@ layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(655372, 65556, 8)
 
-[node name="man_player" parent="." unique_id=1947100739 instance=ExtResource("10_w7kh3")]
-position = Vector2(227, 492)
+[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("10_w7kh3")]
+position = Vector2(220, 476)
 
 [node name="woman_player" parent="." unique_id=1577244921 instance=ExtResource("24_ctatt")]
 position = Vector2(267, 314)
@@ -385,9 +385,17 @@ position = Vector2(513, 432)
 [node name="area_scene1" type="Area2D" parent="." unique_id=1311739337]
 script = ExtResource("22_oo54l")
 next_scene_path = "res://scenes/bodega.tscn"
+target_spawn_name = "bodega_from_world"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1614754670]
 position = Vector2(399.5, 433.5)
 shape = SubResource("RectangleShape2D_kpybi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2137625041]
+
+[node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("24_ctatt")]
+
+[node name="spawn_from_bodega" type="Marker2D" parent="." unique_id=1956853760]
+position = Vector2(401, 469)
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
