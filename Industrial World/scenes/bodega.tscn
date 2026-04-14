@@ -3416,6 +3416,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsh3y"]
+size = Vector2(271, 250.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpn3u"]
 size = Vector2(212, 165)
 
@@ -3473,6 +3476,21 @@ shape = SubResource("RectangleShape2D_yk1j3")
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="intro_station" unique_id=179462421]
 position = Vector2(774, 722.99994)
 scale = Vector2(0.114843756, 0.114843756)
+sprite_frames = SubResource("SpriteFrames_df2sy")
+animation = &"exclamation"
+
+[node name="station_raw_material" type="Area2D" parent="." unique_id=1322409564]
+script = ExtResource("27_fpn3u")
+dialogue_path = "uid://bdsudiw6wblg0"
+step_name = "raw_material"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="station_raw_material" unique_id=1048988687]
+position = Vector2(158.5, 608.75)
+shape = SubResource("RectangleShape2D_gsh3y")
+
+[node name="ExclamationMark" type="AnimatedSprite2D" parent="station_raw_material" unique_id=4561665]
+position = Vector2(197.99994, 672)
+scale = Vector2(0.114843756, 0.11054675)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
 
@@ -3538,17 +3556,11 @@ animation = &"exclamation"
 [node name="spawn_from_world" type="Marker2D" parent="." unique_id=1725956288]
 position = Vector2(800, 844)
 
-[node name="station_raw_material" type="Area2D" parent="." unique_id=169758861]
-script = ExtResource("29_yk1j3")
-dialogue_path = "uid://bdsudiw6wblg0"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="station_raw_material" unique_id=52688339]
-position = Vector2(964.5, 558)
-shape = SubResource("RectangleShape2D_guah3")
-
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]
 [connection signal="body_exited" from="intro_station" to="intro_station" method="_on_body_exited"]
+[connection signal="body_entered" from="station_raw_material" to="station_raw_material" method="_on_body_entered"]
+[connection signal="body_exited" from="station_raw_material" to="station_raw_material" method="_on_body_exited"]
 [connection signal="body_entered" from="station_inventory" to="station_inventory" method="_on_body_entered"]
 [connection signal="body_exited" from="station_inventory" to="station_inventory" method="_on_body_exited"]
 [connection signal="body_entered" from="station_packing_list" to="station_packing_list" method="_on_body_entered"]
@@ -3557,5 +3569,3 @@ shape = SubResource("RectangleShape2D_guah3")
 [connection signal="body_exited" from="station_work_instructions" to="station_work_instructions" method="_on_body_exited"]
 [connection signal="body_entered" from="final_station" to="final_station" method="_on_body_entered"]
 [connection signal="body_exited" from="final_station" to="final_station" method="_on_body_exited"]
-[connection signal="body_entered" from="station_raw_material" to="station_raw_material" method="_on_body_entered"]
-[connection signal="body_exited" from="station_raw_material" to="station_raw_material" method="_on_body_exited"]
