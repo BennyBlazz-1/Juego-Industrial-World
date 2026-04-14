@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="27_8faxs"]
 [ext_resource type="Script" uid="uid://b7g3cle44cr78" path="res://scripts/level_station.gd" id="27_fpn3u"]
 [ext_resource type="Script" uid="uid://cijlrr20aenyv" path="res://scripts/final_station.gd" id="29_yk1j3"]
-[ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="30_5yjkk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_viw4v"]
 texture = ExtResource("1_cu11h")
@@ -3417,9 +3416,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hamv"]
-size = Vector2(249, 256)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpn3u"]
 size = Vector2(212, 165)
 
@@ -3476,21 +3472,6 @@ shape = SubResource("RectangleShape2D_yk1j3")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="intro_station" unique_id=179462421]
 position = Vector2(774, 722.99994)
-scale = Vector2(0.114843756, 0.114843756)
-sprite_frames = SubResource("SpriteFrames_df2sy")
-animation = &"exclamation"
-
-[node name="station_raw_material" type="Area2D" parent="." unique_id=790739340]
-script = ExtResource("27_fpn3u")
-dialogue_path = "uid://bdsudiw6wblg0"
-step_name = "raw_material"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="station_raw_material" unique_id=1028828057]
-position = Vector2(145.5, 585)
-shape = SubResource("RectangleShape2D_2hamv")
-
-[node name="ExclamationMark" type="AnimatedSprite2D" parent="station_raw_material" unique_id=281511406]
-position = Vector2(150, 676.99994)
 scale = Vector2(0.114843756, 0.114843756)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
@@ -3554,20 +3535,20 @@ scale = Vector2(0.114843756, 0.114843756)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1636846371]
-
-[node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("30_5yjkk")]
-offset_left = -24.0
-offset_right = -24.0
-
 [node name="spawn_from_world" type="Marker2D" parent="." unique_id=1725956288]
 position = Vector2(800, 844)
+
+[node name="station_raw_material" type="Area2D" parent="." unique_id=169758861]
+script = ExtResource("29_yk1j3")
+dialogue_path = "uid://bdsudiw6wblg0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="station_raw_material" unique_id=52688339]
+position = Vector2(964.5, 558)
+shape = SubResource("RectangleShape2D_guah3")
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]
 [connection signal="body_exited" from="intro_station" to="intro_station" method="_on_body_exited"]
-[connection signal="body_entered" from="station_raw_material" to="station_raw_material" method="_on_body_entered"]
-[connection signal="body_exited" from="station_raw_material" to="station_raw_material" method="_on_body_exited"]
 [connection signal="body_entered" from="station_inventory" to="station_inventory" method="_on_body_entered"]
 [connection signal="body_exited" from="station_inventory" to="station_inventory" method="_on_body_exited"]
 [connection signal="body_entered" from="station_packing_list" to="station_packing_list" method="_on_body_entered"]
@@ -3576,3 +3557,5 @@ position = Vector2(800, 844)
 [connection signal="body_exited" from="station_work_instructions" to="station_work_instructions" method="_on_body_exited"]
 [connection signal="body_entered" from="final_station" to="final_station" method="_on_body_entered"]
 [connection signal="body_exited" from="final_station" to="final_station" method="_on_body_exited"]
+[connection signal="body_entered" from="station_raw_material" to="station_raw_material" method="_on_body_entered"]
+[connection signal="body_exited" from="station_raw_material" to="station_raw_material" method="_on_body_exited"]
