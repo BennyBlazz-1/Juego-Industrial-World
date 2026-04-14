@@ -4,6 +4,11 @@ extends Node2D
 @onready var building1_completed_map = $building1_completed_map
 @onready var spawn_from_bodega: Marker2D = $spawn_from_bodega
 
+var personajes = [
+	preload("res://scenes/man_player.tscn"),
+	preload("res://scenes/woman_player.tscn"),
+]
+
 func _ready():
 	update_building_1_visual()
 	call_deferred("place_player_at_spawn")
