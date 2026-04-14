@@ -5,7 +5,7 @@ extends Node2D
 
 var personajes = [
 	preload("res://scenes/man_player.tscn"),
-	#preload("res://player_woman.tscn"),
+	preload("res://scenes/woman_player.tscn"),
 ]
 
 func _ready():
