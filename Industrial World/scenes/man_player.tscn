@@ -170,15 +170,22 @@ limit_top = 0
 limit_right = 1790
 limit_bottom = 1305
 limit_smoothed = true
+position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="bodega_camera" type="Camera2D" parent="." unique_id=2044068723]
+zoom = Vector2(1.5, 1.5)
 limit_left = 13
-limit_top = 19
-limit_right = 1265
+limit_top = 42
+limit_right = 1270
 limit_bottom = 887
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=196563930]
 

@@ -25,12 +25,12 @@ func _process(delta: float) -> void:
 			DialogueManager.show_dialogue_balloon(complete_dialogue, "start")
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "man_player":
+	if body.is_in_group("player"):
 		is_player_close = true
 		exclamation_mark.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.name == "man_player":
+	if body.is_in_group("player"):
 		is_player_close = false
 		exclamation_mark.visible = false
 
