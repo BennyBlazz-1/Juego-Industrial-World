@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://bxu2fe44vqwkh"]
+[gd_scene format=3 uid="uid://b8kqi6sxxa68r"]
 
 [ext_resource type="Texture2D" uid="uid://dpd5suy6es1ue" path="res://art/tilesets/Muros.png" id="1_cu11h"]
+[ext_resource type="Script" uid="uid://bof5ugrmnvkic" path="res://scenes/bodega.gd" id="1_q6byh"]
 [ext_resource type="Texture2D" uid="uid://cmaob3as2vofh" path="res://art/tilesets/ground.png" id="2_en0dp"]
 [ext_resource type="Texture2D" uid="uid://cu1cddhxvoc55" path="res://art/tilesets/water.png" id="3_yd45i"]
 [ext_resource type="Texture2D" uid="uid://dfht07dxiqa0c" path="res://art/tilesets/flowers.png" id="4_lovwr"]
@@ -29,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="27_8faxs"]
 [ext_resource type="Script" uid="uid://b7g3cle44cr78" path="res://scripts/level_station.gd" id="27_fpn3u"]
 [ext_resource type="Script" uid="uid://cijlrr20aenyv" path="res://scripts/final_station.gd" id="29_yk1j3"]
-[ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="30_5yjkk"]
+[ext_resource type="AudioStream" uid="uid://xof8r7ohse2x" path="res://Musica/SwitchWithMeTheme.ogg" id="30_q6byh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_viw4v"]
 texture = ExtResource("1_cu11h")
@@ -3434,6 +3435,7 @@ size = Vector2(253, 160)
 
 [node name="Nivel 1" type="Node2D" unique_id=1572856616]
 y_sort_enabled = true
+script = ExtResource("1_q6byh")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1120340458]
 y_sort_enabled = true
@@ -3557,9 +3559,10 @@ animation = &"exclamation"
 [node name="spawn_from_world" type="Marker2D" parent="." unique_id=1725956288]
 position = Vector2(800, 844)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2039123256]
-
-[node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("30_5yjkk")]
+[node name="Musicalvl1" type="AudioStreamPlayer" parent="." unique_id=668795342]
+stream = ExtResource("30_q6byh")
+autoplay = true
+parameters/looping = false
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]

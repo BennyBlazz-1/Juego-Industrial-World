@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://canj0bpthrqxl"
+path="res://.godot/imported/nivel2_complete.dialogue-a2455ac21ca387d1ea93b6c984eaa04e.tres"
+
+[deps]
+
+source_file="res://dialogues/nivel2_complete.dialogue"
+dest_files=["res://.godot/imported/nivel2_complete.dialogue-a2455ac21ca387d1ea93b6c984eaa04e.tres"]
+
+[params]
+
+defaults=true

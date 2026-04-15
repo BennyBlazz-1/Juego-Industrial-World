@@ -5,6 +5,8 @@ var current_dir = "none"
 
 @onready var world_camera: Camera2D = $world_camera
 @onready var bodega_camera: Camera2D = $bodega_camera
+@onready var nivel2_camera: Camera2D = $nivel2_camera
+
 
 func _ready():
 	add_to_group("player")
@@ -87,6 +89,7 @@ func update_current_camera() -> void:
 
 	world_camera.enabled = false
 	bodega_camera.enabled = false
+	nivel2_camera.enabled = false
 
 	if current_scene.scene_file_path == "res://scenes/world.tscn":
 		world_camera.enabled = true
@@ -94,3 +97,6 @@ func update_current_camera() -> void:
 	elif current_scene.scene_file_path == "res://scenes/bodega.tscn":
 		bodega_camera.enabled = true
 		bodega_camera.make_current()
+	elif current_scene.scene_file_path == "res://scenes/nivel_2.tscn":
+		nivel2_camera.enabled = true
+		nivel2_camera.make_current()
