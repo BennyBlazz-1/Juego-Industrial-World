@@ -2,17 +2,20 @@ extends CanvasLayer
 
 @onready var sprite = $Sprite2D
 
+@export_file("*.tscn") var escena_destino: String = "res://scenes/world.tscn"
+
 var personajes = [
 	preload("res://art/characters/man front.png"),
 	preload("res://art/characters/woman front(1).png"),
 ]
 
-var indice = 0
+var indice := 0
 
 func _ready() -> void:
+	indice = Global.personaje_seleccionado
 	mostrar_personaje()
 
-func mostrar_personaje():
+func mostrar_personaje() -> void:
 	sprite.texture = personajes[indice]
 
 func _on_button_left_pressed() -> void:
@@ -27,4 +30,4 @@ func _on_button_2_rigth_pressed() -> void:
 
 func _on_button_3_ok_pressed() -> void:
 	Global.personaje_seleccionado = indice
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	get_tree().change_scene_to_file(escena_destino)

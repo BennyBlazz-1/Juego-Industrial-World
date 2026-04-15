@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cc781n16ro77i" path="res://art/tilesets/edificio2_3.png" id="16_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://sh4gih8l7i1t" path="res://scenes/boss_player.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
+[ext_resource type="PackedScene" uid="uid://dsgkbm0yb0mtx" path="res://scenes/woman_player.tscn" id="22_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="24_ctatt"]
 [ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="25_xgqkh"]
 
@@ -398,6 +399,8 @@ shape = SubResource("RectangleShape2D_kpybi")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2137625041]
 
 [node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("24_ctatt")]
+offset_top = 4.0
+offset_bottom = 4.0
 
 [node name="spawn_from_bodega" type="Marker2D" parent="." unique_id=1956853760]
 position = Vector2(401, 469)
