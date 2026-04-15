@@ -3447,9 +3447,6 @@ layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(589871, 2490377, 6, 393278, 3932169, 5, 458810, 3670025, 7, 1703990, 3407881, 25, 1769521, 3080201, 26, 2031669, 3342345, 31, 1179710, 3801097, 17, 1572926, 3801097, 22, 1310766, 2228233, 20, 786467, 2228233, 7, 1114150, 2359305, 17, 1114154, 2621449, 17, 1441819, 1376265, 21, 1835035, 1638409, 25, 1835039, 1900553, 27, 1966103, 1376265, 29, 1703954, 1048585, 26, 1245194, 262153, 17, 1703944, 9, 25, 1376258, 9, 21, 2031626, 524297, 31, 2228228, 9, 31, 327745, 4194313, 5, 2293824, 4194313, 5, 2555907, 4194313, 5)
 
-[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("25_mfki2")]
-position = Vector2(800, 822)
-
 [node name="collisions" type="StaticBody2D" parent="." unique_id=924897462]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=176215253]
@@ -3555,6 +3552,9 @@ animation = &"exclamation"
 
 [node name="spawn_from_world" type="Marker2D" parent="." unique_id=1725956288]
 position = Vector2(800, 844)
+
+[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("25_mfki2")]
+position = Vector2(838, 802)
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]
