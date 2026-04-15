@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bos4ee32jngaq" path="res://scenes/dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://cwpafx035h2ry" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner01b.png" id="2_ithk8"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://clmg3wb2bo8fn" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02b.png" id="5_t5syq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -63,6 +65,9 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t5syq"]
+texture = ExtResource("2_ithk8")
+
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -99,6 +104,14 @@ _data = {
 &"progress": SubResource("Animation_qkmqt")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ithk8"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("2_ithk8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onvhc"]
+texture = ExtResource("5_t5syq")
+
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=833624758]
 layer = 100
 script = ExtResource("1_36de5")
@@ -119,7 +132,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -219.0
+offset_top = -205.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -127,6 +140,7 @@ grow_vertical = 0
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_t5syq")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=705528225]
 layout_mode = 2
@@ -134,36 +148,53 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=2063888572]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1183768547]
+[node name="TextArea" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1971352956]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=748943629]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea" unique_id=748943629]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
-layout_mode = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 29.0
+offset_right = 1034.0
+offset_bottom = 57.0
 mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=17997846 instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea" unique_id=17997846 instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+offset_left = 30.0
+offset_top = 58.0
+offset_right = 1122.0
+offset_bottom = 153.0
+grow_horizontal = 1
 size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dialogue..."
 
-[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=225070560]
+[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea" unique_id=225070560]
 custom_minimum_size = Vector2(20, 10)
-layout_mode = 2
+anchors_preset = 0
+offset_left = 41.0
+offset_top = 122.0
+offset_right = 61.0
+offset_bottom = 132.0
 size_flags_vertical = 8
 
-[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=829915326]
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea/Control" unique_id=829915326]
 unique_name_in_owner = true
+position = Vector2(937, 0)
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1819444023]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea/Control" unique_id=1819444023]
 libraries/ = SubResource("AnimationLibrary_1337t")
 autoplay = &"progress"
 
@@ -171,24 +202,27 @@ autoplay = &"progress"
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.69000006
-anchor_top = 0.68500006
-anchor_right = 0.69000006
-anchor_bottom = 0.68500006
-offset_left = -290.88007
-offset_top = -34.880035
-offset_right = 290.11993
-offset_bottom = 35.119965
+anchor_left = 0.70400006
+anchor_top = 0.65900004
+anchor_right = 0.70400006
+anchor_bottom = 0.65900004
+offset_left = -290.00806
+offset_top = -49.032013
+offset_right = 290.99194
+offset_bottom = 48.967987
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
-theme_override_constants/separation = 2
+theme_override_constants/separation = 7
 alignment = 1
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=121862247]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ithk8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_onvhc")
 text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=397953596]
