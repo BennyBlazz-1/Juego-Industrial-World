@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://e6e41yioxj68"]
 
+[ext_resource type="Script" uid="uid://be3pjwwwbkv11" path="res://scripts/nivel_2.gd" id="1_7hkex"]
 [ext_resource type="Texture2D" uid="uid://dpd5suy6es1ue" path="res://art/tilesets/Muros.png" id="1_ko3cp"]
 [ext_resource type="Texture2D" uid="uid://cmaob3as2vofh" path="res://art/tilesets/ground.png" id="2_w20dx"]
 [ext_resource type="Texture2D" uid="uid://cu1cddhxvoc55" path="res://art/tilesets/water.png" id="3_11j0o"]
@@ -35,9 +36,9 @@
 [ext_resource type="AudioStream" uid="uid://cgw0cm06grbn5" path="res://Musica/Lvl2.ogg" id="32_oa3es"]
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="33_wl40b"]
 [ext_resource type="AudioStream" uid="uid://bkkl6m4km0wg1" path="res://Musica/boton.wav" id="34_wyaps"]
-[ext_resource type="Script" uid="uid://cjutuyjsxfq7e" path="res://scenes/boton_interrogacion.gd" id="35_fp35h"]
-[ext_resource type="Script" uid="uid://djwhb86e8fje0" path="res://scenes/boton.gd" id="36_21r4u"]
+[ext_resource type="Script" uid="uid://cjutuyjsxfq7e" path="res://scripts/boton_interrogacion.gd" id="35_fp35h"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="38_7hkex"]
+[ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="39_bbe3c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47vl3"]
 texture = ExtResource("1_ko3cp")
@@ -8705,11 +8706,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hkex"]
 size = Vector2(42, 74)
 
+[sub_resource type="GDScript" id="GDScript_21r4u"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbe3c"]
 size = Vector2(44, 31.5)
 
 [node name="Nivel 2" type="Node2D" unique_id=701458017]
 y_sort_enabled = true
+script = ExtResource("1_7hkex")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1872798036]
 y_sort_enabled = true
@@ -8751,7 +8767,7 @@ stream = ExtResource("34_wyaps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boton1" unique_id=1922381515]
 position = Vector2(386, 478)
 shape = SubResource("RectangleShape2D_7hkex")
-script = ExtResource("36_21r4u")
+script = SubResource("GDScript_21r4u")
 
 [node name="Boton2" type="Area2D" parent="." unique_id=2073925681]
 script = ExtResource("35_fp35h")
@@ -8770,7 +8786,7 @@ stream = ExtResource("34_wyaps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boton2" unique_id=795366737]
 position = Vector2(1073, 582)
 shape = SubResource("RectangleShape2D_7hkex")
-script = ExtResource("36_21r4u")
+script = SubResource("GDScript_21r4u")
 
 [node name="Boton3" type="Area2D" parent="." unique_id=408195231]
 script = ExtResource("35_fp35h")
@@ -8789,7 +8805,7 @@ stream = ExtResource("34_wyaps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boton3" unique_id=75752953]
 position = Vector2(1515, 217)
 shape = SubResource("RectangleShape2D_7hkex")
-script = ExtResource("36_21r4u")
+script = SubResource("GDScript_21r4u")
 
 [node name="Boton4" type="Area2D" parent="." unique_id=1091536329]
 script = ExtResource("35_fp35h")
@@ -8808,7 +8824,7 @@ stream = ExtResource("34_wyaps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boton4" unique_id=1129786559]
 position = Vector2(1350, 27)
 shape = SubResource("RectangleShape2D_7hkex")
-script = ExtResource("36_21r4u")
+script = SubResource("GDScript_21r4u")
 
 [node name="Boton5" type="Area2D" parent="." unique_id=1436553993]
 script = ExtResource("35_fp35h")
@@ -8827,7 +8843,7 @@ stream = ExtResource("34_wyaps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boton5" unique_id=425340954]
 position = Vector2(19, 139)
 shape = SubResource("RectangleShape2D_7hkex")
-script = ExtResource("36_21r4u")
+script = SubResource("GDScript_21r4u")
 
 [node name="Boton6" type="Area2D" parent="." unique_id=1419937205]
 script = ExtResource("35_fp35h")
@@ -8846,7 +8862,7 @@ stream = ExtResource("34_wyaps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boton6" unique_id=1587462796]
 position = Vector2(1136, 849)
 shape = SubResource("RectangleShape2D_7hkex")
-script = ExtResource("36_21r4u")
+script = SubResource("GDScript_21r4u")
 
 [node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("29_xpil2")]
 position = Vector2(658, 853)
@@ -8859,5 +8875,9 @@ target_spawn_name = "spawn_from_nivel2"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=155364882]
 position = Vector2(660, 899)
 shape = SubResource("RectangleShape2D_bbe3c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=644498539]
+
+[node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("39_bbe3c")]
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
