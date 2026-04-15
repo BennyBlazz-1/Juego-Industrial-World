@@ -2,6 +2,8 @@ extends Node
 
 var is_dialogue_active = false
 
+var next_spawn_point: String = ""
+
 var level1_steps = {
 	"raw_material": false,
 	"inventory": false,
@@ -16,6 +18,14 @@ var level1_all_stations_done = false
 var level1_exam_taken = false
 var level1_passed = false
 var level1_finished = false
+
+func set_next_spawn(spawn_name: String) -> void:
+	next_spawn_point = spawn_name
+
+func consume_next_spawn() -> String:
+	var spawn_name := next_spawn_point
+	next_spawn_point = ""
+	return spawn_name
 
 func reset_level1():
 	level1_steps["raw_material"] = false

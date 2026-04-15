@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxnrds2kns50p"]
+
+[ext_resource type="Script" uid="uid://c43614auqambo" path="res://scripts/label_fps.gd" id="1_l0eq6"]
+
+[node name="pruebaFPS" type="Control" unique_id=355462747]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelFPS" type="Label" parent="." unique_id=1281081804]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(2, 2)
+script = ExtResource("1_l0eq6")

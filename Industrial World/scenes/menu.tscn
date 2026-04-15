@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c1txttdsrxapu"]
+
+[ext_resource type="Script" uid="uid://d00lujwjw28a1" path="res://menu.gd" id="1_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://bv6oanf68rrv8" path="res://art/tilesets/menuimg.png" id="2_g3eks"]
+[ext_resource type="FontFile" uid="uid://cpivt87dnykic" path="res://art/tilesets/Kenney Blocks.ttf" id="3_v86rl"]
+[ext_resource type="Texture2D" uid="uid://1d4r7p57auh3" path="res://art/tilesets/Fiery orange pixel art button (1).png" id="4_13sgg"]
+[ext_resource type="Texture2D" uid="uid://3ax75bqqbc24" path="res://art/tilesets/Pixel art red glowing button (1).png" id="5_i6lef"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
+texture = ExtResource("4_13sgg")
+expand_margin_left = 30.0
+expand_margin_top = 113.0
+expand_margin_right = 26.0
+expand_margin_bottom = 140.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mj5lg"]
+texture = ExtResource("4_13sgg")
+expand_margin_left = 30.0
+expand_margin_top = 113.0
+expand_margin_right = 26.0
+expand_margin_bottom = 140.0
+modulate_color = Color(0.6313726, 0.17254902, 0.08627451, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufwb2"]
+texture = ExtResource("4_13sgg")
+expand_margin_left = 30.0
+expand_margin_top = 113.0
+expand_margin_right = 26.0
+expand_margin_bottom = 140.0
+modulate_color = Color(0.85882354, 0.4509804, 0.015686275, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cdou"]
+texture = ExtResource("5_i6lef")
+expand_margin_left = 30.0
+expand_margin_top = 90.0
+expand_margin_right = 30.0
+expand_margin_bottom = 114.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i42df"]
+texture = ExtResource("5_i6lef")
+expand_margin_left = 30.0
+expand_margin_top = 90.0
+expand_margin_right = 30.0
+expand_margin_bottom = 114.0
+modulate_color = Color(0.41960785, 0.007843138, 0.050980393, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jp70"]
+texture = ExtResource("5_i6lef")
+expand_margin_left = 30.0
+expand_margin_top = 90.0
+expand_margin_right = 30.0
+expand_margin_bottom = 114.0
+modulate_color = Color(0.80784315, 0.07450981, 0, 1)
+
+[node name="menu" type="Control" unique_id=186389351]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ytvr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1862866066]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 686.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=791401745]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 701.0
+texture = ExtResource("2_g3eks")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1482032924]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = 91.0
+offset_right = 132.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=609378128]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v86rl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_70i5f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mj5lg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ufwb2")
+text = "play"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=801800769]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v86rl")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7jp70")
+text = "exit"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

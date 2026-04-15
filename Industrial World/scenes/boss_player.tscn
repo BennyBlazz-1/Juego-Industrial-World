@@ -149,7 +149,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pp6mn"]
-radius = 25.019993
+radius = 28.160255
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f7ejg"]
 atlas = ExtResource("6_pp6mn")
@@ -201,6 +201,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_pp6mn"]
+font_size = 13
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
 [node name="boss_player" type="CharacterBody2D" unique_id=1361553851]
 script = ExtResource("1_5i7dm")
 
@@ -219,12 +224,23 @@ script = ExtResource("5_pp6mn")
 shape = SubResource("CircleShape2D_pp6mn")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Area2D" unique_id=1867003721]
-position = Vector2(1.1920929e-07, -36)
+position = Vector2(-1, -58.000004)
 scale = Vector2(0.06768799, 0.06768799)
 sprite_frames = SubResource("SpriteFrames_gwibq")
 animation = &"exclamation"
 frame_progress = 0.27455541
 speed_scale = 2.0
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
-[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
+[node name="PromptPoint" type="Node2D" parent="Area2D" unique_id=1607996905]
+position = Vector2(-40, -39)
+
+[node name="InteractionLabel" type="Label" parent="Area2D/PromptPoint" unique_id=557340453]
+visible = false
+offset_right = 142.0
+offset_bottom = 18.0
+text = "Presiona E para hablar"
+label_settings = SubResource("LabelSettings_pp6mn")
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
