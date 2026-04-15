@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Industial World"
-run/main_scene="uid://c8cp24pvonc5r"
+run/main_scene="uid://c1txttdsrxapu"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/image="uid://b6fo7rlodfajh"
 config/icon="res://art/icon.svg"

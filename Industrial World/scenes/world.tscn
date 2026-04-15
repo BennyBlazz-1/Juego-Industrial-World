@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://cc781n16ro77i" path="res://art/tilesets/edificio2_3.png" id="16_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://sh4gih8l7i1t" path="res://scenes/boss_player.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
-[ext_resource type="PackedScene" uid="uid://dsgkbm0yb0mtx" path="res://scenes/woman_player.tscn" id="22_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="24_ctatt"]
 [ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="25_xgqkh"]
 
@@ -416,11 +415,11 @@ next_scene_path = "res://scenes/nivel_2.tscn"
 target_spawn_name = "bodega_from_world"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene2" unique_id=425692894]
-position = Vector2(1232, 469)
+position = Vector2(1233, 465)
 shape = SubResource("RectangleShape2D_kpybi")
 
 [node name="spawn_from_nivel2" type="Marker2D" parent="." unique_id=697388594]
-position = Vector2(1233, 507)
+position = Vector2(1233, 497)
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="area_scene2" to="area_scene2" method="_on_body_entered"]
