@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ckv2gjbyms2t5"]
+[gd_scene format=3 uid="uid://b8kqi6sxxa68r"]
 
 [ext_resource type="Texture2D" uid="uid://dpd5suy6es1ue" path="res://art/tilesets/Muros.png" id="1_cu11h"]
 [ext_resource type="Script" uid="uid://bof5ugrmnvkic" path="res://scenes/bodega.gd" id="1_q6byh"]
@@ -3558,6 +3558,11 @@ animation = &"exclamation"
 
 [node name="spawn_from_world" type="Marker2D" parent="." unique_id=1725956288]
 position = Vector2(800, 844)
+
+[node name="Musicalvl1" type="AudioStreamPlayer" parent="." unique_id=668795342]
+stream = ExtResource("30_q6byh")
+autoplay = true
+parameters/looping = false
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]
