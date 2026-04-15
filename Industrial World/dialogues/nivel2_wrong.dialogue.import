@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cw202m31fkn5o"
+path="res://.godot/imported/nivel2_wrong.dialogue-24e02f3e8330de3d353977955071422d.tres"
+
+[deps]
+
+source_file="res://dialogues/nivel2_wrong.dialogue"
+dest_files=["res://.godot/imported/nivel2_wrong.dialogue-24e02f3e8330de3d353977955071422d.tres"]
+
+[params]
+
+defaults=true
