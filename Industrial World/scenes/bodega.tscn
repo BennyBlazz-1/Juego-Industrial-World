@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8kqi6sxxa68r"]
 
 [ext_resource type="Texture2D" uid="uid://dpd5suy6es1ue" path="res://art/tilesets/Muros.png" id="1_cu11h"]
-[ext_resource type="Script" uid="uid://bof5ugrmnvkic" path="res://scenes/bodega.gd" id="1_q6byh"]
+[ext_resource type="Script" uid="uid://cymfvjeu1je7a" path="res://scripts/bodega.gd" id="1_q6byh"]
 [ext_resource type="Texture2D" uid="uid://cmaob3as2vofh" path="res://art/tilesets/ground.png" id="2_en0dp"]
 [ext_resource type="Texture2D" uid="uid://cu1cddhxvoc55" path="res://art/tilesets/water.png" id="3_yd45i"]
 [ext_resource type="Texture2D" uid="uid://dfht07dxiqa0c" path="res://art/tilesets/flowers.png" id="4_lovwr"]
