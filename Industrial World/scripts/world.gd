@@ -6,7 +6,7 @@ extends Node2D
 @onready var spawn_from_nivel2: Marker2D = $spawn_from_nivel2
 
 @onready var man_player: Node2D = $man_player
-@onready var woman_player: Node2D = $woman_player
+
 
 func _ready():
 	update_building_1_visual()
@@ -22,13 +22,10 @@ func update_building_1_visual() -> void:
 func seleccionar_personaje() -> void:
 	if man_player:
 		man_player.remove_from_group("player")
-	if woman_player:
-		woman_player.remove_from_group("player")
+	
 
 	if Global.personaje_seleccionado == 0:
 		# HOMBRE ACTIVO
-		if woman_player:
-			woman_player.queue_free()
 
 		if man_player:
 			man_player.visible = true
@@ -38,13 +35,12 @@ func seleccionar_personaje() -> void:
 	else:
 		# MUJER ACTIVA
 		if man_player:
-			man_player.queue_free()
+			man_player.visible = true
+			man_player.set_process(true)
+			man_player.set_physics_process(true)
+			man_player.add_to_group("player")
 
-		if woman_player:
-			woman_player.visible = true
-			woman_player.set_process(true)
-			woman_player.set_physics_process(true)
-			woman_player.add_to_group("player")
+		
 
 
 func place_player_at_spawn() -> void:
