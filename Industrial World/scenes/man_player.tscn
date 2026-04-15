@@ -187,6 +187,18 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
+[node name="nivel2_camera" type="Camera2D" parent="." unique_id=1424503291]
+zoom = Vector2(1.5, 1.5)
+limit_left = 6
+limit_top = 16
+limit_right = 1530
+limit_bottom = 897
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="AreaDetector" type="Area2D" parent="." unique_id=196563930]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1058546544]

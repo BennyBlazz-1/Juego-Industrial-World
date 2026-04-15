@@ -407,4 +407,17 @@ stream = ExtResource("25_xgqkh")
 autoplay = true
 parameters/looping = false
 
+[node name="area_scene2" type="Area2D" parent="." unique_id=1994908333]
+script = ExtResource("22_oo54l")
+next_scene_path = "res://scenes/nivel_2.tscn"
+target_spawn_name = "bodega_from_world"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene2" unique_id=425692894]
+position = Vector2(1232, 469)
+shape = SubResource("RectangleShape2D_kpybi")
+
+[node name="spawn_from_nivel2" type="Marker2D" parent="." unique_id=697388594]
+position = Vector2(1233, 507)
+
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
+[connection signal="body_entered" from="area_scene2" to="area_scene2" method="_on_body_entered"]

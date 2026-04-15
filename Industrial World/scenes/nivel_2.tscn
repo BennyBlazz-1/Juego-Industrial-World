@@ -37,6 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://bkkl6m4km0wg1" path="res://Musica/boton.wav" id="34_wyaps"]
 [ext_resource type="Script" uid="uid://cjutuyjsxfq7e" path="res://scenes/boton_interrogacion.gd" id="35_fp35h"]
 [ext_resource type="Script" uid="uid://djwhb86e8fje0" path="res://scenes/boton.gd" id="36_21r4u"]
+[ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="38_7hkex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47vl3"]
 texture = ExtResource("1_ko3cp")
@@ -8704,6 +8705,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hkex"]
 size = Vector2(42, 74)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbe3c"]
+size = Vector2(44, 31.5)
+
 [node name="Nivel 2" type="Node2D" unique_id=701458017]
 y_sort_enabled = true
 
@@ -8845,4 +8849,15 @@ shape = SubResource("RectangleShape2D_7hkex")
 script = ExtResource("36_21r4u")
 
 [node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("29_xpil2")]
-position = Vector2(661, 864)
+position = Vector2(658, 853)
+
+[node name="area_scene1" type="Area2D" parent="." unique_id=660319538]
+script = ExtResource("38_7hkex")
+next_scene_path = "res://scenes/world.tscn"
+target_spawn_name = "spawn_from_nivel2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=155364882]
+position = Vector2(660, 899)
+shape = SubResource("RectangleShape2D_bbe3c")
+
+[connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
