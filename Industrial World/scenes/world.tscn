@@ -324,7 +324,7 @@ sources/22 = SubResource("TileSetAtlasSource_817gm")
 sources/23 = SubResource("TileSetAtlasSource_ggc52")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpybi"]
-size = Vector2(37, 35)
+size = Vector2(37, 33.5)
 
 [node name="world" type="Node2D" unique_id=1874219532]
 y_sort_enabled = true
@@ -398,14 +398,17 @@ shape = SubResource("RectangleShape2D_kpybi")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2137625041]
 
 [node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("24_ctatt")]
+offset_top = 4.0
+offset_bottom = 4.0
 
 [node name="spawn_from_bodega" type="Marker2D" parent="." unique_id=1956853760]
 position = Vector2(401, 469)
 
 [node name="MusicaMundo" type="AudioStreamPlayer" parent="." unique_id=2125044528]
 stream = ExtResource("25_xgqkh")
+volume_db = -15.509
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [node name="area_scene2" type="Area2D" parent="." unique_id=1994908333]
 script = ExtResource("22_oo54l")
@@ -413,11 +416,11 @@ next_scene_path = "res://scenes/nivel_2.tscn"
 target_spawn_name = "bodega_from_world"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene2" unique_id=425692894]
-position = Vector2(1232, 469)
+position = Vector2(1233, 464.25)
 shape = SubResource("RectangleShape2D_kpybi")
 
 [node name="spawn_from_nivel2" type="Marker2D" parent="." unique_id=697388594]
-position = Vector2(1233, 507)
+position = Vector2(1232, 498)
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="area_scene2" to="area_scene2" method="_on_body_entered"]

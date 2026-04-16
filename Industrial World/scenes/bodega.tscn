@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://be6fabkcv1tbk" path="res://art/tilesets/Decoracion.png" id="22_2vfmh"]
 [ext_resource type="Texture2D" uid="uid://qs6uaqurk1fu" path="res://art/tilesets/plains2.png" id="23_5lueq"]
 [ext_resource type="Texture2D" uid="uid://cbibhnxv2skfj" path="res://art/tilesets/DecoracionFondo.png" id="24_en0dp"]
-[ext_resource type="PackedScene" uid="uid://c3a4m83d0v0ta" path="res://scenes/man_player.tscn" id="25_mfki2"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="26_7ylhq"]
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="27_8faxs"]
 [ext_resource type="Script" uid="uid://b7g3cle44cr78" path="res://scripts/level_station.gd" id="27_fpn3u"]
@@ -3450,9 +3449,6 @@ layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(589871, 2490377, 6, 393278, 3932169, 5, 458810, 3670025, 7, 1703990, 3407881, 25, 1769521, 3080201, 26, 2031669, 3342345, 31, 1179710, 3801097, 17, 1572926, 3801097, 22, 1310766, 2228233, 20, 786467, 2228233, 7, 1114150, 2359305, 17, 1114154, 2621449, 17, 1441819, 1376265, 21, 1835035, 1638409, 25, 1835039, 1900553, 27, 1966103, 1376265, 29, 1703954, 1048585, 26, 1245194, 262153, 17, 1703944, 9, 25, 1376258, 9, 21, 2031626, 524297, 31, 2228228, 9, 31, 327745, 4194313, 5, 2293824, 4194313, 5, 2555907, 4194313, 5)
 
-[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("25_mfki2")]
-position = Vector2(800, 822)
-
 [node name="collisions" type="StaticBody2D" parent="." unique_id=924897462]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=176215253]
@@ -3561,8 +3557,9 @@ position = Vector2(800, 844)
 
 [node name="Musicalvl1" type="AudioStreamPlayer" parent="." unique_id=668795342]
 stream = ExtResource("30_q6byh")
+volume_db = -11.86
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]

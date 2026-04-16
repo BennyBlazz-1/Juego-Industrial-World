@@ -5,22 +5,49 @@ extends Node2D
 @onready var spawn_from_bodega: Marker2D = $spawn_from_bodega
 @onready var spawn_from_nivel2: Marker2D = $spawn_from_nivel2
 
-var personajes = [
-	preload("res://scenes/man_player.tscn"),
-	preload("res://scenes/woman_player.tscn"),
-]
+@onready var man_player: Node2D = $man_player
+
 
 func _ready():
 	update_building_1_visual()
+	seleccionar_personaje()
 	call_deferred("place_player_at_spawn")
 
-func update_building_1_visual():
+
+func update_building_1_visual() -> void:
 	building1_under_construction_map.visible = not GameManager.level1_passed
 	building1_completed_map.visible = GameManager.level1_passed
 
+
+func seleccionar_personaje() -> void:
+	if man_player:
+		man_player.remove_from_group("player")
+	
+
+	if Global.personaje_seleccionado == 0:
+		# HOMBRE ACTIVO
+
+		if man_player:
+			man_player.visible = true
+			man_player.set_process(true)
+			man_player.set_physics_process(true)
+			man_player.add_to_group("player")
+	else:
+		# MUJER ACTIVA
+		if man_player:
+			man_player.visible = true
+			man_player.set_process(true)
+			man_player.set_physics_process(true)
+			man_player.add_to_group("player")
+
+		
+
+
 func place_player_at_spawn() -> void:
 	var player := get_tree().get_first_node_in_group("player") as Node2D
+
 	if player == null:
+		print("ERROR: no hay player en grupo")
 		return
 
 	var spawn_name := GameManager.consume_next_spawn()

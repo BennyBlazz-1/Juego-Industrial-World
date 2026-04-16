@@ -107,6 +107,17 @@ func reset_nivel_2() -> void:
 	nivel_2_passed = false
 
 
+func reiniciar_botones_nivel_2_en_escena() -> void:
+	var escena_actual = get_tree().current_scene
+	if escena_actual == null:
+		return
+
+	for hijo in escena_actual.get_children():
+		if hijo is Area2D and hijo.name.begins_with("Boton"):
+			if hijo.has_method("reiniciar_boton"):
+				hijo.reiniciar_boton()
+
+
 # =========================
 # CONFIGURACIÓN NIVEL 2
 # =========================
@@ -144,6 +155,9 @@ func completar_boton_nivel_2(nombre_boton: String) -> bool:
 		check_nivel_2_progreso()
 		return true
 
+	# Si se equivoca, reinicia toda la secuencia
+	reset_nivel_2()
+	reiniciar_botones_nivel_2_en_escena()
 	return false
 
 

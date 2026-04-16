@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dtdfo54kgol2c" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_ButtonValue02b.png" id="4_rh8gb"]
 [ext_resource type="Texture2D" uid="uid://ebo6larhbgvs" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Frame02a.png" id="5_b1hl3"]
 [ext_resource type="Texture2D" uid="uid://di0ob4qmf22yu" path="res://art/characters/man front.png" id="6_2qx31"]
+[ext_resource type="AudioStream" uid="uid://olk2l02ovkwb" path="res://Musica/Floating Downstream.ogg" id="8_0ggmf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq8j6"]
 texture = ExtResource("1_5tcwn")
@@ -112,6 +113,11 @@ scale = Vector2(2.972819, 2.6720777)
 texture = ExtResource("6_2qx31")
 region_enabled = true
 region_rect = Rect2(36.54016, 66.733376, 54.853333, 61.306694)
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=239972758]
+stream = ExtResource("8_0ggmf")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Button_Left" to="." method="_on_button_left_pressed"]
 [connection signal="pressed" from="Button2_Rigth" to="." method="_on_button_2_rigth_pressed"]
