@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cpivt87dnykic" path="res://art/tilesets/Kenney Blocks.ttf" id="3_v86rl"]
 [ext_resource type="Texture2D" uid="uid://1d4r7p57auh3" path="res://art/tilesets/Fiery orange pixel art button (1).png" id="4_13sgg"]
 [ext_resource type="Texture2D" uid="uid://3ax75bqqbc24" path="res://art/tilesets/Pixel art red glowing button (1).png" id="5_i6lef"]
+[ext_resource type="AudioStream" uid="uid://olk2l02ovkwb" path="res://Musica/Floating Downstream.ogg" id="6_g3eks"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
 texture = ExtResource("4_13sgg")
@@ -109,6 +110,11 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6cdou")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7jp70")
 text = "exit"
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=291358028]
+stream = ExtResource("6_g3eks")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

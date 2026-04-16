@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://be6fabkcv1tbk" path="res://art/tilesets/Decoracion.png" id="22_2vfmh"]
 [ext_resource type="Texture2D" uid="uid://qs6uaqurk1fu" path="res://art/tilesets/plains2.png" id="23_5lueq"]
 [ext_resource type="Texture2D" uid="uid://cbibhnxv2skfj" path="res://art/tilesets/DecoracionFondo.png" id="24_en0dp"]
-[ext_resource type="PackedScene" uid="uid://c3a4m83d0v0ta" path="res://scenes/man_player.tscn" id="25_mfki2"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="26_7ylhq"]
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="27_8faxs"]
 [ext_resource type="Script" uid="uid://b7g3cle44cr78" path="res://scripts/level_station.gd" id="27_fpn3u"]
@@ -3558,8 +3557,9 @@ position = Vector2(800, 844)
 
 [node name="Musicalvl1" type="AudioStreamPlayer" parent="." unique_id=668795342]
 stream = ExtResource("30_q6byh")
+volume_db = -11.86
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]
