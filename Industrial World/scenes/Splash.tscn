@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://mv24lrs8d8fu"]
+
+[ext_resource type="Script" uid="uid://bx4af4l12erqb" path="res://scenes/splash.gd" id="1_ad0hg"]
+[ext_resource type="Texture2D" uid="uid://b6fo7rlodfajh" path="res://art/Splash.png" id="1_y4yub"]
+
+[node name="Control" type="Control" unique_id=854163648]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ad0hg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1187852661]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -95.0
+offset_right = 1155.0
+offset_bottom = 769.0
+texture = ExtResource("1_y4yub")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Timer" type="Timer" parent="." unique_id=1848654497]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
