@@ -369,12 +369,6 @@ layer_2/tile_data = PackedInt32Array(655372, 65556, 8)
 [node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("10_w7kh3")]
 position = Vector2(220, 476)
 
-[node name="woman_player" parent="." unique_id=1577244921 instance=ExtResource("24_ctatt")]
-offset_left = 267.0
-offset_top = 314.0
-offset_right = 267.0
-offset_bottom = 314.0
-
 [node name="collisions" type="StaticBody2D" parent="." unique_id=661130436]
 
 [node name="colisionmapa" type="CollisionPolygon2D" parent="collisions" unique_id=105806179]
