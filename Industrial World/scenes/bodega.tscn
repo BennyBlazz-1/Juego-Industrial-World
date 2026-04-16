@@ -3417,6 +3417,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_5yjkk"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsh3y"]
 size = Vector2(271, 250.5)
 
@@ -3467,21 +3472,35 @@ shape = SubResource("RectangleShape2D_7ylhq")
 [node name="intro_station" type="Area2D" parent="." unique_id=1895215323]
 script = ExtResource("27_fpn3u")
 dialogue_path = "uid://cdy2mbtxj1pqu"
+station_display_name = "Intro"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_station" unique_id=262140353]
 position = Vector2(780, 724)
 shape = SubResource("RectangleShape2D_yk1j3")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="intro_station" unique_id=179462421]
-position = Vector2(774, 722.99994)
+position = Vector2(779, 708)
 scale = Vector2(0.114843756, 0.114843756)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
+
+[node name="PromptPoint" type="Marker2D" parent="intro_station" unique_id=742032583]
+
+[node name="InteractionLabel" type="Label" parent="intro_station/PromptPoint" unique_id=747131069]
+visible = false
+offset_left = 661.0
+offset_top = 730.0
+offset_right = 919.0
+offset_bottom = 753.0
+text = "Press E to start Intro"
+label_settings = SubResource("LabelSettings_5yjkk")
+horizontal_alignment = 1
 
 [node name="station_raw_material" type="Area2D" parent="." unique_id=1322409564]
 script = ExtResource("27_fpn3u")
 dialogue_path = "uid://bdsudiw6wblg0"
 step_name = "raw_material"
+station_display_name = "Raw Material"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="station_raw_material" unique_id=1048988687]
 position = Vector2(158.5, 608.75)
@@ -3493,10 +3512,23 @@ scale = Vector2(0.114843756, 0.11054675)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
 
+[node name="PromptPoint" type="Marker2D" parent="station_raw_material" unique_id=283835138]
+
+[node name="InteractionLabel" type="Label" parent="station_raw_material/PromptPoint" unique_id=464047483]
+visible = false
+offset_left = 77.0
+offset_top = 707.0
+offset_right = 335.0
+offset_bottom = 730.0
+text = "Press E to start Raw Material"
+label_settings = SubResource("LabelSettings_5yjkk")
+horizontal_alignment = 1
+
 [node name="station_inventory" type="Area2D" parent="." unique_id=173862970]
 script = ExtResource("27_fpn3u")
 dialogue_path = "uid://c2dy0xa8p4u2f"
 step_name = "inventory"
+station_display_name = "Inventory"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="station_inventory" unique_id=373606279]
 position = Vector2(526, 540.5)
@@ -3508,25 +3540,51 @@ scale = Vector2(0.114843756, 0.114843756)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
 
+[node name="PromptPoint" type="Marker2D" parent="station_inventory" unique_id=382387510]
+
+[node name="InteractionLabel" type="Label" parent="station_inventory/PromptPoint" unique_id=902226079]
+visible = false
+offset_left = 429.0
+offset_top = 605.0
+offset_right = 687.0
+offset_bottom = 628.0
+text = "Press E to start Inventory"
+label_settings = SubResource("LabelSettings_5yjkk")
+horizontal_alignment = 1
+
 [node name="station_packing_list" type="Area2D" parent="." unique_id=288134178]
 script = ExtResource("27_fpn3u")
 dialogue_path = "uid://12cbw5i3sc52"
 step_name = "packing_list"
+station_display_name = "Packing List"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="station_packing_list" unique_id=653612347]
 position = Vector2(1154, 142)
 shape = SubResource("RectangleShape2D_5yjkk")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="station_packing_list" unique_id=1897174930]
-position = Vector2(1180.9999, 175)
+position = Vector2(1170.9999, 167)
 scale = Vector2(0.114843756, 0.114843756)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
+
+[node name="PromptPoint" type="Marker2D" parent="station_packing_list" unique_id=94458853]
+
+[node name="InteractionLabel" type="Label" parent="station_packing_list/PromptPoint" unique_id=2069641089]
+visible = false
+offset_left = 1037.0
+offset_top = 189.0
+offset_right = 1295.0
+offset_bottom = 212.0
+text = "Press E to start Packing List"
+label_settings = SubResource("LabelSettings_5yjkk")
+horizontal_alignment = 1
 
 [node name="station_work_instructions" type="Area2D" parent="." unique_id=655549364]
 script = ExtResource("27_fpn3u")
 dialogue_path = "uid://c87vs02gq5c2q"
 step_name = "work_instructions"
+station_display_name = "Work Instructions"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="station_work_instructions" unique_id=470121579]
 position = Vector2(1244, 514)
@@ -3537,6 +3595,19 @@ position = Vector2(1243, 569)
 scale = Vector2(0.114843756, 0.114843756)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
+
+[node name="PromptPoint" type="Marker2D" parent="station_work_instructions" unique_id=1985243321]
+
+[node name="InteractionLabel" type="Label" parent="station_work_instructions/PromptPoint" unique_id=175533827]
+visible = false
+offset_left = 1224.0
+offset_top = 517.0
+offset_right = 1482.0
+offset_bottom = 540.0
+rotation = 1.5707964
+text = "Press E to start Work Instructions"
+label_settings = SubResource("LabelSettings_5yjkk")
+horizontal_alignment = 1
 
 [node name="final_station" type="Area2D" parent="." unique_id=1268677725]
 script = ExtResource("29_yk1j3")
@@ -3551,6 +3622,18 @@ position = Vector2(868, 534)
 scale = Vector2(0.114843756, 0.114843756)
 sprite_frames = SubResource("SpriteFrames_df2sy")
 animation = &"exclamation"
+
+[node name="PromptPoint" type="Marker2D" parent="final_station" unique_id=1844312818]
+
+[node name="InteractionLabel" type="Label" parent="final_station/PromptPoint" unique_id=1835134987]
+visible = false
+offset_left = 791.0
+offset_top = 612.0
+offset_right = 1049.0
+offset_bottom = 635.0
+text = "Press E to start Final Test"
+label_settings = SubResource("LabelSettings_5yjkk")
+horizontal_alignment = 1
 
 [node name="spawn_from_world" type="Marker2D" parent="." unique_id=1725956288]
 position = Vector2(800, 844)

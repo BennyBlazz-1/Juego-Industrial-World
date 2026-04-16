@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://coa3mfx5fbsyk"
+path="res://.godot/imported/supervisor_office_sign.dialogue-6305fb4e7c898714eadf7966d8e452ce.tres"
+
+[deps]
+
+source_file="res://dialogues/supervisor_office_sign.dialogue"
+dest_files=["res://.godot/imported/supervisor_office_sign.dialogue-6305fb4e7c898714eadf7966d8e452ce.tres"]
+
+[params]
+
+defaults=true

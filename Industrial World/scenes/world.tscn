@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cc781n16ro77i" path="res://art/tilesets/edificio2_3.png" id="16_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://sh4gih8l7i1t" path="res://scenes/boss_player.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
-[ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="24_ctatt"]
+[ext_resource type="Script" uid="uid://c5fnytwnaqifq" path="res://scripts/sign_interaction.gd" id="25_munwf"]
 [ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="25_xgqkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
@@ -326,6 +326,30 @@ sources/23 = SubResource("TileSetAtlasSource_ggc52")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpybi"]
 size = Vector2(37, 33.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3gi"]
+size = Vector2(35.5, 44)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0nbtd"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0.0013967262, 0.0013967262, 0.001396726, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37qwj"]
+size = Vector2(38, 41)
+
+[sub_resource type="LabelSettings" id="LabelSettings_navra"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0.0023445897, 0.00234459, 0.00234459, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_luhhm"]
+size = Vector2(36, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh13f"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="world" type="Node2D" unique_id=1874219532]
 y_sort_enabled = true
 position = Vector2(0, 1)
@@ -367,13 +391,7 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(655372, 65556, 8)
 
 [node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("10_w7kh3")]
-position = Vector2(220, 476)
-
-[node name="woman_player" parent="." unique_id=1577244921 instance=ExtResource("24_ctatt")]
-offset_left = 267.0
-offset_top = 314.0
-offset_right = 267.0
-offset_bottom = 314.0
+position = Vector2(331, 1239)
 
 [node name="collisions" type="StaticBody2D" parent="." unique_id=661130436]
 
@@ -384,7 +402,7 @@ polygon = PackedVector2Array(1, 112, 266, 112, 274, 102, 274, 0, 1198, 0, 1199, 
 polygon = PackedVector2Array(1555, 465, 1772, 465, 1778, 471, 1779, 680, 1772, 688, 1554, 688, 1552, 669)
 
 [node name="boss_player" parent="." unique_id=1361553851 instance=ExtResource("21_7iits")]
-position = Vector2(513, 432)
+position = Vector2(1296, 999)
 
 [node name="area_scene1" type="Area2D" parent="." unique_id=1311739337]
 script = ExtResource("22_oo54l")
@@ -394,12 +412,6 @@ target_spawn_name = "bodega_from_world"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1614754670]
 position = Vector2(399.5, 433.5)
 shape = SubResource("RectangleShape2D_kpybi")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2137625041]
-
-[node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("24_ctatt")]
-offset_top = 4.0
-offset_bottom = 4.0
 
 [node name="spawn_from_bodega" type="Marker2D" parent="." unique_id=1956853760]
 position = Vector2(401, 469)
@@ -422,5 +434,74 @@ shape = SubResource("RectangleShape2D_kpybi")
 [node name="spawn_from_nivel2" type="Marker2D" parent="." unique_id=697388594]
 position = Vector2(1232, 498)
 
+[node name="SupervisorOfficeSignArea" type="Area2D" parent="." unique_id=15295052]
+script = ExtResource("25_munwf")
+dialogue_path = "uid://coa3mfx5fbsyk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SupervisorOfficeSignArea" unique_id=1045161669]
+position = Vector2(1361, 1089)
+shape = SubResource("RectangleShape2D_ts3gi")
+
+[node name="PromptPoint" type="Marker2D" parent="SupervisorOfficeSignArea" unique_id=1096130193]
+
+[node name="InteractionLabel" type="Label" parent="SupervisorOfficeSignArea/PromptPoint" unique_id=1184534982]
+visible = false
+z_index = 3
+offset_left = 1304.0
+offset_top = 1048.0
+offset_right = 1419.0
+offset_bottom = 1071.0
+text = "Press E to read"
+label_settings = SubResource("LabelSettings_0nbtd")
+horizontal_alignment = 1
+
+[node name="Level1SignArea" type="Area2D" parent="." unique_id=2104761172]
+script = ExtResource("25_munwf")
+dialogue_path = "uid://dq5o8kt3v3l5i"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1SignArea" unique_id=823831958]
+position = Vector2(272, 478.5)
+shape = SubResource("RectangleShape2D_37qwj")
+
+[node name="PromptPoint" type="Marker2D" parent="Level1SignArea" unique_id=191585229]
+
+[node name="InteractionLabel" type="Label" parent="Level1SignArea/PromptPoint" unique_id=517598633]
+visible = false
+z_index = 3
+offset_left = 218.0
+offset_top = 440.0
+offset_right = 333.0
+offset_bottom = 463.0
+text = "Press E to read"
+label_settings = SubResource("LabelSettings_navra")
+horizontal_alignment = 1
+
+[node name="Level2SignArea" type="Area2D" parent="." unique_id=987300401]
+script = ExtResource("25_munwf")
+dialogue_path = "uid://df26qukc2i8oa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2SignArea" unique_id=1840963292]
+position = Vector2(1136, 546)
+shape = SubResource("RectangleShape2D_luhhm")
+
+[node name="PromptPoint" type="Marker2D" parent="Level2SignArea" unique_id=984343619]
+
+[node name="InteractionLabel" type="Label" parent="Level2SignArea/PromptPoint" unique_id=1702692435]
+visible = false
+z_index = 3
+offset_left = 1082.0
+offset_top = 501.0
+offset_right = 1197.0
+offset_bottom = 524.0
+text = "Press E to read"
+label_settings = SubResource("LabelSettings_fh13f")
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="area_scene2" to="area_scene2" method="_on_body_entered"]
+[connection signal="body_entered" from="SupervisorOfficeSignArea" to="SupervisorOfficeSignArea" method="_on_body_entered"]
+[connection signal="body_exited" from="SupervisorOfficeSignArea" to="SupervisorOfficeSignArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Level1SignArea" to="Level1SignArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Level1SignArea" to="Level1SignArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Level2SignArea" to="Level2SignArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Level2SignArea" to="Level2SignArea" method="_on_body_exited"]

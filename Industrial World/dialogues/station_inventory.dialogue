@@ -1,47 +1,47 @@
 ~ start
 
-System: Station: Inventory
+Station: Station: Inventory
 
-System: Question 1.
-System: What does inventory mean?
+Station: Question 1.
+Station: What does inventory mean?
 
 - A machine failure
-	System: Not correct.
+	Station: Not correct.
 
 - A work uniform
-	System: Not correct.
+	Station: Not correct.
 
 - Stock of materials or finished product
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
-System: Question 2.
-System: Why is inventory important?
+Station: Question 2.
+Station: Why is inventory important?
 
 - It changes employee schedules
-	System: Not correct.
+	Station: Not correct.
 
 - It helps control materials and products
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
 - It cleans the warehouse
-	System: Not correct.
+	Station: Not correct.
 
-System: Question 3.
-System: Where is inventory usually stored?
+Station: Question 3.
+Station: Where is inventory usually stored?
 
 - In warehouse areas or storage locations
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
 - On the road outside
 	System: Not correct.
 
 - In the cafeteria
-	System: Not correct.
+	Station: Not correct.
 
-System: Station complete.
-System: Next station location: Up the stairs in the right corner
+Station: Station complete.
+Station: Next station location: Up the stairs in the right corner
 
 => END
