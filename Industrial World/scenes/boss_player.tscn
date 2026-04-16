@@ -224,7 +224,7 @@ script = ExtResource("5_pp6mn")
 shape = SubResource("CircleShape2D_pp6mn")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Area2D" unique_id=1867003721]
-position = Vector2(-1, -58.000004)
+position = Vector2(-55, -28)
 scale = Vector2(0.06768799, 0.06768799)
 sprite_frames = SubResource("SpriteFrames_gwibq")
 animation = &"exclamation"

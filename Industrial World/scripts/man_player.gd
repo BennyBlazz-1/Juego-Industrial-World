@@ -7,18 +7,19 @@ var current_dir = "down"
 @onready var bodega_camera: Camera2D = $bodega_camera
 @onready var nivel2_camera: Camera2D = $nivel2_camera
 
-
 @onready var spritehombre: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spritemujer: AnimatedSprite2D = $AnimatedSprite2D2
 
 var sprite_actual: AnimatedSprite2D
 
-func _ready():
+
+func _ready() -> void:
 	add_to_group("player")
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 
 	configurar_personaje()
 	call_deferred("update_current_camera")
+
 
 func configurar_personaje() -> void:
 	if Global.personaje_seleccionado == 0:
@@ -30,15 +31,18 @@ func configurar_personaje() -> void:
 		spritemujer.visible = true
 		sprite_actual = spritemujer
 
-	sprite_actual.play("front_idle")
+	if sprite_actual != null:
+		sprite_actual.play("front_idle")
 
-func _physics_process(_delta):
+
+func _physics_process(_delta: float) -> void:
 	if GameManager.is_dialogue_active:
 		velocity = Vector2.ZERO
 		play_anim(0)
 		return
 
 	player_movement()
+
 
 func player_movement() -> void:
 	var input_vector := Vector2.ZERO
@@ -68,6 +72,7 @@ func player_movement() -> void:
 	else:
 		velocity = Vector2.ZERO
 		play_anim(0)
+
 
 func play_anim(movement: int) -> void:
 	if sprite_actual == null:
@@ -101,8 +106,16 @@ func play_anim(movement: int) -> void:
 		else:
 			sprite_actual.play("back_idle")
 
+
 func update_current_camera() -> void:
-	var current_scene: Node = get_tree().current_scene
+	if not is_inside_tree():
+		return
+
+	var tree := get_tree()
+	if tree == null:
+		return
+
+	var current_scene := tree.current_scene
 	if current_scene == null:
 		return
 

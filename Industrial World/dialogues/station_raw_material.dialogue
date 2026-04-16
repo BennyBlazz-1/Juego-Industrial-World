@@ -1,46 +1,46 @@
 ~ start
 
-System: Station: Raw Material
+Station: Station: Raw Material
 
-System: Question 1.
-System: What is raw material?
+Station: Question 1.
+Station: What is raw material?
 
 - Material needed to make a product
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
 - A finished product
-	System: Not correct.
+	Station: Not correct.
 
 - A shipping document
-	System: Not correct.
+	Station: Not correct.
 
-System: Question 2.
-System: Where can you usually find raw material?
+Station: Question 2.
+Station: Where can you usually find raw material?
 
 - In the parking lot
-	System: Not correct.
+	Station: Not correct.
 
 - In storage before production
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
 - In the employee office
-	System: Not correct.
+	Station: Not correct.
 
-System: Question 3.
-System: What happens to raw material in production?
+Station: Question 3.
+Station: What happens to raw material in production?
 
 - It is thrown away immediately
-	System: Not correct.
+	Station: Not correct.
 
 - It becomes a lunch menu
-	System: Not correct.
+	Station: Not correct.
 
 - It is used to make products
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
-System: Station complete.
-System: Next station location: To your right in the toolbox
+Station: Station complete.
+Station: Next station location: To your right in the toolbox
 => END

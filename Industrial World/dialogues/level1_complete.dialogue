@@ -1,58 +1,58 @@
 ~ start
 
-System: Final Test Station
+Final Station: Final Test Station
 
-System: Question 1.
-System: What is raw material?
+Final Station: Question 1.
+Final Station: What is raw material?
 
 - Material used to make a product
 	set GameManager.level1_score += 1
-	System: Correct.
+	Final Station: Correct.
 
 - A delivery truck
-	System: Not correct.
+	Final Station: Not correct.
 
 - A final report
-	System: Not correct.
+	Final Station: Not correct.
 
-System: Question 2.
-System: What does inventory mean?
+Final Station: Question 2.
+Final Station: What does inventory mean?
 
 - A warehouse door
-	System: Not correct.
+	Final Station: Not correct.
 
 - Stock of materials or finished product
 	set GameManager.level1_score += 1
-	System: Correct.
+	Final Station: Correct.
 
 - A worker break time
-	System: Not correct.
+	Final Station: Not correct.
 
-System: Question 3.
-System: What is a packing list used for?
+Final Station: Question 3.
+Final Station: What is a packing list used for?
 
 - To repair machines
-	System: Not correct.
+	Final Station: Not correct.
 
 - To hire workers
-	System: Not correct.
+	Final Station: Not correct.
 
 - To check shipment contents
 	set GameManager.level1_score += 1
-	System: Correct.
+	Final Station: Correct.
 
-System: Question 4.
-System: What do work instructions do?
+Final Station: Question 4.
+Final Station: What do work instructions do?
 
 - They explain how to do a task
 	set GameManager.level1_score += 1
-	System: Correct.
+	Final Station: Correct.
 
 - They move inventory automatically
-	System: Not correct.
+	Final Station: Not correct.
 
 - They replace safety rules
-	System: Not correct.
+	Final Station: Not correct.
 
 set GameManager.level1_exam_taken = true
 

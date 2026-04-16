@@ -1,49 +1,47 @@
 ~ start
 
-System: Station: Packing List
+Station: Station: Packing List
 
-System: Question 1.
-System: What is a packing list?
+Station: Question 1.
+Station: What is a packing list?
 
 - A document with shipment contents
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
 - A tool for lifting boxes
-	System: Not correct.
+	Station: Not correct.
 
 - A machine instruction
-	System: Not correct.
+	Station: Not correct.
 
-System: Question 2.
-System: When is a packing list used?
+Station: Question 2.
+Station: When is a packing list used?
 
 - When fixing a machine
-	System: Not correct.
+	Station: Not correct.
 
 - When hiring a new worker
-	System: Not correct.
+	Station: Not correct.
 
 - When preparing or checking a shipment
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
-System: Question 3.
-System: What can you verify with a packing list?
+Station: Question 3.
+Station: What can you verify with a packing list?
 
 - What items are inside the shipment
 	set GameManager.level1_score += 1
-	System: Correct.
+	Station: Correct.
 
 - The weather outside
-	System: Not correct.
+	Station: Not correct.
 
 - The building color
-	System: Not correct.
+	Station: Not correct.
 
-System: Station complete.
-System: Next station location: Down the stairs to the right
-
-=> END
+Station: Station complete.
+Station: Next station location: Down the stairs to the right
 
 => END

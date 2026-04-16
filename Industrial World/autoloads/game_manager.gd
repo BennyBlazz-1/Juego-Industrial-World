@@ -1,7 +1,6 @@
 extends Node
 
 var is_dialogue_active = false
-
 var next_spawn_point: String = ""
 
 # =========================
@@ -98,12 +97,16 @@ func check_level1_progress() -> void:
 # =========================
 # RESET NIVEL 2
 # =========================
-func reset_nivel_2() -> void:
+func reset_nivel_2_intento() -> void:
 	for key in nivel_2_botones.keys():
 		nivel_2_botones[key] = false
 
 	nivel_2_indice_actual = 0
 	nivel_2_finished = false
+
+
+func reset_nivel_2_completo() -> void:
+	reset_nivel_2_intento()
 	nivel_2_passed = false
 
 
@@ -122,8 +125,8 @@ func reiniciar_botones_nivel_2_en_escena() -> void:
 # CONFIGURACIÓN NIVEL 2
 # =========================
 func set_nivel_2_orden(nuevo_orden: Array) -> void:
-	nivel_2_orden = nuevo_orden
-	reset_nivel_2()
+	nivel_2_orden = nuevo_orden.duplicate()
+	reset_nivel_2_intento()
 
 
 func get_nivel_2_boton_esperado() -> String:
@@ -155,8 +158,8 @@ func completar_boton_nivel_2(nombre_boton: String) -> bool:
 		check_nivel_2_progreso()
 		return true
 
-	# Si se equivoca, reinicia toda la secuencia
-	reset_nivel_2()
+	# Si se equivoca, reinicia solo el intento actual
+	reset_nivel_2_intento()
 	reiniciar_botones_nivel_2_en_escena()
 	return false
 

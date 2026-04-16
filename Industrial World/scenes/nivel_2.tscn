@@ -38,7 +38,6 @@
 [ext_resource type="AudioStream" uid="uid://bkkl6m4km0wg1" path="res://Musica/boton.wav" id="34_wyaps"]
 [ext_resource type="Script" uid="uid://cjutuyjsxfq7e" path="res://scripts/boton_interrogacion.gd" id="35_fp35h"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="38_7hkex"]
-[ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="39_bbe3c"]
 [ext_resource type="Script" uid="uid://c4q0vbliwerrg" path="res://scripts/ListaInstrucciones.gd" id="40_3xn6m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47vl3"]
@@ -8868,21 +8867,15 @@ position = Vector2(1136, 849)
 shape = SubResource("RectangleShape2D_7hkex")
 script = SubResource("GDScript_21r4u")
 
-[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("29_xpil2")]
-position = Vector2(658, 853)
-
 [node name="area_scene1" type="Area2D" parent="." unique_id=660319538]
 script = ExtResource("38_7hkex")
 next_scene_path = "res://scenes/world.tscn"
+require_nivel_2_passed = true
 target_spawn_name = "spawn_from_nivel2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=155364882]
 position = Vector2(660, 899)
 shape = SubResource("RectangleShape2D_bbe3c")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=644498539]
-
-[node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("39_bbe3c")]
 
 [node name="ListaInstrucciones" type="Area2D" parent="." unique_id=393488173]
 script = ExtResource("40_3xn6m")
@@ -8901,5 +8894,12 @@ frame_progress = 0.63370174
 
 [node name="Boton" type="AudioStreamPlayer" parent="ListaInstrucciones/ExclamationMark" unique_id=910546918]
 stream = ExtResource("34_wyaps")
+
+[node name="spawn_from_world" type="Marker2D" parent="." unique_id=802149085]
+position = Vector2(658, 847)
+scale = Vector2(1, 0.99999994)
+
+[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("29_xpil2")]
+position = Vector2(659, 817)
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]

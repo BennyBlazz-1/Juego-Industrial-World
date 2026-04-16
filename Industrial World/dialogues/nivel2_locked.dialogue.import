@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dm6vp4f4358y3"
+path="res://.godot/imported/nivel2_locked.dialogue-89e6eac49cef814af369058e5c51fc7a.tres"
+
+[deps]
+
+source_file="res://dialogues/nivel2_locked.dialogue"
+dest_files=["res://.godot/imported/nivel2_locked.dialogue-89e6eac49cef814af369058e5c51fc7a.tres"]
+
+[params]
+
+defaults=true

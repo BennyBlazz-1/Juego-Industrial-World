@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cc781n16ro77i" path="res://art/tilesets/edificio2_3.png" id="16_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://sh4gih8l7i1t" path="res://scenes/boss_player.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
-[ext_resource type="PackedScene" uid="uid://dxnrds2kns50p" path="res://scenes/prueba_fps.tscn" id="24_ctatt"]
+[ext_resource type="Script" uid="uid://c5fnytwnaqifq" path="res://scripts/sign_interaction.gd" id="25_munwf"]
 [ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="25_xgqkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
@@ -207,6 +207,8 @@ texture = ExtResource("13_xgqkh")
 texture = ExtResource("14_munwf")
 8:14/size_in_atlas = Vector2i(5, 9)
 8:14/0 = 0
+8:14/0/y_sort_origin = 40
+8:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40.11963, 6.842107, 37.94259, 6.531102, 38.016533, 56.19835, -40.11963, 56.602882)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_817gm"]
 texture = ExtResource("15_ts3gi")
@@ -326,6 +328,30 @@ sources/23 = SubResource("TileSetAtlasSource_ggc52")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpybi"]
 size = Vector2(37, 33.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3gi"]
+size = Vector2(35.5, 44)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0nbtd"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0.0013967262, 0.0013967262, 0.001396726, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37qwj"]
+size = Vector2(38, 41)
+
+[sub_resource type="LabelSettings" id="LabelSettings_navra"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0.0023445897, 0.00234459, 0.00234459, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_luhhm"]
+size = Vector2(36, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh13f"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="world" type="Node2D" unique_id=1874219532]
 y_sort_enabled = true
 position = Vector2(0, 1)
@@ -342,7 +368,7 @@ layer_1/name = "cliff"
 layer_1/tile_data = PackedInt32Array(37, 983048, 2, 65573, 983048, 2, 131109, 983048, 2, 196645, 983048, 2, 262181, 983048, 2, 327717, 983048, 13, 327718, 1048584, 13, 327719, 1048584, 13, 327720, 1048584, 13, 327721, 1048584, 13, 327722, 1048584, 13, 327723, 1048584, 13, 327724, 1048584, 13, 327725, 1048584, 13, 327726, 1048584, 13, 196663, 1048584, 536870913, 196662, 1048584, 536870913, 196661, 1048584, 536870913, 196660, 1048584, 536870913, 196659, 1048584, 536870913, 196658, 1048584, 536870913, 196657, 1048584, 536870913, 196656, 1048584, 536870913, 327727, 983048, 268435469, 262191, 983048, 268435458, 196655, 1310728, 268435465, 131119, 1310728, 268435465, 65583, 1310728, 268435465, 47, 1310728, 268435465, 38, 1048584, 3, 65574, 1048584, 3, 131110, 1048584, 3, 196646, 1048584, 3, 262182, 1048584, 536870914, 262183, 1114120, 12, 262184, 1114120, 12, 262185, 1114120, 12, 262186, 1114120, 12, 262187, 1114120, 12, 262188, 1114120, 12, 262189, 1114120, 12, 262190, 1048584, 268435468, 196654, 1048584, 268435460, 131118, 1048584, 268435460, 65582, 1048584, 268435460, 46, 1048584, 268435460, 131120, 1048584, 12, 131121, 1114120, 12, 131122, 1114120, 12, 131123, 1114120, 12, 131124, 1114120, 12, 131125, 1114120, 12, 131126, 1114120, 12, 131127, 1114120, 12, 65584, 1048584, 11, 48, 1048584, 11, 39, 1114120, 8, 40, 1114120, 8, 41, 1114120, 8, 42, 1114120, 8, 43, 1114120, 8, 44, 1114120, 8, 45, 1114120, 8, 65581, 1114120, 8, 131117, 1114120, 8, 131116, 1114120, 8, 196652, 1114120, 8, 196651, 1114120, 8, 196650, 1114120, 8, 196649, 65537, 5, 196648, 1114120, 8, 196647, 1114120, 8, 131111, 65537, 5, 131112, 1114120, 8, 131113, 65537, 5, 65577, 1114120, 8, 65578, 1114120, 8, 65579, 65537, 5, 65575, 1114120, 8, 131114, 1114120, 8, 131115, 65537, 5, 65580, 1114120, 8, 196653, 1114120, 8, 65585, 1114120, 8, 65586, 1114120, 8, 65587, 1114120, 8, 65588, 65537, 5, 65589, 1114120, 8, 65590, 1114120, 8, 65591, 65537, 5, 49, 1114120, 8, 50, 65537, 5, 51, 1114120, 8, 52, 1114120, 8, 53, 65537, 5, 54, 1114120, 8, 55, 1114120, 8, 65576, 65537, 5, 196608, 1114120, 536870913, 196609, 1114120, 536870913, 196610, 1114120, 536870913, 196611, 1114120, 536870913, 196612, 1114120, 536870913, 196613, 1114120, 536870913, 196614, 1114120, 536870913, 196615, 1114120, 536870913, 196616, 983048, 805306369, 131080, 983048, 268435458, 8, 983048, 268435458, 65544, 983048, 268435458, 131079, 1048584, 805306370, 131078, 1114120, 536870914, 131077, 1114120, 536870914, 131076, 1114120, 536870914, 131075, 1114120, 536870914, 131074, 1114120, 536870914, 131073, 1114120, 536870914, 131072, 1114120, 536870914, 65543, 1048584, 268435459, 7, 1048584, 268435459, 0, 1114120, 3, 1, 131073, 5, 2, 1114120, 3, 3, 1114120, 3, 4, 131073, 5, 5, 1114120, 3, 6, 1114120, 3, 65542, 1114120, 3, 65541, 131073, 5, 65540, 1114120, 3, 65539, 1114120, 3, 65538, 131073, 5, 65537, 1114120, 3, 65536, 1114120, 3, 917552, 983048, 1, 917553, 1048584, 1, 917554, 1048584, 1, 917555, 1048584, 1, 917556, 1048584, 1, 917557, 1048584, 1, 917558, 1048584, 1, 983095, 983048, 268435458, 917559, 983048, 268435457, 1048631, 983048, 268435458, 1114167, 983048, 268435458, 1179703, 983048, 268435458, 1245239, 983048, 268435458, 1310775, 983048, 268435458, 1376311, 983048, 805306369, 1376310, 1048584, 536870913, 1376309, 1048584, 536870913, 1376308, 1048584, 536870913, 1376307, 1048584, 536870913, 1376306, 1048584, 536870913, 1376305, 1048584, 536870913, 1376304, 983048, 536870913, 1310768, 983048, 2, 1245232, 983048, 2, 1179696, 983048, 2, 1114160, 983048, 2, 1048624, 983048, 2, 983088, 983048, 2, 983089, 1048584, 2, 983094, 1048584, 268435458, 1310774, 1048584, 805306370, 1310769, 1048584, 536870914, 983090, 1114120, 2, 983091, 1114120, 2, 983092, 1114120, 2, 983093, 1114120, 2, 1310770, 1114120, 536870914, 1310771, 1114120, 536870914, 1310772, 1114120, 536870914, 1310773, 1114120, 536870914, 1245233, 1048584, 3, 1179697, 1048584, 3, 1114161, 1048584, 3, 1048625, 1048584, 3, 1048630, 1048584, 268435459, 1114166, 1048584, 268435459, 1179702, 1048584, 268435459, 1245238, 1048584, 268435459, 1048626, 1114120, 3, 1048627, 1114120, 3, 1114163, 1114120, 3, 1114164, 131073, 5, 1179700, 1114120, 3, 1245236, 1114120, 3, 1245237, 131073, 5, 1114165, 1114120, 3, 1048629, 131073, 5, 1048628, 1114120, 3, 1179701, 1114120, 3, 1114162, 1114120, 3, 1179698, 131073, 5, 1245234, 1114120, 3, 1245235, 1114120, 3, 1179699, 1114120, 3, 1572864, 1048584, 1, 1572865, 1048584, 1, 1572866, 1048584, 1, 1572867, 1048584, 1, 1572868, 1048584, 1, 1572869, 1048584, 1, 1572870, 983048, 268435457, 1638406, 983048, 268435459, 1703942, 983048, 268435459, 1769478, 983048, 268435459, 1835014, 983048, 268435459, 1900550, 983048, 268435459, 1966086, 983048, 268435459, 2031622, 983048, 268435459, 2097158, 983048, 268435459, 2162694, 983048, 268435459, 2228230, 983048, 805306369, 2228229, 1048584, 536870913, 2228228, 1048584, 536870913, 2228227, 1048584, 536870913, 2228226, 1048584, 536870913, 2228225, 1048584, 536870913, 2228224, 1048584, 536870913, 1638405, 1048584, 268435458, 2162693, 1048584, 805306370, 1638404, 1114120, 2, 1638403, 1114120, 2, 1638402, 1114120, 2, 1638401, 1114120, 2, 1638400, 1114120, 2, 2162688, 1114120, 536870914, 2162689, 1114120, 536870914, 2162690, 1114120, 536870914, 2162691, 1114120, 536870914, 2162692, 1114120, 536870914, 2097157, 1048584, 268435459, 2031621, 1048584, 268435459, 1966085, 1048584, 268435459, 1900549, 1048584, 268435459, 1835013, 1048584, 268435459, 1769477, 1048584, 268435459, 1703941, 1048584, 268435459, 1703936, 1114120, 4, 1703937, 1114120, 4, 1769473, 1114120, 4, 1835009, 131073, 5, 1703938, 1114120, 4, 1703939, 1114120, 4, 1703940, 1114120, 4, 1769476, 131073, 5, 1835012, 1114120, 4, 1900548, 1114120, 4, 1966084, 131073, 5, 2031620, 1114120, 4, 2097156, 1114120, 4, 2097155, 131073, 5, 2097154, 1114120, 4, 2097153, 1114120, 4, 2031617, 1114120, 4, 2031616, 1114120, 4, 1966080, 1114120, 4, 1900544, 1114120, 4, 1835008, 1114120, 4, 1769474, 1114120, 4, 1835010, 131073, 5, 1900546, 1114120, 4, 1900545, 131073, 5, 1966081, 1114120, 4, 1769472, 131073, 5, 2097152, 131073, 5, 2031618, 1114120, 4, 1966082, 1114120, 4, 1835011, 1114120, 4, 1769475, 1114120, 4, 1900547, 1114120, 4, 1966083, 1114120, 4, 2031619, 1114120, 4, 1638417, 10, 0, 131090, 131075, 11, 655389, 131075, 11, 524341, 131075, 11, 2228277, 131075, 11, 1966110, 131075, 11, 1703950, 131075, 11, 2359301, 131075, 11, 1507361, 196611, 11, 589825, 196611, 11, 1376275, 11, 0, 720923, 11, 0, 1245226, 11, 0, 2162732, 11, 0, 2162720, 12, 0, 2752533, 12, 0, 1572872, 12, 0, 851980, 12, 0, 983062, 12, 0)
 layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
-layer_2/tile_data = PackedInt32Array(2424839, 13, 1, 2621449, 13, 1, 2621490, 13, 1, 2359346, 13, 1, 2228254, 13, 1, 2031634, 13, 1, 1900558, 13, 1, 1441811, 13, 1, 1376270, 13, 1, 1769506, 13, 1, 1507358, 13, 1, 852000, 13, 1, 524311, 13, 1, 786435, 13, 1, 1376261, 13, 1, 131084, 13, 1, 589872, 13, 1, 327732, 13, 1, 1114158, 13, 1, 1769512, 786436, 10, 1900581, 786435, 16, 1966117, 786435, 16, 1835045, 786435, 16, 1769509, 786435, 16, 1769515, 786435, 16, 1835051, 786435, 16, 1900587, 786435, 16, 1966123, 786435, 16, 1048611, 1114115, 18, 917512, 1114115, 18, 2162730, 1114115, 18, 1114163, 131080, 16, -65487, 131080, 16, -65485, 131080, 16, -65483, 131080, 16, 131111, 131080, 16, 39, 131080, 16, 65577, 131080, 16, 44, 131080, 16, 196651, 13, 1, 196653, 13, 1, 1900544, 720904, 10, 1900546, 720904, 268435466, 1769476, 720904, 268435466, 1769474, 720904, 10, 1966083, 131080, 16, 2490369, 131080, 16, 2424833, 131080, 16, 2359297, 131080, 16, 2293761, 131080, 16, 2490422, 131080, 16, 2293813, 131080, 16, 2097206, 131080, 16, 1900597, 131080, 16, 1703990, 131080, 16, 1572916, 131080, 16, 1441846, 131080, 16, 2097197, 1179651, 17, 2097198, 1179651, 17, 852011, 1179651, 17, 786449, 1179651, 17, -65535, 131080, 16, -65533, 131080, 16, -65531, 131080, 16, 32, 131080, 16, 16, 131080, 16, 262145, 131080, 16, 720897, 131080, 16, 1048577, 131080, 16, 1376257, 131080, 16, 458756, 131080, 16, 458779, 131080, 16, 458794, 131080, 16, 589857, 131080, 16, 327692, 131080, 16, 1507339, 131080, 16, 1835035, 131080, 16, 1703953, 131080, 16, 1703967, 131080, 16, 2162721, 131080, 16, 2097166, 131080, 16, 262198, 131080, 16, 10, 131080, 16, 262148, 13, 1, 458760, 13, 1, 589844, 131080, 16, 851995, 131080, 16, 1441837, 327693, 0, 1835055, 13, 1, 2228261, 327693, 0, 1376293, 327693, 0, 2162715, 327693, 0, 1310736, 327693, 0, 1179652, 327693, 0, 2162738, 327693, 0, 393265, 327693, 0, 393251, 327693, 0, 393238, 327693, 0, 1376283, 327693, 0, 2490373, 327693, 0, 131093, 131080, 3, 131094, 131080, 3, 131095, 131080, 3, 131096, 131080, 3, 131097, 131080, 3, 131098, 131080, 3, 131099, 131080, 3, 131100, 131080, 3, 2162696, 131080, 3, 2162697, 131080, 3, 2162698, 131080, 3, 720950, 131080, 3, 720949, 131080, 3, 786470, 65551, 17)
+layer_2/tile_data = PackedInt32Array(2424839, 13, 1, 2621449, 13, 1, 2621490, 13, 1, 2359346, 13, 1, 2228254, 13, 1, 2031634, 13, 1, 1900558, 13, 1, 1441811, 13, 1, 1376270, 13, 1, 1769506, 13, 1, 1507358, 13, 1, 852000, 13, 1, 524311, 13, 1, 786435, 13, 1, 1376261, 13, 1, 131084, 13, 1, 589872, 13, 1, 327732, 13, 1, 1114158, 13, 1, 1769512, 786436, 10, 1900581, 786435, 16, 1966117, 786435, 16, 1835045, 786435, 16, 1769509, 786435, 16, 1769515, 786435, 16, 1835051, 786435, 16, 1900587, 786435, 16, 1966123, 786435, 16, 1048611, 1114115, 18, 917512, 1114115, 18, 2162730, 1114115, 18, 1114163, 131080, 16, -65487, 131080, 16, -65485, 131080, 16, -65483, 131080, 16, 131111, 131080, 16, 39, 131080, 16, 65577, 131080, 16, 44, 131080, 16, 196651, 13, 1, 196653, 13, 1, 1900544, 720904, 10, 1900546, 720904, 268435466, 1769476, 720904, 268435466, 1769474, 720904, 10, 1966083, 131080, 16, 2490369, 131080, 16, 2424833, 131080, 16, 2359297, 131080, 16, 2293761, 131080, 16, 2490422, 131080, 16, 2293813, 131080, 16, 2097206, 131080, 16, 1900597, 131080, 16, 1703990, 131080, 16, 1572916, 131080, 16, 1441846, 131080, 16, 2097197, 1179651, 17, 2097198, 1179651, 17, 852011, 1179651, 17, 786449, 1179651, 17, -65535, 131080, 16, -65533, 131080, 16, -65531, 131080, 16, 32, 131080, 16, 16, 131080, 16, 262145, 131080, 16, 720897, 131080, 16, 1048577, 131080, 16, 1376257, 131080, 16, 458756, 131080, 16, 458779, 131080, 16, 458794, 131080, 16, 589857, 131080, 16, 327692, 131080, 16, 1507339, 131080, 16, 1835035, 131080, 16, 1703953, 131080, 16, 1703967, 131080, 16, 2162721, 131080, 16, 2097166, 131080, 16, 262198, 131080, 16, 10, 131080, 16, 262148, 13, 1, 458760, 13, 1, 589844, 131080, 16, 851995, 131080, 16, 1441837, 327693, 0, 1835055, 13, 1, 2228261, 327693, 0, 1376293, 327693, 0, 2162715, 327693, 0, 1310736, 327693, 0, 1179652, 327693, 0, 2162738, 327693, 0, 393265, 327693, 0, 393251, 327693, 0, 393238, 327693, 0, 1376283, 327693, 0, 2490373, 327693, 0, 131093, 131080, 3, 131094, 131080, 3, 131095, 131080, 3, 131096, 131080, 3, 131097, 131080, 3, 131098, 131080, 3, 131099, 131080, 3, 131100, 131080, 3, 2162696, 131080, 3, 2162697, 131080, 3, 2162698, 131080, 3, 720950, 131080, 3, 720949, 131080, 3)
 
 [node name="building1_under_construction_map" type="TileMap" parent="." unique_id=1769384710]
 y_sort_enabled = true
@@ -366,14 +392,30 @@ layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(655372, 65556, 8)
 
-[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("10_w7kh3")]
-position = Vector2(220, 476)
+[node name="building2_under_construction_map" type="TileMap" parent="." unique_id=979527696]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_7r4gi")
+format = 2
+layer_0/name = "ground"
+layer_1/name = "cliff"
+layer_2/name = "ysort"
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array(786470, 65551, 17)
 
-[node name="woman_player" parent="." unique_id=1577244921 instance=ExtResource("24_ctatt")]
-offset_left = 267.0
-offset_top = 314.0
-offset_right = 267.0
-offset_bottom = 314.0
+[node name="building2_completed_map" type="TileMap" parent="." unique_id=647236402]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_7r4gi")
+format = 2
+layer_0/name = "ground"
+layer_1/name = "cliff"
+layer_2/name = "ysort"
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array(720934, 524309, 14)
+
+[node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("10_w7kh3")]
+position = Vector2(331, 1239)
 
 [node name="collisions" type="StaticBody2D" parent="." unique_id=661130436]
 
@@ -384,7 +426,7 @@ polygon = PackedVector2Array(1, 112, 266, 112, 274, 102, 274, 0, 1198, 0, 1199, 
 polygon = PackedVector2Array(1555, 465, 1772, 465, 1778, 471, 1779, 680, 1772, 688, 1554, 688, 1552, 669)
 
 [node name="boss_player" parent="." unique_id=1361553851 instance=ExtResource("21_7iits")]
-position = Vector2(513, 432)
+position = Vector2(1296, 999)
 
 [node name="area_scene1" type="Area2D" parent="." unique_id=1311739337]
 script = ExtResource("22_oo54l")
@@ -394,12 +436,6 @@ target_spawn_name = "bodega_from_world"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1614754670]
 position = Vector2(399.5, 433.5)
 shape = SubResource("RectangleShape2D_kpybi")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2137625041]
-
-[node name="pruebaFPS" parent="CanvasLayer" unique_id=355462747 instance=ExtResource("24_ctatt")]
-offset_top = 4.0
-offset_bottom = 4.0
 
 [node name="spawn_from_bodega" type="Marker2D" parent="." unique_id=1956853760]
 position = Vector2(401, 469)
@@ -413,14 +449,85 @@ parameters/looping = true
 [node name="area_scene2" type="Area2D" parent="." unique_id=1994908333]
 script = ExtResource("22_oo54l")
 next_scene_path = "res://scenes/nivel_2.tscn"
-target_spawn_name = "bodega_from_world"
+require_level1_passed = true
+target_spawn_name = "spawn_from_world"
+blocked_dialogue_path = "uid://dm6vp4f4358y3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene2" unique_id=425692894]
-position = Vector2(1233, 464.25)
+position = Vector2(1233, 468)
 shape = SubResource("RectangleShape2D_kpybi")
 
 [node name="spawn_from_nivel2" type="Marker2D" parent="." unique_id=697388594]
-position = Vector2(1232, 498)
+position = Vector2(1233, 507)
+
+[node name="SupervisorOfficeSignArea" type="Area2D" parent="." unique_id=15295052]
+script = ExtResource("25_munwf")
+dialogue_path = "uid://coa3mfx5fbsyk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SupervisorOfficeSignArea" unique_id=1045161669]
+position = Vector2(1361, 1089)
+shape = SubResource("RectangleShape2D_ts3gi")
+
+[node name="PromptPoint" type="Marker2D" parent="SupervisorOfficeSignArea" unique_id=1096130193]
+
+[node name="InteractionLabel" type="Label" parent="SupervisorOfficeSignArea/PromptPoint" unique_id=1184534982]
+visible = false
+z_index = 3
+offset_left = 1304.0
+offset_top = 1048.0
+offset_right = 1419.0
+offset_bottom = 1071.0
+text = "Press E to read"
+label_settings = SubResource("LabelSettings_0nbtd")
+horizontal_alignment = 1
+
+[node name="Level1SignArea" type="Area2D" parent="." unique_id=2104761172]
+script = ExtResource("25_munwf")
+dialogue_path = "uid://dq5o8kt3v3l5i"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1SignArea" unique_id=823831958]
+position = Vector2(272, 478.5)
+shape = SubResource("RectangleShape2D_37qwj")
+
+[node name="PromptPoint" type="Marker2D" parent="Level1SignArea" unique_id=191585229]
+
+[node name="InteractionLabel" type="Label" parent="Level1SignArea/PromptPoint" unique_id=517598633]
+visible = false
+z_index = 3
+offset_left = 218.0
+offset_top = 440.0
+offset_right = 333.0
+offset_bottom = 463.0
+text = "Press E to read"
+label_settings = SubResource("LabelSettings_navra")
+horizontal_alignment = 1
+
+[node name="Level2SignArea" type="Area2D" parent="." unique_id=987300401]
+script = ExtResource("25_munwf")
+dialogue_path = "uid://df26qukc2i8oa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2SignArea" unique_id=1840963292]
+position = Vector2(1136, 546)
+shape = SubResource("RectangleShape2D_luhhm")
+
+[node name="PromptPoint" type="Marker2D" parent="Level2SignArea" unique_id=984343619]
+
+[node name="InteractionLabel" type="Label" parent="Level2SignArea/PromptPoint" unique_id=1702692435]
+visible = false
+z_index = 3
+offset_left = 1082.0
+offset_top = 501.0
+offset_right = 1197.0
+offset_bottom = 524.0
+text = "Press E to read"
+label_settings = SubResource("LabelSettings_fh13f")
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="area_scene2" to="area_scene2" method="_on_body_entered"]
+[connection signal="body_entered" from="SupervisorOfficeSignArea" to="SupervisorOfficeSignArea" method="_on_body_entered"]
+[connection signal="body_exited" from="SupervisorOfficeSignArea" to="SupervisorOfficeSignArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Level1SignArea" to="Level1SignArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Level1SignArea" to="Level1SignArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Level2SignArea" to="Level2SignArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Level2SignArea" to="Level2SignArea" method="_on_body_exited"]
