@@ -3463,6 +3463,7 @@ polygon = PackedVector2Array(15, 342, 290, 344, 291, 496, 410, 497, 412, 344, 62
 [node name="area_scene1" type="Area2D" parent="." unique_id=129401730]
 script = ExtResource("26_7ylhq")
 next_scene_path = "res://scenes/world.tscn"
+require_level1_passed = true
 target_spawn_name = "world_from_bodega"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1493313368]

@@ -431,14 +431,16 @@ position = Vector2(1296, 999)
 [node name="area_scene1" type="Area2D" parent="." unique_id=1311739337]
 script = ExtResource("22_oo54l")
 next_scene_path = "res://scenes/bodega.tscn"
+require_nivel_2_passed = true
 target_spawn_name = "bodega_from_world"
+blocked_dialogue_path = "uid://dm6vp4f4358y3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene1" unique_id=1614754670]
-position = Vector2(399.5, 433.5)
+position = Vector2(1231, 469)
 shape = SubResource("RectangleShape2D_kpybi")
 
 [node name="spawn_from_bodega" type="Marker2D" parent="." unique_id=1956853760]
-position = Vector2(401, 469)
+position = Vector2(1233, 507)
 
 [node name="MusicaMundo" type="AudioStreamPlayer" parent="." unique_id=2125044528]
 stream = ExtResource("25_xgqkh")
@@ -449,16 +451,14 @@ parameters/looping = true
 [node name="area_scene2" type="Area2D" parent="." unique_id=1994908333]
 script = ExtResource("22_oo54l")
 next_scene_path = "res://scenes/nivel_2.tscn"
-require_level1_passed = true
 target_spawn_name = "spawn_from_world"
-blocked_dialogue_path = "uid://dm6vp4f4358y3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_scene2" unique_id=425692894]
-position = Vector2(1233, 468)
+position = Vector2(399, 434)
 shape = SubResource("RectangleShape2D_kpybi")
 
 [node name="spawn_from_nivel2" type="Marker2D" parent="." unique_id=697388594]
-position = Vector2(1233, 507)
+position = Vector2(400, 476)
 
 [node name="SupervisorOfficeSignArea" type="Area2D" parent="." unique_id=15295052]
 script = ExtResource("25_munwf")

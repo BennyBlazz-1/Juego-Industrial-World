@@ -1,10 +1,10 @@
 extends Node2D
 
-@onready var building1_under_construction_map = $building1_under_construction_map
-@onready var building1_completed_map = $building1_completed_map
+@onready var building2_under_construction_map = $building1_under_construction_map
+@onready var building2_completed_map = $building1_completed_map
 
-@onready var building2_under_construction_map = $building2_under_construction_map
-@onready var building2_completed_map = $building2_completed_map
+@onready var building1_under_construction_map = $building2_under_construction_map
+@onready var building1_completed_map = $building2_completed_map
 
 @onready var spawn_from_bodega: Marker2D = $spawn_from_bodega
 @onready var spawn_from_nivel2: Marker2D = $spawn_from_nivel2
