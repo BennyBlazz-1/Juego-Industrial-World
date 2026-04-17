@@ -220,7 +220,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"back_idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -237,7 +237,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"back_walk",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -245,7 +245,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"front_idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -262,7 +262,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"front_walk",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -270,7 +270,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"side_idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -287,7 +287,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"side_walk",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="man_player" type="CharacterBody2D" unique_id=1216528816]
@@ -301,7 +301,7 @@ shape = SubResource("CircleShape2D_mptrd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20465144]
 visible = false
 sprite_frames = SubResource("SpriteFrames_b6leb")
-animation = &"front_walk"
+animation = &"back_walk"
 offset = Vector2(0, -15)
 
 [node name="world_camera" type="Camera2D" parent="." unique_id=952091903]
@@ -349,5 +349,5 @@ shape = SubResource("CircleShape2D_7xo2o")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1385549273]
 sprite_frames = SubResource("SpriteFrames_3ytjl")
-animation = &"front_idle"
+animation = &"side_walk"
 offset = Vector2(0, -15)
