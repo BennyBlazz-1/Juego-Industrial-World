@@ -1,9 +1,50 @@
-~ start
-Supervisor: Buenos días. Bienvenido a la planta.
-Supervisor: Aquí aprenderás inglés aplicado al entorno laboral industrial.
-Supervisor: Cada edificio representa una etapa de entrenamiento.
-Supervisor: El primer edificio ya está listo.
-Supervisor: Tu primera actividad será dentro del edificio arriba en la izquierda..
-Supervisor: Sigue el caminio y lo encontraras.
-Supervisor: Entra cuando estés listo.
+~ start_1
+Supervisor: Buenos días. Ya te estaba esperando.
+Supervisor: A partir de este momento comenzarás tu entrenamiento dentro de la planta.
+Supervisor: Aquí practicarás inglés aplicado a situaciones reales del entorno laboral industrial.
+Supervisor: Cada edificio que ves corresponde a una etapa distinta de aprendizaje.
+Supervisor: Tu primer objetivo está en el edificio ubicado arriba a la izquierda.
+Supervisor: Dentro de ese lugar realizarás la primera actividad.
+Supervisor: Cuando avances, también tendrás disponible el nivel 2 en el edificio de la derecha.
+Supervisor: Sigue el camino y entra cuando estés listo.
+=> END
+
+~ start_2
+Supervisor: Excelente, llegaste justo a tiempo para comenzar.
+Supervisor: En esta planta irás aprendiendo vocabulario y expresiones de inglés usadas en el trabajo industrial.
+Supervisor: El recorrido está dividido por niveles, y cada edificio representa uno diferente.
+Supervisor: Debes iniciar en el edificio que se encuentra arriba a la izquierda.
+Supervisor: Ahí te espera la primera parte de tu entrenamiento.
+Supervisor: Más adelante podrás continuar con el nivel 2, que está en el edificio de la derecha.
+Supervisor: Avanza cuando te sientas preparado.
+=> END
+
+~ start_3
+Supervisor: Todo está listo para que empieces.
+Supervisor: Durante este recorrido aprenderás inglés enfocado en actividades comunes dentro de una planta industrial.
+Supervisor: No todos los edificios cumplen la misma función, ya que cada uno marca una etapa de práctica distinta.
+Supervisor: El punto de inicio está arriba a la izquierda.
+Supervisor: En ese edificio encontrarás tu primera actividad.
+Supervisor: Después de completarla, podrás dirigirte al nivel 2 en el edificio de la derecha.
+Supervisor: Sigue la ruta y comienza cuando quieras.
+=> END
+
+~ start_4
+Supervisor: Me da gusto verte por aquí.
+Supervisor: Este entrenamiento fue diseñado para ayudarte a comprender inglés dentro de un ambiente industrial.
+Supervisor: Irás avanzando por etapas, y cada edificio representa una parte de ese proceso.
+Supervisor: El primer nivel ya se encuentra habilitado en el edificio de arriba a la izquierda.
+Supervisor: Ahí comenzarás con las actividades iniciales.
+Supervisor: Cuando termines esa parte, podrás continuar con el nivel 2 en el edificio que está a la derecha.
+Supervisor: Adelante, puedes entrar cuando estés preparado.
+=> END
+
+~ start_5
+Supervisor: Perfecto, es hora de comenzar el recorrido.
+Supervisor: Desde aquí empezarás a familiarizarte con el inglés usado en el trabajo dentro de la planta.
+Supervisor: La capacitación está organizada por niveles, distribuidos en distintos edificios.
+Supervisor: El primero de ellos está en la parte de arriba a la izquierda.
+Supervisor: Ese será tu punto de arranque.
+Supervisor: Más adelante podrás avanzar al nivel 2, el cual se encuentra en el edificio de la derecha.
+Supervisor: Sigue el camino y entra en cuanto decidas comenzar.
 => END
