@@ -483,7 +483,7 @@ horizontal_alignment = 1
 
 [node name="Level1SignArea" type="Area2D" parent="." unique_id=2104761172]
 script = ExtResource("25_munwf")
-dialogue_path = "uid://dq5o8kt3v3l5i"
+dialogue_path = "uid://df26qukc2i8oa"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1SignArea" unique_id=823831958]
 position = Vector2(272, 478.5)
@@ -504,7 +504,7 @@ horizontal_alignment = 1
 
 [node name="Level2SignArea" type="Area2D" parent="." unique_id=987300401]
 script = ExtResource("25_munwf")
-dialogue_path = "uid://df26qukc2i8oa"
+dialogue_path = "uid://dq5o8kt3v3l5i"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2SignArea" unique_id=1840963292]
 position = Vector2(1136, 546)
