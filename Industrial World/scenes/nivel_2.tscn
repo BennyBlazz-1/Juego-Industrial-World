@@ -37,6 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://bkkl6m4km0wg1" path="res://Musica/boton.wav" id="34_wyaps"]
 [ext_resource type="Texture2D" uid="uid://chr3txruqjfne" path="res://art/tilesets/!Assets.png" id="35_bbe3c"]
 [ext_resource type="Script" uid="uid://cjutuyjsxfq7e" path="res://scripts/boton_interrogacion.gd" id="35_fp35h"]
+[ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="37_mwiq3"]
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="38_7hkex"]
 [ext_resource type="Texture2D" uid="uid://85maxmvwgjxl" path="res://art/tilesets/RPG_Exclamation_Mark_Animation_grey.png" id="39_3xn6m"]
 [ext_resource type="Script" uid="uid://c4q0vbliwerrg" path="res://scripts/ListaInstrucciones.gd" id="40_3xn6m"]
@@ -8735,6 +8736,12 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="LabelSettings" id="LabelSettings_ps7l8"]
+font = ExtResource("37_mwiq3")
+font_size = 13
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbe3c"]
 size = Vector2(44, 31.5)
 
@@ -8822,11 +8829,22 @@ position = Vector2(386, 478)
 shape = SubResource("RectangleShape2D_7hkex")
 script = SubResource("GDScript_21r4u")
 
+[node name="PromptPoint" type="Marker2D" parent="Boton1" unique_id=544637536]
+
+[node name="InteractionLabel" type="Label" parent="Boton1/PromptPoint" unique_id=1853394394]
+z_index = 3
+offset_left = 362.0
+offset_top = 456.0
+offset_right = 411.0
+offset_bottom = 473.0
+text = "Press E "
+label_settings = SubResource("LabelSettings_ps7l8")
+
 [node name="Boton2" type="Area2D" parent="." unique_id=2073925681]
 script = ExtResource("35_fp35h")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Boton2" unique_id=2030863764]
-position = Vector2(1074, 551)
+position = Vector2(1073, 533)
 scale = Vector2(0.029882757, 0.026931414)
 sprite_frames = SubResource("SpriteFrames_wyaps")
 animation = &"exclamation"
@@ -8840,12 +8858,23 @@ position = Vector2(1073, 582)
 shape = SubResource("RectangleShape2D_7hkex")
 script = SubResource("GDScript_21r4u")
 
+[node name="PromptPoint" type="Marker2D" parent="Boton2" unique_id=403887653]
+
+[node name="InteractionLabel" type="Label" parent="Boton2/PromptPoint" unique_id=1814156834]
+z_index = 3
+offset_left = 1049.0
+offset_top = 550.0
+offset_right = 1098.0
+offset_bottom = 567.0
+text = "Press E "
+label_settings = SubResource("LabelSettings_ps7l8")
+
 [node name="Boton3" type="Area2D" parent="." unique_id=408195231]
 script = ExtResource("35_fp35h")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Boton3" unique_id=1303392255]
-position = Vector2(1516, 202)
-scale = Vector2(0.02499996, 0.02253086)
+position = Vector2(1513, 189)
+scale = Vector2(0.02499996, 0.022984173)
 sprite_frames = SubResource("SpriteFrames_wyaps")
 animation = &"exclamation"
 frame_progress = 0.63370174
@@ -8858,11 +8887,22 @@ position = Vector2(1515, 217)
 shape = SubResource("RectangleShape2D_7hkex")
 script = SubResource("GDScript_21r4u")
 
+[node name="PromptPoint" type="Marker2D" parent="Boton3" unique_id=355517035]
+
+[node name="InteractionLabel" type="Label" parent="Boton3/PromptPoint" unique_id=1779936766]
+z_index = 3
+offset_left = 1478.0
+offset_top = 200.0
+offset_right = 1527.0
+offset_bottom = 217.0
+text = "Press E "
+label_settings = SubResource("LabelSettings_ps7l8")
+
 [node name="Boton4" type="Area2D" parent="." unique_id=1091536329]
 script = ExtResource("35_fp35h")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Boton4" unique_id=829006432]
-position = Vector2(844, 258.00003)
+position = Vector2(844, 246.00002)
 scale = Vector2(0.030859336, 0.02781154)
 sprite_frames = SubResource("SpriteFrames_wyaps")
 animation = &"exclamation"
@@ -8876,11 +8916,22 @@ position = Vector2(842, 277)
 shape = SubResource("RectangleShape2D_7hkex")
 script = SubResource("GDScript_21r4u")
 
+[node name="PromptPoint" type="Marker2D" parent="Boton4" unique_id=997836855]
+
+[node name="InteractionLabel" type="Label" parent="Boton4/PromptPoint" unique_id=1296202106]
+z_index = 3
+offset_left = 820.0
+offset_top = 261.0
+offset_right = 869.0
+offset_bottom = 278.0
+text = "Press E "
+label_settings = SubResource("LabelSettings_ps7l8")
+
 [node name="Boton5" type="Area2D" parent="." unique_id=1436553993]
 script = ExtResource("35_fp35h")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Boton5" unique_id=861049665]
-position = Vector2(17.100016, 118.386444)
+position = Vector2(23.000002, 112)
 scale = Vector2(0.03105466, 0.027987575)
 sprite_frames = SubResource("SpriteFrames_wyaps")
 animation = &"exclamation"
@@ -8890,15 +8941,26 @@ frame_progress = 0.63370174
 stream = ExtResource("34_wyaps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boton5" unique_id=425340954]
-position = Vector2(19, 139)
+position = Vector2(23, 139)
 shape = SubResource("RectangleShape2D_7hkex")
 script = SubResource("GDScript_21r4u")
+
+[node name="PromptPoint" type="Marker2D" parent="Boton5" unique_id=1335520792]
+
+[node name="InteractionLabel" type="Label" parent="Boton5/PromptPoint" unique_id=2101117049]
+z_index = 3
+offset_left = 7.0
+offset_top = 130.0
+offset_right = 56.0
+offset_bottom = 147.0
+text = "Press E "
+label_settings = SubResource("LabelSettings_ps7l8")
 
 [node name="Boton6" type="Area2D" parent="." unique_id=1419937205]
 script = ExtResource("35_fp35h")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Boton6" unique_id=500184462]
-position = Vector2(1132, 836)
+position = Vector2(1133, 828)
 scale = Vector2(0.027929692, 0.02517124)
 sprite_frames = SubResource("SpriteFrames_wyaps")
 animation = &"exclamation"
@@ -8911,6 +8973,17 @@ stream = ExtResource("34_wyaps")
 position = Vector2(1136, 849)
 shape = SubResource("RectangleShape2D_7hkex")
 script = SubResource("GDScript_21r4u")
+
+[node name="PromptPoint" type="Marker2D" parent="Boton6" unique_id=1708689791]
+
+[node name="InteractionLabel" type="Label" parent="Boton6/PromptPoint" unique_id=744555828]
+z_index = 3
+offset_left = 1112.0
+offset_top = 841.0
+offset_right = 1161.0
+offset_bottom = 858.0
+text = "Press E "
+label_settings = SubResource("LabelSettings_ps7l8")
 
 [node name="area_scene1" type="Area2D" parent="." unique_id=660319538]
 script = ExtResource("38_7hkex")
@@ -8935,10 +9008,21 @@ rotation = 0.38397244
 scale = Vector2(1.8630824, 1.6611732)
 sprite_frames = SubResource("SpriteFrames_qw0fi")
 animation = &"exclamation"
-frame_progress = 0.79194415
+frame_progress = 0.75976586
 
 [node name="Boton" type="AudioStreamPlayer" parent="ListaInstrucciones/ExclamationMark" unique_id=910546918]
 stream = ExtResource("34_wyaps")
+
+[node name="PromptPoint" type="Marker2D" parent="ListaInstrucciones" unique_id=154908511]
+
+[node name="InteractionLabel" type="Label" parent="ListaInstrucciones/PromptPoint" unique_id=1511568342]
+z_index = 3
+offset_left = 394.0
+offset_top = 724.0
+offset_right = 561.0
+offset_bottom = 741.0
+text = "Press E to read instructions"
+label_settings = SubResource("LabelSettings_ps7l8")
 
 [node name="spawn_from_world" type="Marker2D" parent="." unique_id=802149085]
 position = Vector2(658, 847)

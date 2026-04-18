@@ -3490,6 +3490,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="intro_station/PromptPoint" unique_id=747131069]
 visible = false
+z_index = 3
 offset_left = 661.0
 offset_top = 730.0
 offset_right = 919.0
@@ -3518,6 +3519,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_raw_material/PromptPoint" unique_id=464047483]
 visible = false
+z_index = 3
 offset_left = 77.0
 offset_top = 707.0
 offset_right = 335.0
@@ -3546,6 +3548,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_inventory/PromptPoint" unique_id=902226079]
 visible = false
+z_index = 3
 offset_left = 429.0
 offset_top = 605.0
 offset_right = 687.0
@@ -3574,6 +3577,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_packing_list/PromptPoint" unique_id=2069641089]
 visible = false
+z_index = 3
 offset_left = 1037.0
 offset_top = 189.0
 offset_right = 1295.0
@@ -3602,6 +3606,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_work_instructions/PromptPoint" unique_id=175533827]
 visible = false
+z_index = 3
 offset_left = 1224.0
 offset_top = 517.0
 offset_right = 1482.0
@@ -3629,6 +3634,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="final_station/PromptPoint" unique_id=1835134987]
 visible = false
+z_index = 3
 offset_left = 791.0
 offset_top = 612.0
 offset_right = 1049.0
