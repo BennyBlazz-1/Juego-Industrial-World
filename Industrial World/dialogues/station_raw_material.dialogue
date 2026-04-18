@@ -13,32 +13,32 @@ Station: What is raw material?
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- A finished product
+- Finished product ready for shipping
 	Station: Not correct.
 
-- A shipping document
+- Shipping document for outgoing orders
 	Station: Not correct.
 
 Station: Question 2.
 Station: Where can you usually find raw material?
 
-- In the parking lot
+- In loading docks near delivery trucks
 	Station: Not correct.
 
 - In storage before production
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- In the employee office
+- In office areas near supervisors
 	Station: Not correct.
 
 Station: Question 3.
 Station: What happens to raw material in production?
 
-- It is thrown away immediately
+- It is stored as finished inventory
 	Station: Not correct.
 
-- It becomes a lunch menu
+- It is sent directly to customers
 	Station: Not correct.
 
 - It is used to make products
@@ -46,6 +46,6 @@ Station: What happens to raw material in production?
 	Station: Correct.
 
 Station: Station complete.
-Station: Next station location: To your right in the toolbox
+Station: [b]Next station location:[/b] To your right in the toolbox
 
 => END
