@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="22_oo54l"]
 [ext_resource type="Script" uid="uid://c5fnytwnaqifq" path="res://scripts/sign_interaction.gd" id="25_munwf"]
 [ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="25_xgqkh"]
+[ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="26_munwf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
 texture = ExtResource("2_k0juu")
@@ -332,6 +333,7 @@ size = Vector2(37, 33.5)
 size = Vector2(35.5, 44)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0nbtd"]
+font = ExtResource("26_munwf")
 font_size = 13
 outline_size = 5
 outline_color = Color(0.0013967262, 0.0013967262, 0.001396726, 1)
@@ -340,6 +342,7 @@ outline_color = Color(0.0013967262, 0.0013967262, 0.001396726, 1)
 size = Vector2(38, 41)
 
 [sub_resource type="LabelSettings" id="LabelSettings_navra"]
+font = ExtResource("26_munwf")
 font_size = 13
 outline_size = 5
 outline_color = Color(0.0023445897, 0.00234459, 0.00234459, 1)
@@ -348,6 +351,7 @@ outline_color = Color(0.0023445897, 0.00234459, 0.00234459, 1)
 size = Vector2(36, 48)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fh13f"]
+font = ExtResource("26_munwf")
 font_size = 13
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
