@@ -2,6 +2,10 @@
 
 Station: Station: Raw Material
 
+Station: Raw material is the basic material needed to make a product.
+Station: It is usually stored before production starts.
+Station: During production, raw material is used and transformed into products.
+
 Station: Question 1.
 Station: What is raw material?
 
@@ -43,4 +47,5 @@ Station: What happens to raw material in production?
 
 Station: Station complete.
 Station: Next station location: To your right in the toolbox
+
 => END

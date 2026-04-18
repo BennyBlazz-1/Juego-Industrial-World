@@ -4,7 +4,9 @@ System: Welcome to Building 2.
 
 System: This is your first warehouse training level.
 
-System: In this level, you will answer simple questions about basic warehouse terms.
+System: In this level, each station will first explain a basic warehouse term.
+
+System: Use that information as a clue before answering the questions.
 
 System: Read carefully and choose the best answer at each station.
 

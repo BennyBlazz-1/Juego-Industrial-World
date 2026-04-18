@@ -60,7 +60,7 @@ if GameManager.level1_score >= GameManager.level1_pass_score
 	set GameManager.level1_passed = true
 	set GameManager.level1_finished = true
 	System: Level passed.
-	System: You completed Building 1 successfully.
+	System: You completed Building 2 successfully.
 	System: You can now leave the warehouse.
 
 else

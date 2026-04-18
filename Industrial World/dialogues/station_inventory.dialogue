@@ -2,6 +2,10 @@
 
 Station: Station: Inventory
 
+Station: Inventory means the materials or finished products that a company keeps in stock.
+Station: It is important because it helps workers control what items they have and where they are.
+Station: Inventory is usually stored in warehouse areas or storage locations.
+
 Station: Question 1.
 Station: What does inventory mean?
 
@@ -36,7 +40,7 @@ Station: Where is inventory usually stored?
 	Station: Correct.
 
 - On the road outside
-	System: Not correct.
+	Station: Not correct.
 
 - In the cafeteria
 	Station: Not correct.
