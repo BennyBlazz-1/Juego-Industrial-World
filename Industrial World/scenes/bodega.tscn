@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="26_7ylhq"]
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="27_8faxs"]
 [ext_resource type="Script" uid="uid://b7g3cle44cr78" path="res://scripts/level_station.gd" id="27_fpn3u"]
+[ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="29_lloru"]
 [ext_resource type="Script" uid="uid://cijlrr20aenyv" path="res://scripts/final_station.gd" id="29_yk1j3"]
 [ext_resource type="AudioStream" uid="uid://xof8r7ohse2x" path="res://Musica/SwitchWithMeTheme.ogg" id="30_q6byh"]
 
@@ -3418,6 +3419,7 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5yjkk"]
+font = ExtResource("29_lloru")
 font_size = 13
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)

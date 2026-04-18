@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dg317pt0rcodm" path="res://art/characters/right boss.png" id="4_f7ejg"]
 [ext_resource type="Script" uid="uid://cn4j36fyg53xw" path="res://scripts/area_2d.gd" id="5_pp6mn"]
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="6_pp6mn"]
+[ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="7_f7ejg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5i7dm"]
 radius = 15.033297
@@ -202,6 +203,7 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pp6mn"]
+font = ExtResource("7_f7ejg")
 font_size = 13
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
