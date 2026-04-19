@@ -1,6 +1,6 @@
 ~ start
 
-Final Station: Final Test Station
+Final Station: [b]Final Test Station[/b]
 
 Final Station: Question 1.
 Final Station: What is raw material?
@@ -9,32 +9,32 @@ Final Station: What is raw material?
 	set GameManager.level1_score += 1
 	Final Station: Correct.
 
-- A delivery truck
+- Finished item ready for delivery
 	Final Station: Not correct.
 
-- A final report
+- Shipping form for customer orders
 	Final Station: Not correct.
 
 Final Station: Question 2.
 Final Station: What does inventory mean?
 
-- A warehouse door
+- Record of worker break schedules
 	Final Station: Not correct.
 
 - Stock of materials or finished product
 	set GameManager.level1_score += 1
 	Final Station: Correct.
 
-- A worker break time
+- Series of doors in the warehouse
 	Final Station: Not correct.
 
 Final Station: Question 3.
 Final Station: What is a packing list used for?
 
-- To repair machines
+- To repair damaged equipment
 	Final Station: Not correct.
 
-- To hire workers
+- To hire and train workers
 	Final Station: Not correct.
 
 - To check shipment contents
@@ -48,10 +48,10 @@ Final Station: What do work instructions do?
 	set GameManager.level1_score += 1
 	Final Station: Correct.
 
-- They move inventory automatically
+- They move products through the line
 	Final Station: Not correct.
 
-- They replace safety rules
+- They replace plant safety rules
 	Final Station: Not correct.
 
 set GameManager.level1_exam_taken = true
@@ -60,7 +60,7 @@ if GameManager.level1_score >= GameManager.level1_pass_score
 	set GameManager.level1_passed = true
 	set GameManager.level1_finished = true
 	System: Level passed.
-	System: You completed Building 1 successfully.
+	System: You completed Building 2 successfully.
 	System: You can now leave the warehouse.
 
 else

@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var signo = get_node_or_null("ExclamationMark")
 @onready var sonido = get_node_or_null("ExclamationMark/Boton")
+@onready var interaction_label = get_node_or_null("PromptPoint/InteractionLabel")
 
 var jugador_cerca := false
 
@@ -12,9 +13,13 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 
 	if signo:
-		signo.visible = false
-		if signo.has_method("stop"):
-			signo.stop()
+		signo.visible = true
+		if signo.has_method("play"):
+			signo.play()
+
+	if interaction_label:
+		interaction_label.visible = false
+		interaction_label.text = "Press E to read instructions"
 
 func _process(_delta: float) -> void:
 	if jugador_cerca and Input.is_action_just_pressed("interact"):
@@ -24,11 +29,12 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		jugador_cerca = true
 		mostrar_signo()
+		mostrar_label()
 
 func _on_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		jugador_cerca = false
-		ocultar_signo()
+		ocultar_label()
 
 func mostrar_signo() -> void:
 	if signo:
@@ -42,6 +48,14 @@ func ocultar_signo() -> void:
 		if signo.has_method("stop"):
 			signo.stop()
 
+func mostrar_label() -> void:
+	if interaction_label:
+		interaction_label.visible = true
+
+func ocultar_label() -> void:
+	if interaction_label:
+		interaction_label.visible = false
+
 func interactuar() -> void:
 	if GameManager.is_dialogue_active:
 		return
@@ -54,6 +68,12 @@ func interactuar() -> void:
 
 func mostrar_dialogo_instrucciones() -> void:
 	GameManager.is_dialogue_active = true
+	ocultar_signo()
+	ocultar_label()
 	DialogueManager.show_dialogue_balloon(load(DIALOGO_INSTRUCCIONES))
 	await DialogueManager.dialogue_ended
 	GameManager.is_dialogue_active = false
+
+	mostrar_signo()
+	if jugador_cerca:
+		mostrar_label()

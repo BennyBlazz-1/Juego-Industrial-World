@@ -37,6 +37,9 @@ var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
 
+## Random for shuffled answers
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+
 ## The current line
 var dialogue_line: DialogueLine:
 	set(value):
@@ -72,6 +75,8 @@ var mutation_cooldown: Timer = Timer.new()
 
 
 func _ready() -> void:
+	rng.randomize()
+
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -121,6 +126,18 @@ func start(with_dialogue_resource: DialogueResource = null, title: String = "", 
 	show()
 
 
+func get_shuffled_responses(responses: Array) -> Array:
+	var shuffled: Array = responses.duplicate()
+
+	for i in range(shuffled.size() - 1, 0, -1):
+		var j: int = rng.randi_range(0, i)
+		var temp = shuffled[i]
+		shuffled[i] = shuffled[j]
+		shuffled[j] = temp
+
+	return shuffled
+
+
 ## Apply any changes to the balloon given a new [DialogueLine].
 func apply_dialogue_line() -> void:
 	mutation_cooldown.stop()
@@ -137,7 +154,7 @@ func apply_dialogue_line() -> void:
 	dialogue_label.dialogue_line = dialogue_line
 
 	responses_menu.hide()
-	responses_menu.responses = dialogue_line.responses
+	responses_menu.responses = get_shuffled_responses(dialogue_line.responses)
 
 	# Show our balloon
 	balloon.show()

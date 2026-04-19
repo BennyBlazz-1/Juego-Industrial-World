@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var sprite = $Sprite2D
 
-@export_file("*.tscn") var escena_destino: String = "res://scenes/world.tscn"
+@export_file("*.tscn") var escena_destino: String = "res://scenes/intro.tscn"
 
 var personajes = [
 	preload("res://art/characters/man front.png"),

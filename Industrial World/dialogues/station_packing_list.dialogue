@@ -1,6 +1,10 @@
 ~ start
 
-Station: Station: Packing List
+Station: [b]Station:[/b] Packing List
+
+Station: A packing list is a document used in shipments.
+Station: It shows the contents inside a shipment.
+Station: Workers use it when preparing or checking a shipment to verify the items.
 
 Station: Question 1.
 Station: What is a packing list?
@@ -9,39 +13,39 @@ Station: What is a packing list?
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- A tool for lifting boxes
+- A machine used for lifting pallets
 	Station: Not correct.
 
-- A machine instruction
+- A schedule used for worker shifts
 	Station: Not correct.
 
 Station: Question 2.
 Station: When is a packing list used?
 
-- When fixing a machine
+- During equipment repair in storage
 	Station: Not correct.
 
-- When hiring a new worker
+- During task assignment for operators
 	Station: Not correct.
 
-- When preparing or checking a shipment
+- During shipment preparation or inspection
 	set GameManager.level1_score += 1
 	Station: Correct.
 
 Station: Question 3.
 Station: What can you verify with a packing list?
 
-- What items are inside the shipment
+- The items inside the shipment
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- The weather outside
+- The expected weather outside
 	Station: Not correct.
 
-- The building color
+- The color of the building walls
 	Station: Not correct.
 
 Station: Station complete.
-Station: Next station location: Down the stairs to the right
+Station: [b]Next station location:[/b] Down the stairs to the right
 
 => END

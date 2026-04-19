@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://cwpafx035h2ry" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner01b.png" id="2_ithk8"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="3_onvhc"]
 [ext_resource type="Texture2D" uid="uid://clmg3wb2bo8fn" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02b.png" id="5_t5syq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -156,11 +157,13 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 26.0
-offset_top = 25.0
+offset_top = 19.0
 offset_right = 1028.0
-offset_bottom = 53.0
+offset_bottom = 47.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_onvhc")
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -172,12 +175,14 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 offset_left = 30.0
-offset_top = 51.0
-offset_right = 997.0
-offset_bottom = 124.0
+offset_top = 49.0
+offset_right = 985.0
+offset_bottom = 122.0
 grow_horizontal = 1
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_onvhc")
+theme_override_font_sizes/normal_font_size = 22
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea" unique_id=225070560]
@@ -192,6 +197,7 @@ size_flags_vertical = 8
 [node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea/Control" unique_id=829915326]
 unique_name_in_owner = true
 position = Vector2(937, 0)
+texture_scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextArea/Control" unique_id=1819444023]
@@ -221,6 +227,8 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=121862247]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_onvhc")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxTexture_ithk8")
 theme_override_styles/focus = SubResource("StyleBoxTexture_onvhc")
 text = "Response example"

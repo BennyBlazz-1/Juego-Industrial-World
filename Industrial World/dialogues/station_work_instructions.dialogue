@@ -1,6 +1,10 @@
 ~ start
 
-Station: Station: Work Instructions
+Station: [b]Station:[/b] Work Instructions
+
+Station: Work instructions are step-by-step directions that explain how to do a task.
+Station: Operators and workers use them during the process.
+Station: They are important because they help people do the job correctly.
 
 Station: Question 1.
 Station: What are work instructions?
@@ -9,19 +13,19 @@ Station: What are work instructions?
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- A shipping invoice
+- Document that records shipping costs
 	Station: Not correct.
 
-- A type of raw material
+- Material that enters the production line
 	Station: Not correct.
 
 Station: Question 2.
 Station: Who uses work instructions?
 
-- Only visitors
+- Visitors and guests during the tour
 	Station: Not correct.
 
-- Only drivers outside the plant
+- Drivers and guards at the entrance
 	Station: Not correct.
 
 - Operators and workers during a process
@@ -31,17 +35,17 @@ Station: Who uses work instructions?
 Station: Question 3.
 Station: Why are work instructions important?
 
-- They replace all materials
+- They replace tools used in production
 	Station: Not correct.
 
 - They help do the job correctly
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- They close the warehouse
+- They close areas after each shift
 	Station: Not correct.
 
 Station: Station complete.
-Station: Next station location: To your left, in the center
+Station: [b]Next station location:[/b] To your left, in the center
 
 => END

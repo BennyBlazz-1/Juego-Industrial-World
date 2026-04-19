@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="26_7ylhq"]
 [ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="27_8faxs"]
 [ext_resource type="Script" uid="uid://b7g3cle44cr78" path="res://scripts/level_station.gd" id="27_fpn3u"]
+[ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="29_lloru"]
 [ext_resource type="Script" uid="uid://cijlrr20aenyv" path="res://scripts/final_station.gd" id="29_yk1j3"]
 [ext_resource type="AudioStream" uid="uid://xof8r7ohse2x" path="res://Musica/SwitchWithMeTheme.ogg" id="30_q6byh"]
 
@@ -3418,6 +3419,7 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5yjkk"]
+font = ExtResource("29_lloru")
 font_size = 13
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
@@ -3488,6 +3490,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="intro_station/PromptPoint" unique_id=747131069]
 visible = false
+z_index = 3
 offset_left = 661.0
 offset_top = 730.0
 offset_right = 919.0
@@ -3516,6 +3519,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_raw_material/PromptPoint" unique_id=464047483]
 visible = false
+z_index = 3
 offset_left = 77.0
 offset_top = 707.0
 offset_right = 335.0
@@ -3544,6 +3548,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_inventory/PromptPoint" unique_id=902226079]
 visible = false
+z_index = 3
 offset_left = 429.0
 offset_top = 605.0
 offset_right = 687.0
@@ -3572,6 +3577,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_packing_list/PromptPoint" unique_id=2069641089]
 visible = false
+z_index = 3
 offset_left = 1037.0
 offset_top = 189.0
 offset_right = 1295.0
@@ -3600,6 +3606,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="station_work_instructions/PromptPoint" unique_id=175533827]
 visible = false
+z_index = 3
 offset_left = 1224.0
 offset_top = 517.0
 offset_right = 1482.0
@@ -3627,6 +3634,7 @@ animation = &"exclamation"
 
 [node name="InteractionLabel" type="Label" parent="final_station/PromptPoint" unique_id=1835134987]
 visible = false
+z_index = 3
 offset_left = 791.0
 offset_top = 612.0
 offset_right = 1049.0

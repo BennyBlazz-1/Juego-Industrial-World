@@ -8,8 +8,12 @@ const FIRST_DIALOGUE = preload("res://dialogues/first_dialogue.dialogue")
 @export var prompt_text: String = "Presiona E para hablar"
 
 var is_player_close: bool = false
+var last_dialogue_index: int = -1
+var rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
+	rng.randomize()
+
 	exclamation_mark.visible = false
 	exclamation_mark.play("exclamation")
 
@@ -21,7 +25,18 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if is_player_close and Input.is_action_just_pressed("interact") and not GameManager.is_dialogue_active:
-		DialogueManager.show_dialogue_balloon(FIRST_DIALOGUE, "start")
+		var random_index := get_random_dialogue_index()
+		var dialogue_start := "start_" + str(random_index)
+		DialogueManager.show_dialogue_balloon(FIRST_DIALOGUE, dialogue_start)
+
+func get_random_dialogue_index() -> int:
+	var new_index := rng.randi_range(1, 5)
+
+	while new_index == last_dialogue_index:
+		new_index = rng.randi_range(1, 5)
+
+	last_dialogue_index = new_index
+	return new_index
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

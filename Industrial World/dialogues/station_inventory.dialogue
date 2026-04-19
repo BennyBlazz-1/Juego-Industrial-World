@@ -1,14 +1,18 @@
 ~ start
 
-Station: Station: Inventory
+Station: [b]Station:[/b] Inventory
+
+Station: Inventory means the materials or finished products that a company keeps in stock.
+Station: It is important because it helps workers control what items they have and where they are.
+Station: Inventory is usually stored in warehouse areas or storage locations.
 
 Station: Question 1.
 Station: What does inventory mean?
 
-- A machine failure
+- Record of machine failures and repairs
 	Station: Not correct.
 
-- A work uniform
+- Uniform used by warehouse employees
 	Station: Not correct.
 
 - Stock of materials or finished product
@@ -18,14 +22,14 @@ Station: What does inventory mean?
 Station: Question 2.
 Station: Why is inventory important?
 
-- It changes employee schedules
+- It changes worker shifts every week
 	Station: Not correct.
 
 - It helps control materials and products
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- It cleans the warehouse
+- It washes tools after each process
 	Station: Not correct.
 
 Station: Question 3.
@@ -35,13 +39,13 @@ Station: Where is inventory usually stored?
 	set GameManager.level1_score += 1
 	Station: Correct.
 
-- On the road outside
-	System: Not correct.
+- In parking spaces near the entrance
+	Station: Not correct.
 
-- In the cafeteria
+- In office rooms for supervisors
 	Station: Not correct.
 
 Station: Station complete.
-Station: Next station location: Up the stairs in the right corner
+Station: [b]Next station location:[/b] Up the stairs in the right corner
 
 => END
