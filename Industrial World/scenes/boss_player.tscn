@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ivirnawqb63r" path="res://art/characters/boss front.png" id="3_pp6mn"]
 [ext_resource type="Texture2D" uid="uid://dg317pt0rcodm" path="res://art/characters/right boss.png" id="4_f7ejg"]
 [ext_resource type="Script" uid="uid://cn4j36fyg53xw" path="res://scripts/area_2d.gd" id="5_pp6mn"]
-[ext_resource type="Texture2D" uid="uid://cry4qfaorr8ia" path="res://art/objects/ExclamationMark_grayscale.png" id="6_pp6mn"]
+[ext_resource type="Texture2D" uid="uid://85maxmvwgjxl" path="res://art/tilesets/RPG_Exclamation_Mark_Animation_grey.png" id="6_f7ejg"]
 [ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="7_f7ejg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5i7dm"]
@@ -150,38 +150,27 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pp6mn"]
-radius = 28.160255
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7ejg"]
-atlas = ExtResource("6_pp6mn")
-region = Rect2(0, 0, 320, 320)
+radius = 30.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yf2ve"]
-atlas = ExtResource("6_pp6mn")
-region = Rect2(320, 0, 320, 320)
+atlas = ExtResource("6_f7ejg")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwpsr"]
-atlas = ExtResource("6_pp6mn")
-region = Rect2(640, 0, 320, 320)
+atlas = ExtResource("6_f7ejg")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwiso"]
-atlas = ExtResource("6_pp6mn")
-region = Rect2(0, 320, 320, 320)
+atlas = ExtResource("6_f7ejg")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atxue"]
-atlas = ExtResource("6_pp6mn")
-region = Rect2(320, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yjqxk"]
-atlas = ExtResource("6_pp6mn")
-region = Rect2(640, 320, 320, 320)
+atlas = ExtResource("6_f7ejg")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gwibq"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f7ejg")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yf2ve")
 }, {
@@ -193,9 +182,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_atxue")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yjqxk")
 }],
 "loop": true,
 "name": &"exclamation",
@@ -226,8 +212,8 @@ script = ExtResource("5_pp6mn")
 shape = SubResource("CircleShape2D_pp6mn")
 
 [node name="ExclamationMark" type="AnimatedSprite2D" parent="Area2D" unique_id=1867003721]
-position = Vector2(-55, -28)
-scale = Vector2(0.06768799, 0.06768799)
+position = Vector2(0, -61)
+scale = Vector2(2.360672, 2.360672)
 sprite_frames = SubResource("SpriteFrames_gwibq")
 animation = &"exclamation"
 frame_progress = 0.27455541
@@ -238,8 +224,10 @@ position = Vector2(-40, -39)
 
 [node name="InteractionLabel" type="Label" parent="Area2D/PromptPoint" unique_id=557340453]
 visible = false
-offset_right = 142.0
-offset_bottom = 18.0
+offset_left = -21.0
+offset_top = -2.0
+offset_right = 121.0
+offset_bottom = 16.0
 text = "Presiona E para hablar"
 label_settings = SubResource("LabelSettings_pp6mn")
 horizontal_alignment = 1
