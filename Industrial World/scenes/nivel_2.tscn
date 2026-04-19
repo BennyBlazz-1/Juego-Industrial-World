@@ -41,6 +41,10 @@
 [ext_resource type="Script" uid="uid://yg5alplk7new" path="res://scripts/area_scene_1.gd" id="38_7hkex"]
 [ext_resource type="Texture2D" uid="uid://85maxmvwgjxl" path="res://art/tilesets/RPG_Exclamation_Mark_Animation_grey.png" id="39_3xn6m"]
 [ext_resource type="Script" uid="uid://c4q0vbliwerrg" path="res://scripts/ListaInstrucciones.gd" id="40_3xn6m"]
+[ext_resource type="Texture2D" uid="uid://be7w075j3c8qy" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02a.png" id="42_o3gjl"]
+[ext_resource type="PackedScene" uid="uid://c632qe06lq3in" path="res://scenes/result_panel.tscn" id="42_ps7l8"]
+[ext_resource type="PackedScene" uid="uid://x20qw8l7q3fb" path="res://scenes/tutorial_panel.tscn" id="44_3g43v"]
+[ext_resource type="Script" uid="uid://cy0a6bbcavxqq" path="res://scripts/tutorial_panel.gd" id="45_81j0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47vl3"]
 texture = ExtResource("1_ko3cp")
@@ -8784,6 +8788,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_o3gjl"]
+font = ExtResource("37_mwiq3")
+font_size = 32
+
 [node name="Nivel 2" type="Node2D" unique_id=701458017]
 y_sort_enabled = true
 script = ExtResource("1_7hkex")
@@ -9030,5 +9038,40 @@ scale = Vector2(1, 0.99999994)
 
 [node name="man_player" parent="." unique_id=1216528816 instance=ExtResource("29_xpil2")]
 position = Vector2(659, 817)
+
+[node name="TimerUI" type="CanvasLayer" parent="." unique_id=612935228]
+
+[node name="PanelRoot" type="Control" parent="TimerUI" unique_id=760412149]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimerBackground" type="TextureRect" parent="TimerUI/PanelRoot" unique_id=1327437687]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 20.0
+offset_right = 1128.0
+offset_bottom = 92.0
+texture = ExtResource("42_o3gjl")
+
+[node name="TimerLabel" type="Label" parent="TimerUI/PanelRoot" unique_id=1101471664]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 32.0
+offset_right = 1108.0
+offset_bottom = 76.0
+text = "0:00"
+label_settings = SubResource("LabelSettings_o3gjl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultPanel" parent="." unique_id=330399826 instance=ExtResource("42_ps7l8")]
+test_mode = false
+
+[node name="TutorialPanel" parent="." unique_id=1717304724 instance=ExtResource("44_3g43v")]
+script = ExtResource("45_81j0s")
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]

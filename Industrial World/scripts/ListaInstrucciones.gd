@@ -74,6 +74,12 @@ func mostrar_dialogo_instrucciones() -> void:
 	await DialogueManager.dialogue_ended
 	GameManager.is_dialogue_active = false
 
+	var escena_actual := get_tree().current_scene
+	if escena_actual != null:
+		var tutorial_panel = escena_actual.get_node_or_null("TutorialPanel")
+		if tutorial_panel != null and tutorial_panel.has_method("show_panel"):
+			tutorial_panel.show_panel()
+
 	mostrar_signo()
 	if jugador_cerca:
 		mostrar_label()

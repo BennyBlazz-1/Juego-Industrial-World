@@ -36,16 +36,18 @@ var nivel_2_botones = {
 
 var nivel_2_orden = [
 	"Boton1",
-	"Boton2",
 	"Boton3",
+	"Boton6",
 	"Boton4",
-	"Boton5",
-	"Boton6"
+	"Boton2",
+	"Boton5"
 ]
 
 var nivel_2_indice_actual = 0
 var nivel_2_finished = false
 var nivel_2_passed = false
+var nivel_2_stars: int = 0
+var nivel_2_final_time_seconds: int = 0
 
 
 # =========================
@@ -108,6 +110,8 @@ func reset_nivel_2_intento() -> void:
 func reset_nivel_2_completo() -> void:
 	reset_nivel_2_intento()
 	nivel_2_passed = false
+	nivel_2_stars = 0
+	nivel_2_final_time_seconds = 0
 
 
 func reiniciar_botones_nivel_2_en_escena() -> void:
