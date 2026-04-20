@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://be7w075j3c8qy" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02a.png" id="42_o3gjl"]
 [ext_resource type="PackedScene" uid="uid://c632qe06lq3in" path="res://scenes/result_panel.tscn" id="42_ps7l8"]
 [ext_resource type="PackedScene" uid="uid://x20qw8l7q3fb" path="res://scenes/tutorial_panel.tscn" id="44_3g43v"]
-[ext_resource type="Script" uid="uid://cy0a6bbcavxqq" path="res://scripts/tutorial_panel.gd" id="45_81j0s"]
+[ext_resource type="PackedScene" uid="uid://c70m0pcnyffly" path="res://scenes/control_panel.tscn" id="45_3g43v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47vl3"]
 texture = ExtResource("1_ko3cp")
@@ -9072,6 +9072,7 @@ vertical_alignment = 1
 test_mode = false
 
 [node name="TutorialPanel" parent="." unique_id=1717304724 instance=ExtResource("44_3g43v")]
-script = ExtResource("45_81j0s")
+
+[node name="ControlPanel" parent="." unique_id=1623279706 instance=ExtResource("45_3g43v")]
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]

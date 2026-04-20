@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://c70m0pcnyffly"]
+
+[ext_resource type="Script" uid="uid://bkttdqd1tro2h" path="res://scripts/control_panel.gd" id="1_6ymrp"]
+[ext_resource type="Texture2D" uid="uid://clmg3wb2bo8fn" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02b.png" id="1_mori3"]
+[ext_resource type="FontFile" uid="uid://3h0ltdnyvx5s" path="res://art/tilesets/ComicRelief-Bold.ttf" id="2_0etsd"]
+[ext_resource type="Texture2D" uid="uid://h444amw7j52s" path="res://art/04_TabletBook/04_TabletBook/Sprites/up.png" id="3_bsupa"]
+[ext_resource type="Texture2D" uid="uid://d0wqjvpo236h4" path="res://art/04_TabletBook/04_TabletBook/Sprites/left.png" id="4_6ymrp"]
+[ext_resource type="Texture2D" uid="uid://d3vtdqiwul3e8" path="res://art/04_TabletBook/04_TabletBook/Sprites/down.png" id="5_rj1aa"]
+[ext_resource type="Texture2D" uid="uid://dqcrpew243a2u" path="res://art/04_TabletBook/04_TabletBook/Sprites/right.png" id="6_b5yiy"]
+[ext_resource type="Texture2D" uid="uid://d2adrla2ftw8c" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_FrameSlot02h.png" id="7_tlajc"]
+[ext_resource type="Texture2D" uid="uid://1oklh64imhu1" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_FrameSlot02g.png" id="8_bsupa"]
+[ext_resource type="Texture2D" uid="uid://d1ji4be7bvti4" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_FrameSlot02f.png" id="9_6ymrp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehn5r"]
+texture = ExtResource("1_mori3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_pjcnf"]
+font = ExtResource("2_0etsd")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdd8e"]
+font = ExtResource("2_0etsd")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_3b0pg"]
+font = ExtResource("2_0etsd")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ijt1"]
+font = ExtResource("2_0etsd")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_7o36f"]
+font = ExtResource("2_0etsd")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_qd5ay"]
+font = ExtResource("2_0etsd")
+font_size = 18
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d485j"]
+texture = ExtResource("7_tlajc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj1aa"]
+texture = ExtResource("9_6ymrp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b5yiy"]
+texture = ExtResource("8_bsupa")
+
+[node name="ControlPanel" type="CanvasLayer" unique_id=1623279706]
+script = ExtResource("1_6ymrp")
+
+[node name="PanelRoot" type="Control" parent="." unique_id=1121821253]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="PanelRoot" unique_id=1767382202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.77254903)
+
+[node name="MainPanel" type="Panel" parent="PanelRoot" unique_id=1273533927]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 74.0
+offset_right = 846.0
+offset_bottom = 574.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ehn5r")
+
+[node name="TitleLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=125249850]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 540.0
+offset_bottom = 93.0
+text = "Controls"
+label_settings = SubResource("LabelSettings_pjcnf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=1547377923]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 103.0
+offset_right = 539.0
+offset_bottom = 133.0
+text = "Move"
+label_settings = SubResource("LabelSettings_vdd8e")
+horizontal_alignment = 1
+
+[node name="UpArrow" type="TextureRect" parent="PanelRoot/MainPanel" unique_id=2142681884]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 140.0
+offset_right = 294.0
+offset_bottom = 188.0
+texture = ExtResource("3_bsupa")
+
+[node name="LeftArrow" type="TextureRect" parent="PanelRoot/MainPanel" unique_id=2073303379]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 198.0
+offset_right = 236.0
+offset_bottom = 246.0
+texture = ExtResource("4_6ymrp")
+
+[node name="DownArrow" type="TextureRect" parent="PanelRoot/MainPanel" unique_id=549602355]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 198.0
+offset_right = 294.0
+offset_bottom = 246.0
+texture = ExtResource("5_rj1aa")
+
+[node name="RightArrow" type="TextureRect" parent="PanelRoot/MainPanel" unique_id=1706015165]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 198.0
+offset_right = 352.0
+offset_bottom = 246.0
+texture = ExtResource("6_b5yiy")
+
+[node name="ArrowText" type="Label" parent="PanelRoot/MainPanel" unique_id=87108379]
+layout_mode = 0
+offset_top = 265.0
+offset_right = 540.0
+offset_bottom = 295.0
+text = "Arrow Keys"
+label_settings = SubResource("LabelSettings_3b0pg")
+horizontal_alignment = 1
+
+[node name="InteractLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=1955997301]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 330.0
+offset_right = 420.0
+offset_bottom = 360.0
+text = "E = Interact"
+label_settings = SubResource("LabelSettings_8ijt1")
+
+[node name="ContinueLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=923250575]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 375.0
+offset_right = 440.0
+offset_bottom = 405.0
+text = "Enter = Continue dialogue"
+label_settings = SubResource("LabelSettings_7o36f")
+
+[node name="ToggleLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=1797855307]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 420.0
+offset_right = 440.0
+offset_bottom = 450.0
+text = "C = Open / Close controls"
+label_settings = SubResource("LabelSettings_qd5ay")
+
+[node name="CloseButton" type="Button" parent="PanelRoot/MainPanel" unique_id=967315835]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 26.0
+offset_right = 520.0
+offset_bottom = 66.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d485j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rj1aa")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b5yiy")
