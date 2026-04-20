@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b5seth6dmgj3e"
+path="res://.godot/imported/supervisor_final.dialogue-06c7c22ec9e94c5f48ab6ca7d8ed81de.tres"
+
+[deps]
+
+source_file="res://dialogues/supervisor_final.dialogue"
+dest_files=["res://.godot/imported/supervisor_final.dialogue-06c7c22ec9e94c5f48ab6ca7d8ed81de.tres"]
+
+[params]
+
+defaults=true

@@ -1,5 +1,7 @@
 extends Node2D
 
+const FINAL_SUPERVISOR_WORLD_POSITION: Vector2 = Vector2(1233, 537)
+
 @onready var building2_under_construction_map = $building1_under_construction_map
 @onready var building2_completed_map = $building1_completed_map
 
@@ -10,20 +12,21 @@ extends Node2D
 @onready var spawn_from_nivel2: Marker2D = $spawn_from_nivel2
 
 @onready var man_player: Node2D = $man_player
+@onready var supervisor_root: Node2D = $boss_player
+@onready var supervisor_sprite: AnimatedSprite2D = $boss_player/AnimatedSprite2D
 
 
 func _ready() -> void:
 	update_buildings_visual()
 	seleccionar_personaje()
 	place_player_at_spawn()
+	apply_supervisor_world_state()
 
 
 func update_buildings_visual() -> void:
-	# Edificio 1
 	building1_under_construction_map.visible = not GameManager.level1_passed
 	building1_completed_map.visible = GameManager.level1_passed
 
-	# Edificio 2
 	building2_under_construction_map.visible = not GameManager.nivel_2_passed
 	building2_completed_map.visible = GameManager.nivel_2_passed
 
@@ -59,3 +62,15 @@ func place_player_at_spawn() -> void:
 		player.global_position = spawn_from_bodega.global_position
 	elif spawn_name == "spawn_from_nivel2":
 		player.global_position = spawn_from_nivel2.global_position
+
+
+func apply_supervisor_world_state() -> void:
+	if supervisor_root == null:
+		return
+
+	if GameManager.final_supervisor_dialogue_enabled:
+		supervisor_root.visible = true
+		supervisor_root.global_position = FINAL_SUPERVISOR_WORLD_POSITION
+
+		if supervisor_sprite != null:
+			supervisor_sprite.play("back_idle")
