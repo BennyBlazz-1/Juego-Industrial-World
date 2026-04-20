@@ -14,12 +14,15 @@ var level1_steps = {
 }
 
 var level1_score = 0
-var level1_pass_score = 11
+var level1_pass_score = 5
+var level1_total_questions = 16
 
 var level1_all_stations_done = false
 var level1_exam_taken = false
 var level1_passed = false
 var level1_finished = false
+var level1_stars: int = 0
+var level1_final_score: int = 0
 
 
 # =========================
@@ -77,6 +80,8 @@ func reset_level1() -> void:
 	level1_exam_taken = false
 	level1_passed = false
 	level1_finished = false
+	level1_stars = 0
+	level1_final_score = 0
 
 
 # =========================

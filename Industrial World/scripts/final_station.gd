@@ -44,6 +44,7 @@ func update_visual_state() -> void:
 		interaction_label.visible = false
 		return
 
+	# En este nivel, al completarlo el icono debe quedar oculto
 	exclamation_mark.visible = available
 	interaction_label.visible = available and is_player_close
 
@@ -69,5 +70,11 @@ func _on_dialogue_started(_dialogue) -> void:
 func _on_dialogue_ended(_dialogue) -> void:
 	await get_tree().create_timer(0.2).timeout
 	GameManager.is_dialogue_active = false
+
+	if opened_here and GameManager.level1_exam_taken:
+		var escena_actual := get_tree().current_scene
+		if escena_actual != null and escena_actual.has_method("show_bodega_results"):
+			escena_actual.show_bodega_results()
+
 	opened_here = false
 	update_visual_state()

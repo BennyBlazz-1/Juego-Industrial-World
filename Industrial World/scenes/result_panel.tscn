@@ -549,4 +549,4 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxTexture_7vy7x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gv2hc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bknvd")
-text = "NEXT"
+text = "CONTINUE"

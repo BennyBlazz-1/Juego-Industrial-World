@@ -126,4 +126,6 @@ func _on_next_button_pressed() -> void:
 	if is_final_level:
 		print("Finish pressed")
 	else:
-		hide_results()
+		print("Continue pressed")
+
+	hide_results()
