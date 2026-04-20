@@ -14,7 +14,7 @@ func _ready() -> void:
 		GameManager.reset_level1()
 
 	crear_player()
-	call_deferred("place_player_at_spawn")
+	place_player_at_spawn()
 
 	if result_panel != null and result_panel.has_method("hide_results"):
 		result_panel.hide_results()

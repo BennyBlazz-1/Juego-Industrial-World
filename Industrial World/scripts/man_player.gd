@@ -126,9 +126,12 @@ func update_current_camera() -> void:
 	if current_scene.scene_file_path == "res://scenes/world.tscn":
 		world_camera.enabled = true
 		world_camera.make_current()
+		world_camera.reset_smoothing()
 	elif current_scene.scene_file_path == "res://scenes/bodega.tscn":
 		bodega_camera.enabled = true
 		bodega_camera.make_current()
+		bodega_camera.reset_smoothing()
 	elif current_scene.scene_file_path == "res://scenes/nivel_2.tscn":
 		nivel2_camera.enabled = true
 		nivel2_camera.make_current()
+		nivel2_camera.reset_smoothing()

@@ -15,7 +15,7 @@ extends Node2D
 func _ready() -> void:
 	update_buildings_visual()
 	seleccionar_personaje()
-	call_deferred("place_player_at_spawn")
+	place_player_at_spawn()
 
 
 func update_buildings_visual() -> void:
