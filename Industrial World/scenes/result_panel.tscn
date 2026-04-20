@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bd0l3drltsw31" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Button02a.png" id="7_bqmfo"]
 [ext_resource type="Texture2D" uid="uid://cj2ss1vkuniwa" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_1.png" id="8_nfaii"]
 [ext_resource type="Texture2D" uid="uid://c0ce54lwb7fil" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_3.png" id="9_bqmfo"]
+[ext_resource type="AudioStream" uid="uid://cdeqhbj50i3kk" path="res://Musica/Sonidito.wav" id="10_r6u04"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqmfo"]
 font = ExtResource("3_k5fo1")
@@ -550,3 +551,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_7vy7x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gv2hc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bknvd")
 text = "CONTINUE"
+
+[node name="Sonido" type="AudioStreamPlayer" parent="." unique_id=1410462326]
+stream = ExtResource("10_r6u04")

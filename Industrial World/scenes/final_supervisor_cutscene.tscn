@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://da7dgk7ofpn8c" path="res://art/characters/woman back.png" id="26_4bxno"]
 [ext_resource type="Texture2D" uid="uid://b5mw5w013p5t6" path="res://art/characters/woman front.png" id="27_igi47"]
 [ext_resource type="Texture2D" uid="uid://bhvmw1efpbrig" path="res://art/characters/right woman.png" id="28_rt5n6"]
+[ext_resource type="AudioStream" uid="uid://cbghqs5o7bc2a" path="res://Musica/Inicio.ogg" id="30_6pi1w"]
 
 [sub_resource type="Animation" id="Animation_6nav6"]
 length = 0.001
@@ -1316,3 +1317,7 @@ sprite_frames = SubResource("SpriteFrames_cnqce")
 animation = &"front_idle"
 autoplay = "front_idle"
 offset = Vector2(0, -15)
+
+[node name="FinalSuper" type="AudioStreamPlayer" parent="." unique_id=707752828]
+stream = ExtResource("30_6pi1w")
+autoplay = true

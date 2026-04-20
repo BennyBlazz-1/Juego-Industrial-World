@@ -26,6 +26,7 @@ extends CanvasLayer
 
 @onready var restart_button: Button = $PanelRoot/RestartButton
 @onready var next_button: Button = $PanelRoot/NextButton
+@onready var sonido: AudioStreamPlayer = $Sonido
 
 var restart_button_default_position: Vector2
 var next_button_default_position: Vector2
@@ -51,6 +52,10 @@ func _ready() -> void:
 func show_results(stars_count: int, text1: String, text2: String, text3: String, metric_text: String = "") -> void:
 	visible = true
 	GameManager.is_dialogue_active = true
+
+	if sonido:
+		sonido.stop()
+		sonido.play()
 
 	label1.text = text3
 	label2.text = text2
