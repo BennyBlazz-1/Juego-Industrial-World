@@ -5,12 +5,15 @@ extends Area2D
 
 const FIRST_DIALOGUE = preload("res://dialogues/first_dialogue.dialogue")
 const FINAL_DIALOGUE = preload("res://dialogues/supervisor_final.dialogue")
+const POSTGAME_DIALOGUE = preload("res://dialogues/supervisor_postgame.dialogue")
 
 @export var prompt_text: String = "Presiona E para hablar"
 
 var is_player_close: bool = false
 var last_dialogue_index: int = -1
 var rng := RandomNumberGenerator.new()
+
+var opened_final_dialogue: bool = false
 
 
 func _ready() -> void:
@@ -34,7 +37,12 @@ func _process(_delta: float) -> void:
 		return
 
 	if Input.is_action_just_pressed("interact"):
-		if GameManager.final_supervisor_dialogue_enabled:
+		opened_final_dialogue = false
+
+		if GameManager.postgame_supervisor_dialogue_enabled:
+			DialogueManager.show_dialogue_balloon(POSTGAME_DIALOGUE, "start")
+		elif GameManager.final_supervisor_dialogue_enabled:
+			opened_final_dialogue = true
 			DialogueManager.show_dialogue_balloon(FINAL_DIALOGUE, "start")
 		else:
 			var random_index := get_random_dialogue_index()
@@ -75,6 +83,13 @@ func _on_dialogue_started(_dialogue) -> void:
 func _on_dialogue_ended(_dialogue) -> void:
 	await get_tree().create_timer(0.2).timeout
 	GameManager.is_dialogue_active = false
+
+	if opened_final_dialogue:
+		opened_final_dialogue = false
+		var current_scene := get_tree().current_scene
+		if current_scene != null and current_scene.has_method("start_endgame_credits"):
+			current_scene.call_deferred("start_endgame_credits")
+		return
 
 	if is_player_close:
 		interaction_label.visible = true

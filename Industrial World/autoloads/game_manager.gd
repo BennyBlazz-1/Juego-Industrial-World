@@ -4,6 +4,8 @@ var is_dialogue_active = false
 var next_spawn_point: String = ""
 var final_supervisor_dialogue_enabled: bool = false
 var return_to_world_after_final_cutscene: bool = false
+var postgame_supervisor_dialogue_enabled: bool = false
+var credits_played: bool = false
 
 # =========================
 # NIVEL 1

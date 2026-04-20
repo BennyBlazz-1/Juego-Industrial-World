@@ -1,0 +1,291 @@
+[gd_scene format=3 uid="uid://bkfjhi6g2cwl6"]
+
+[ext_resource type="FontFile" uid="uid://53ycylmn8n1i" path="res://art/tilesets/Antonio-Medium.ttf" id="1_eu0ln"]
+[ext_resource type="Script" uid="uid://c47jqdqg6c8fl" path="res://scripts/credits_panel.gd" id="1_pfpt8"]
+[ext_resource type="FontFile" uid="uid://dawutpnkf0y0o" path="res://art/tilesets/Antonio-Bold.ttf" id="3_ixq8b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qphap"]
+font = ExtResource("1_eu0ln")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_pfpt8"]
+font = ExtResource("1_eu0ln")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_ty8fy"]
+font = ExtResource("1_eu0ln")
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7c17"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fouj"]
+font = ExtResource("1_eu0ln")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_abs7s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vee6v"]
+font = ExtResource("3_ixq8b")
+font_size = 20
+font_color = Color(0.84032553, 0.84032553, 0.8403255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dnnwk"]
+font = ExtResource("1_eu0ln")
+font_size = 17
+font_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_70qtj"]
+font = ExtResource("3_ixq8b")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixq8b"]
+font = ExtResource("1_eu0ln")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d30og"]
+font = ExtResource("1_eu0ln")
+
+[node name="CreditsPanel" type="CanvasLayer" unique_id=1599235183]
+script = ExtResource("1_pfpt8")
+
+[node name="PanelRoot" type="Control" parent="." unique_id=600559109]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="PanelRoot" unique_id=852407093]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TitleLabel" type="Label" parent="PanelRoot" unique_id=1066217917]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 1152.0
+offset_bottom = 64.0
+text = "Industrial World"
+label_settings = SubResource("LabelSettings_qphap")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="PanelRoot" unique_id=2041699188]
+layout_mode = 0
+offset_top = 66.0
+offset_right = 1152.0
+offset_bottom = 94.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_pfpt8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsFrame" type="Panel" parent="PanelRoot" unique_id=533648243]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 120.0
+offset_right = 906.0
+offset_bottom = 480.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelRoot/CreditsFrame" unique_id=534079212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelRoot/CreditsFrame/ScrollContainer" unique_id=1515309213]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="CreditsVBox" type="VBoxContainer" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer" unique_id=1914825077]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label_GameTitle" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1148243029]
+layout_mode = 2
+text = "Industrial World"
+label_settings = SubResource("LabelSettings_ty8fy")
+horizontal_alignment = 1
+
+[node name="Label_Space_1" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1491725261]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_u7c17")
+
+[node name="Label_Credits" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1109629199]
+layout_mode = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_3fouj")
+horizontal_alignment = 1
+
+[node name="Label_Space_2" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1306836946]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_abs7s")
+
+[node name="Label_DevelopedBy_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1088050184]
+layout_mode = 2
+text = "Developed by"
+label_settings = SubResource("LabelSettings_vee6v")
+horizontal_alignment = 1
+
+[node name="Label_DevelopedBy_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=2093610877]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_3" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1806988595]
+layout_mode = 2
+
+[node name="Label_GameDesign_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1364670528]
+layout_mode = 2
+text = "Game Design"
+label_settings = SubResource("LabelSettings_vee6v")
+horizontal_alignment = 1
+
+[node name="Label_GameDesign_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=2064810363]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_4" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1038343294]
+layout_mode = 2
+
+[node name="Label_Programming_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1934356585]
+layout_mode = 2
+text = "Programming"
+label_settings = SubResource("LabelSettings_vee6v")
+horizontal_alignment = 1
+
+[node name="Label_Programming_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=173173259]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_5" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1441750640]
+layout_mode = 2
+
+[node name="Label_UI_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=693200389]
+layout_mode = 2
+text = "UI / UX Design"
+horizontal_alignment = 1
+
+[node name="Label_UI_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=705276711]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_6" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=804890129]
+layout_mode = 2
+
+[node name="Label_Dialogue_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=28493477]
+layout_mode = 2
+text = "Dialogue & Educational Content"
+label_settings = SubResource("LabelSettings_vee6v")
+horizontal_alignment = 1
+
+[node name="Label_Dialogue_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=222021876]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_7" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=664161500]
+layout_mode = 2
+
+[node name="Label_LevelDesign_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=660574278]
+layout_mode = 2
+text = "Level Design"
+label_settings = SubResource("LabelSettings_vee6v")
+horizontal_alignment = 1
+
+[node name="Label_LevelDesign_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1447952151]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_8" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=109282096]
+layout_mode = 2
+
+[node name="Label_Art_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=127855356]
+layout_mode = 2
+text = "Art Integration"
+label_settings = SubResource("LabelSettings_70qtj")
+horizontal_alignment = 1
+
+[node name="Label_Art_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1532844415]
+layout_mode = 2
+text = "Integrated and adapted assets"
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_9" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1518080853]
+layout_mode = 2
+
+[node name="Label_Testing_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=272977647]
+layout_mode = 2
+text = "Testing"
+label_settings = SubResource("LabelSettings_vee6v")
+horizontal_alignment = 1
+
+[node name="Label_Testing_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1661457741]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_10" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=2030230401]
+layout_mode = 2
+
+[node name="Label_Thanks_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=506475981]
+layout_mode = 2
+text = "Special Thanks"
+label_settings = SubResource("LabelSettings_vee6v")
+horizontal_alignment = 1
+
+[node name="Label_Thanks_Text" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=24486120]
+layout_mode = 2
+text = "Everyone who supported this project"
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Space_11" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=374999791]
+layout_mode = 2
+
+[node name="Label_Final_Thanks" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1607908341]
+layout_mode = 2
+text = "Thank you for playing"
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="Label_Final_Update" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=522616148]
+layout_mode = 2
+text = "More updates and new levels coming soon"
+label_settings = SubResource("LabelSettings_dnnwk")
+horizontal_alignment = 1
+
+[node name="ThanksLabel" type="Label" parent="PanelRoot" unique_id=1154117864]
+layout_mode = 0
+offset_top = 505.0
+offset_right = 1152.0
+offset_bottom = 533.0
+text = "Thank you for playing"
+label_settings = SubResource("LabelSettings_ixq8b")
+horizontal_alignment = 1
+
+[node name="SkipLabel" type="Label" parent="PanelRoot" unique_id=873559400]
+layout_mode = 0
+offset_top = 580.0
+offset_right = 1152.0
+offset_bottom = 604.0
+text = "Press Enter to skip"
+label_settings = SubResource("LabelSettings_d30og")
+horizontal_alignment = 1

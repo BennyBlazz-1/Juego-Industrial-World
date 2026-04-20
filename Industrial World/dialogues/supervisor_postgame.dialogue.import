@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://lrab8dubkqjt"
+path="res://.godot/imported/supervisor_postgame.dialogue-802c3d60f1fbffc3d56777e510a75287.tres"
+
+[deps]
+
+source_file="res://dialogues/supervisor_postgame.dialogue"
+dest_files=["res://.godot/imported/supervisor_postgame.dialogue-802c3d60f1fbffc3d56777e510a75287.tres"]
+
+[params]
+
+defaults=true
