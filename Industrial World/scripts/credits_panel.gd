@@ -6,6 +6,7 @@ signal credits_finished
 
 @onready var panel_root: Control = $PanelRoot
 @onready var scroll_container: ScrollContainer = $PanelRoot/CreditsFrame/ScrollContainer
+@onready var music: AudioStreamPlayer = $Music
 
 var is_showing: bool = false
 var is_finishing: bool = false
@@ -30,6 +31,10 @@ func show_credits() -> void:
 
 	GameManager.is_dialogue_active = true
 	get_tree().paused = true
+
+	if music:
+		music.stop()
+		music.play()
 
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -65,6 +70,9 @@ func finish_credits() -> void:
 
 	is_finishing = true
 	is_showing = false
+
+	if music:
+		music.stop()
 
 	get_tree().paused = false
 	GameManager.is_dialogue_active = false

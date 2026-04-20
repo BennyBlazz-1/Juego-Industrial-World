@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://53ycylmn8n1i" path="res://art/tilesets/Antonio-Medium.ttf" id="1_eu0ln"]
 [ext_resource type="Script" uid="uid://c47jqdqg6c8fl" path="res://scripts/credits_panel.gd" id="1_pfpt8"]
 [ext_resource type="FontFile" uid="uid://dawutpnkf0y0o" path="res://art/tilesets/Antonio-Bold.ttf" id="3_ixq8b"]
+[ext_resource type="AudioStream" uid="uid://jr31d7r6ikqd" path="res://Musica/Final.ogg" id="4_ixq8b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qphap"]
 font = ExtResource("1_eu0ln")
@@ -135,7 +136,7 @@ label_settings = SubResource("LabelSettings_abs7s")
 
 [node name="Label_DevelopedBy_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1088050184]
 layout_mode = 2
-text = "Developed by"
+text = "Developed by:"
 label_settings = SubResource("LabelSettings_vee6v")
 horizontal_alignment = 1
 
@@ -146,10 +147,13 @@ horizontal_alignment = 1
 
 [node name="Label_Space_3" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1806988595]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_GameDesign_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1364670528]
 layout_mode = 2
-text = "Game Design"
+text = "Game Design:"
 label_settings = SubResource("LabelSettings_vee6v")
 horizontal_alignment = 1
 
@@ -160,10 +164,13 @@ horizontal_alignment = 1
 
 [node name="Label_Space_4" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1038343294]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_Programming_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1934356585]
 layout_mode = 2
-text = "Programming"
+text = "Programming:"
 label_settings = SubResource("LabelSettings_vee6v")
 horizontal_alignment = 1
 
@@ -174,10 +181,13 @@ horizontal_alignment = 1
 
 [node name="Label_Space_5" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1441750640]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_UI_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=693200389]
 layout_mode = 2
-text = "UI / UX Design"
+text = "UI / UX Design:"
 horizontal_alignment = 1
 
 [node name="Label_UI_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=705276711]
@@ -187,10 +197,13 @@ horizontal_alignment = 1
 
 [node name="Label_Space_6" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=804890129]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_Dialogue_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=28493477]
 layout_mode = 2
-text = "Dialogue & Educational Content"
+text = "Dialogue & Educational Content:"
 label_settings = SubResource("LabelSettings_vee6v")
 horizontal_alignment = 1
 
@@ -201,10 +214,13 @@ horizontal_alignment = 1
 
 [node name="Label_Space_7" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=664161500]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_LevelDesign_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=660574278]
 layout_mode = 2
-text = "Level Design"
+text = "Level Design:"
 label_settings = SubResource("LabelSettings_vee6v")
 horizontal_alignment = 1
 
@@ -215,10 +231,13 @@ horizontal_alignment = 1
 
 [node name="Label_Space_8" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=109282096]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_Art_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=127855356]
 layout_mode = 2
-text = "Art Integration"
+text = "Art Integration:"
 label_settings = SubResource("LabelSettings_70qtj")
 horizontal_alignment = 1
 
@@ -230,24 +249,28 @@ horizontal_alignment = 1
 
 [node name="Label_Space_9" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1518080853]
 layout_mode = 2
+text = "El Espriteador
+@el_espriteador"
 
-[node name="Label_Testing_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=272977647]
+[node name="Label_Music_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=272977647]
 layout_mode = 2
-text = "Testing"
+text = "Music by:"
 label_settings = SubResource("LabelSettings_vee6v")
 horizontal_alignment = 1
 
-[node name="Label_Testing_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1661457741]
+[node name="Label_Music_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1661457741]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_10" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=2030230401]
 layout_mode = 2
+text = "Not Jam Music Pack by Not Jam
+SomeWhatGood: Lofi by Flowerhead"
 
 [node name="Label_Thanks_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=506475981]
 layout_mode = 2
-text = "Special Thanks"
+text = "Special Thanks to:"
 label_settings = SubResource("LabelSettings_vee6v")
 horizontal_alignment = 1
 
@@ -262,7 +285,7 @@ layout_mode = 2
 
 [node name="Label_Final_Thanks" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1607908341]
 layout_mode = 2
-text = "Thank you for playing"
+text = "Thank you for playing."
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
@@ -289,3 +312,7 @@ offset_bottom = 604.0
 text = "Press Enter to skip"
 label_settings = SubResource("LabelSettings_d30og")
 horizontal_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=503753454]
+process_mode = 3
+stream = ExtResource("4_ixq8b")

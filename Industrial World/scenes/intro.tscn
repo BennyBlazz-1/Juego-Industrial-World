@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dfhqejldkpsnw" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Page02a.png" id="29_h7rjp"]
 [ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="30_6ac85"]
 [ext_resource type="Script" uid="uid://ckr3nrprlns8u" path="res://scripts/Papel.gd" id="30_lm4bj"]
+[ext_resource type="AudioStream" uid="uid://cbghqs5o7bc2a" path="res://Musica/Inicio.ogg" id="33_366e5"]
 
 [sub_resource type="Animation" id="Animation_t5vr6"]
 length = 0.001
@@ -1121,6 +1122,10 @@ offset_top = -152.0
 offset_right = 1953.0
 offset_bottom = 818.0
 color = Color(0, 0, 0, 0)
+
+[node name="Inicio" type="AudioStreamPlayer" parent="." unique_id=187406303]
+stream = ExtResource("33_366e5")
+autoplay = true
 
 [connection signal="timeout" from="Papel/TimerEscritura" to="Papel" method="_on_timer_escritura_timeout"]
 [connection signal="timeout" from="Papel/TimerOcultar" to="Papel" method="_on_timer_ocultar_timeout"]
