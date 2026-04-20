@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://c5fnytwnaqifq" path="res://scripts/sign_interaction.gd" id="25_munwf"]
 [ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="25_xgqkh"]
 [ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="26_munwf"]
+[ext_resource type="PackedScene" uid="uid://c70m0pcnyffly" path="res://scenes/control_panel.tscn" id="27_ts3gi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_munwf"]
 texture = ExtResource("2_k0juu")
@@ -526,6 +527,8 @@ offset_bottom = 524.0
 text = "Press E to read"
 label_settings = SubResource("LabelSettings_fh13f")
 horizontal_alignment = 1
+
+[node name="ControlPanel" parent="." unique_id=1623279706 instance=ExtResource("27_ts3gi")]
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="area_scene2" to="area_scene2" method="_on_body_entered"]
