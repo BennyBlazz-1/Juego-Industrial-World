@@ -31,6 +31,8 @@
 [ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="29_lloru"]
 [ext_resource type="Script" uid="uid://cijlrr20aenyv" path="res://scripts/final_station.gd" id="29_yk1j3"]
 [ext_resource type="AudioStream" uid="uid://xof8r7ohse2x" path="res://Musica/SwitchWithMeTheme.ogg" id="30_q6byh"]
+[ext_resource type="Texture2D" uid="uid://be7w075j3c8qy" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02a.png" id="32_gsh3y"]
+[ext_resource type="PackedScene" uid="uid://c632qe06lq3in" path="res://scenes/result_panel.tscn" id="33_c3obm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_viw4v"]
 texture = ExtResource("1_cu11h")
@@ -3439,6 +3441,10 @@ size = Vector2(70, 205)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guah3"]
 size = Vector2(253, 160)
 
+[sub_resource type="LabelSettings" id="LabelSettings_rio7j"]
+font = ExtResource("29_lloru")
+font_size = 32
+
 [node name="Nivel 1" type="Node2D" unique_id=1572856616]
 y_sort_enabled = true
 script = ExtResource("1_q6byh")
@@ -3651,6 +3657,39 @@ stream = ExtResource("30_q6byh")
 volume_db = -11.86
 autoplay = true
 parameters/looping = true
+
+[node name="ScoreUI" type="CanvasLayer" parent="." unique_id=1077543718]
+
+[node name="PanelRoot" type="Control" parent="ScoreUI" unique_id=1140526574]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreBackground" type="TextureRect" parent="ScoreUI/PanelRoot" unique_id=658508286]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 240.0
+offset_bottom = 92.0
+texture = ExtResource("32_gsh3y")
+
+[node name="ScoreLabel" type="Label" parent="ScoreUI/PanelRoot" unique_id=1841645477]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 34.0
+offset_right = 230.0
+offset_bottom = 66.0
+text = "Score: 0/16"
+label_settings = SubResource("LabelSettings_rio7j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultPanel" parent="." unique_id=330399826 instance=ExtResource("33_c3obm")]
+test_mode = false
+is_final_level = true
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]

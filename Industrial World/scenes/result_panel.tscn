@@ -363,6 +363,10 @@ font_size = 18
 font = ExtResource("3_k5fo1")
 font_size = 18
 
+[sub_resource type="LabelSettings" id="LabelSettings_x3m87"]
+font = ExtResource("3_k5fo1")
+font_size = 18
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3m87"]
 texture = ExtResource("7_bqmfo")
 
@@ -504,12 +508,23 @@ label_settings = SubResource("LabelSettings_mgqsa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MetricLabel" type="Label" parent="PanelRoot" unique_id=1261803563]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 395.0
+offset_right = 721.0
+offset_bottom = 429.0
+text = "Time:8:30"
+label_settings = SubResource("LabelSettings_x3m87")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RestartButton" type="Button" parent="PanelRoot" unique_id=1638128258]
 layout_mode = 0
 offset_left = 441.0
-offset_top = 425.0
+offset_top = 450.0
 offset_right = 576.0
-offset_bottom = 480.0
+offset_bottom = 505.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.4745098, 0.4745098, 0.4745098, 1)
 theme_override_colors/font_hover_color = Color(0.24705882, 0.24705882, 0.24705882, 1)
@@ -518,14 +533,14 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxTexture_x3m87")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7tj81")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mgqsa")
-text = "RESTART"
+text = "RESET"
 
 [node name="NextButton" type="Button" parent="PanelRoot" unique_id=2015430289]
 layout_mode = 0
 offset_left = 586.0
-offset_top = 425.0
+offset_top = 450.0
 offset_right = 721.0
-offset_bottom = 480.0
+offset_bottom = 505.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.4745098, 0.4745098, 0.4745098, 1)
 theme_override_colors/font_hover_color = Color(0.24840015, 0.24840018, 0.24840015, 1)
@@ -534,4 +549,4 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxTexture_7vy7x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gv2hc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bknvd")
-text = "NEXT"
+text = "CONTINUE"

@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://x20qw8l7q3fb"]
+
+[ext_resource type="Texture2D" uid="uid://cre20c1k0gley" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Cover01b.png" id="1_7pxi2"]
+[ext_resource type="Script" uid="uid://cy0a6bbcavxqq" path="res://scripts/tutorial_panel.gd" id="1_uik7u"]
+[ext_resource type="FontFile" uid="uid://3h0ltdnyvx5s" path="res://art/tilesets/ComicRelief-Bold.ttf" id="2_uik7u"]
+[ext_resource type="Texture2D" uid="uid://clmg3wb2bo8fn" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02b.png" id="3_neo3p"]
+[ext_resource type="Texture2D" uid="uid://v2j7esc26syf" path="res://art/tilesets/boton.png" id="4_3s40b"]
+[ext_resource type="Texture2D" uid="uid://bd0l3drltsw31" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Button02a.png" id="5_ut62a"]
+[ext_resource type="Texture2D" uid="uid://cj2ss1vkuniwa" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_1.png" id="6_1bqmg"]
+[ext_resource type="Texture2D" uid="uid://c0ce54lwb7fil" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_3.png" id="7_thb7m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kghse"]
+font = ExtResource("2_uik7u")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_xkjjv"]
+font = ExtResource("2_uik7u")
+font_size = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4juv"]
+texture = ExtResource("5_ut62a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4iwnd"]
+texture = ExtResource("6_1bqmg")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ywc2"]
+texture = ExtResource("7_thb7m")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[node name="TutorialPanel" type="CanvasLayer" unique_id=1717304724]
+script = ExtResource("1_uik7u")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1993421399]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="PanelRoot" type="Control" parent="." unique_id=2003028193]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="PanelRoot" unique_id=1874211574]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 89.0
+offset_right = 806.0
+offset_bottom = 559.0
+texture = ExtResource("1_7pxi2")
+
+[node name="TitleLabel" type="Label" parent="PanelRoot" unique_id=1454818275]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 122.0
+offset_right = 731.0
+offset_bottom = 164.0
+text = "BUTTON TARGET"
+label_settings = SubResource("LabelSettings_kghse")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PreviewFrame" type="TextureRect" parent="PanelRoot" unique_id=1186871539]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 185.0
+offset_right = 696.0
+offset_bottom = 335.0
+texture = ExtResource("3_neo3p")
+
+[node name="ButtonImage" type="TextureRect" parent="PanelRoot" unique_id=1511153251]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 176.0
+offset_right = 667.0
+offset_bottom = 334.35294
+texture = ExtResource("4_3s40b")
+
+[node name="DescriptionLabel" type="Label" parent="PanelRoot" unique_id=1007784061]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 360.0
+offset_right = 751.0
+offset_bottom = 430.0
+text = "This is the button you must activate.
+Find all 6 around the office."
+label_settings = SubResource("LabelSettings_xkjjv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="PanelRoot" unique_id=1357232530]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 462.0
+offset_right = 641.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.26536053, 0.26536053, 0.2653605, 1)
+theme_override_colors/font_hover_color = Color(0.15007508, 0.15007511, 0.15007558, 1)
+theme_override_fonts/font = ExtResource("2_uik7u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_c4juv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4iwnd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5ywc2")
+text = "OK"
