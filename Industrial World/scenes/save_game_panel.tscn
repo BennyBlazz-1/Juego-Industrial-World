@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://htbirhsiagkm"]
+
+[ext_resource type="Texture2D" uid="uid://clmg3wb2bo8fn" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02b.png" id="1_6ltay"]
+[ext_resource type="FontFile" uid="uid://3h0ltdnyvx5s" path="res://art/tilesets/ComicRelief-Bold.ttf" id="2_e1pu2"]
+[ext_resource type="Texture2D" uid="uid://bd0l3drltsw31" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Button02a.png" id="3_c8hrh"]
+[ext_resource type="Texture2D" uid="uid://cj2ss1vkuniwa" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_1.png" id="4_qfj21"]
+[ext_resource type="Texture2D" uid="uid://c0ce54lwb7fil" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_3.png" id="5_20617"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hul8j"]
+texture = ExtResource("1_6ltay")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qjr4x"]
+font = ExtResource("2_e1pu2")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_g1gcg"]
+font = ExtResource("2_e1pu2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6nof"]
+texture = ExtResource("3_c8hrh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vymkt"]
+texture = ExtResource("4_qfj21")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ii3s1"]
+texture = ExtResource("5_20617")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36t8g"]
+texture = ExtResource("3_c8hrh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8dti"]
+texture = ExtResource("4_qfj21")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cod6b"]
+texture = ExtResource("5_20617")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[node name="SaveGamePanel" type="CanvasLayer" unique_id=144413489]
+
+[node name="PanelRoot" type="Control" parent="." unique_id=1152294499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="PanelRoot" unique_id=119503918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.68235296)
+
+[node name="MainPanel" type="Panel" parent="PanelRoot" unique_id=6977042]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 189.0
+offset_right = 801.0
+offset_bottom = 459.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_hul8j")
+
+[node name="TitleLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=1719598241]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 450.0
+offset_bottom = 60.0
+text = "Save Game"
+label_settings = SubResource("LabelSettings_qjr4x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveInfoLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=1069130741]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 78.0
+offset_right = 405.0
+offset_bottom = 156.0
+text = "Your current progress
+will overwrite 
+the existing save file."
+label_settings = SubResource("LabelSettings_g1gcg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveButton" type="Button" parent="PanelRoot/MainPanel" unique_id=1908369059]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 180.0
+offset_right = 210.0
+offset_bottom = 228.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+theme_override_colors/font_hover_color = Color(0.15007508, 0.15007511, 0.15007558, 1)
+theme_override_fonts/font = ExtResource("2_e1pu2")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_r6nof")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vymkt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ii3s1")
+text = "SAVE"
+
+[node name="CancelButton" type="Button" parent="PanelRoot/MainPanel" unique_id=1094318996]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 180.0
+offset_right = 400.0
+offset_bottom = 228.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.30588236, 0.30588236, 0.30588236, 1)
+theme_override_colors/font_hover_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_e1pu2")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_36t8g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v8dti")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cod6b")
+text = "CANCEL"

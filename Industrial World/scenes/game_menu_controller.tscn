@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cv4otwfmswu2m"]
+
+[ext_resource type="Script" uid="uid://d0c52w07iiu3x" path="res://scripts/game_menu_controller.gd" id="1_yjumf"]
+[ext_resource type="PackedScene" uid="uid://cbpghbn6q6k15" path="res://scenes/pause_menu.tscn" id="2_yq403"]
+[ext_resource type="PackedScene" uid="uid://c5jaoiv5ru4er" path="res://scenes/exit_confirmation_panel.tscn" id="3_8aa5p"]
+[ext_resource type="PackedScene" uid="uid://htbirhsiagkm" path="res://scenes/save_game_panel.tscn" id="4_wl1fg"]
+[ext_resource type="PackedScene" uid="uid://cp1e3jfffi2t0" path="res://scenes/save_notification_panel.tscn" id="5_cgdb7"]
+
+[node name="GameMenuController" type="Node" unique_id=925185965]
+script = ExtResource("1_yjumf")
+
+[node name="PauseMenu" parent="." unique_id=2120870336 instance=ExtResource("2_yq403")]
+
+[node name="ExitConfirmationPanel" parent="." unique_id=1244904439 instance=ExtResource("3_8aa5p")]
+
+[node name="SaveGamePanel" parent="." unique_id=144413489 instance=ExtResource("4_wl1fg")]
+
+[node name="SaveNotificationPanel" parent="." unique_id=1486006816 instance=ExtResource("5_cgdb7")]

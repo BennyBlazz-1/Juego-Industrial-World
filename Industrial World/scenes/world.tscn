@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://d24atujvab62r" path="res://scripts/supervisor_office_door_trigger.gd" id="27_37qwj"]
 [ext_resource type="PackedScene" uid="uid://c70m0pcnyffly" path="res://scenes/control_panel.tscn" id="27_ts3gi"]
 [ext_resource type="PackedScene" uid="uid://bkfjhi6g2cwl6" path="res://scenes/credits_panel.tscn" id="28_0nbtd"]
+[ext_resource type="PackedScene" uid="uid://cv4otwfmswu2m" path="res://scenes/game_menu_controller.tscn" id="30_navra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_munwf"]
 texture = ExtResource("2_k0juu")
@@ -543,6 +544,8 @@ shape = SubResource("RectangleShape2D_navra")
 [node name="ControlPanel" parent="." unique_id=1623279706 instance=ExtResource("27_ts3gi")]
 
 [node name="CreditsPanel" parent="." unique_id=1599235183 instance=ExtResource("28_0nbtd")]
+
+[node name="GameMenuController" parent="." unique_id=925185965 instance=ExtResource("30_navra")]
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="area_scene2" to="area_scene2" method="_on_body_entered"]

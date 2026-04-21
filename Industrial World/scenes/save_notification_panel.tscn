@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cp1e3jfffi2t0"]
+
+[ext_resource type="Script" uid="uid://8pq0s05qd884" path="res://scripts/save_notification_panel.gd" id="1_5m4m7"]
+[ext_resource type="FontFile" uid="uid://3h0ltdnyvx5s" path="res://art/tilesets/ComicRelief-Bold.ttf" id="1_37j38"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5m4m7"]
+font = ExtResource("1_37j38")
+font_size = 20
+
+[node name="SaveNotificationPanel" type="CanvasLayer" unique_id=1486006816]
+script = ExtResource("1_5m4m7")
+
+[node name="PanelRoot" type="Control" parent="." unique_id=1611068494]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPanel" type="Panel" parent="PanelRoot" unique_id=1767304466]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 40.0
+offset_right = 756.0
+offset_bottom = 110.0
+
+[node name="MessageLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=683379526]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 70.0
+text = "Game Saved"
+label_settings = SubResource("LabelSettings_5m4m7")
+horizontal_alignment = 1
+vertical_alignment = 1

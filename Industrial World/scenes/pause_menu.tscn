@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cbpghbn6q6k15"]
+
+[ext_resource type="Texture2D" uid="uid://clmg3wb2bo8fn" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02b.png" id="1_7l7mv"]
+[ext_resource type="FontFile" uid="uid://3h0ltdnyvx5s" path="res://art/tilesets/ComicRelief-Bold.ttf" id="2_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://bd0l3drltsw31" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Button02a.png" id="3_1s2dm"]
+[ext_resource type="Texture2D" uid="uid://cj2ss1vkuniwa" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_1.png" id="4_88e76"]
+[ext_resource type="Texture2D" uid="uid://c0ce54lwb7fil" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_3.png" id="5_7l7mv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71k7c"]
+texture = ExtResource("1_7l7mv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmnsq"]
+font = ExtResource("2_v4r4p")
+font_size = 28
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofnjo"]
+texture = ExtResource("3_1s2dm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rgno"]
+texture = ExtResource("4_88e76")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hnlu"]
+texture = ExtResource("5_7l7mv")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7l7mv"]
+texture = ExtResource("3_1s2dm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4r4p"]
+texture = ExtResource("4_88e76")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1s2dm"]
+texture = ExtResource("5_7l7mv")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88e76"]
+texture = ExtResource("3_1s2dm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knqa7"]
+texture = ExtResource("4_88e76")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cmnsq"]
+texture = ExtResource("5_7l7mv")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2120870336]
+
+[node name="PanelRoot" type="Control" parent="." unique_id=2032647448]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="PanelRoot" unique_id=427695367]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.68235296)
+
+[node name="MainPanel" type="Panel" parent="PanelRoot" unique_id=1199510327]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 144.0
+offset_right = 781.0
+offset_bottom = 504.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_71k7c")
+
+[node name="TitleLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=1941816871]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 410.0
+offset_bottom = 80.0
+text = "Pause Menu"
+label_settings = SubResource("LabelSettings_cmnsq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PanelRoot/MainPanel" unique_id=261223656]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 105.0
+offset_right = 330.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.4096032, 0.4096033, 0.40960315, 1)
+theme_override_colors/font_hover_color = Color(0.26293218, 0.26293254, 0.26293305, 1)
+theme_override_fonts/font = ExtResource("2_v4r4p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_ofnjo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1rgno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4hnlu")
+text = "RESUME"
+
+[node name="SaveGameButton" type="Button" parent="PanelRoot/MainPanel" unique_id=545919421]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 175.0
+offset_right = 330.0
+offset_bottom = 229.0
+theme_override_colors/font_color = Color(0.000245482, 0.00024548316, 0.00024548228, 1)
+theme_override_colors/font_pressed_color = Color(0.40784314, 0.40784314, 0.40784314, 1)
+theme_override_colors/font_hover_color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("2_v4r4p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_7l7mv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v4r4p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1s2dm")
+text = "SAVE GAME"
+
+[node name="ExitButton" type="Button" parent="PanelRoot/MainPanel" unique_id=1012302008]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 245.0
+offset_right = 330.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.40784314, 0.40784314, 0.40784314, 1)
+theme_override_colors/font_hover_color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("2_v4r4p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_88e76")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_knqa7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cmnsq")
+text = "EXIT"
