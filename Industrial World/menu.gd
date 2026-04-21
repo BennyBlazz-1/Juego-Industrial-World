@@ -8,21 +8,27 @@ extends Control
 
 
 func _ready() -> void:
+	get_tree().paused = false
+	GameManager.is_dialogue_active = false
+
 	new_game_button.pressed.connect(_on_new_game_button_pressed)
 	load_game_button.pressed.connect(_on_load_game_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
 
-	# Por ahora, hasta que hagamos el sistema real de guardado.
-	load_game_button.visible = false
+	_update_load_button_visibility()
+
+
+func _update_load_button_visibility() -> void:
+	load_game_button.visible = SaveManager.has_save()
 
 
 func _on_new_game_button_pressed() -> void:
+	SaveManager.prepare_new_game()
 	get_tree().change_scene_to_file(new_game_scene_path)
 
 
 func _on_load_game_button_pressed() -> void:
-	# Aquí después irá la lógica real de cargar partida.
-	pass
+	SaveManager.load_game()
 
 
 func _on_exit_button_pressed() -> void:

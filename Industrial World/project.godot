@@ -27,6 +27,7 @@ boot_splash/minimum_display_time=2000
 DialogueManager="*uid://c3rodes2l3gxb"
 GameManager="*uid://dyl1u02lmu1oj"
 Global="*uid://bnpaslewbemdu"
+SaveManager="*uid://cpwlkcvbh20pi"
 
 [dialogue_manager]
 

@@ -119,6 +119,14 @@ func _show_save_notification(text: String) -> void:
 		save_notification_panel.visible = true
 
 
+func _return_to_menu() -> void:
+	get_tree().paused = false
+	GameManager.is_dialogue_active = false
+	is_menu_open = false
+	_hide_all_panels()
+	get_tree().change_scene_to_file(menu_scene_path)
+
+
 func _on_resume_button_pressed() -> void:
 	_resume_game()
 
@@ -140,9 +148,10 @@ func _on_cancel_exit_button_pressed() -> void:
 
 
 func _on_save_button_pressed() -> void:
-	# Aquí después irá la lógica real de guardado.
+	var save_ok: bool = SaveManager.save_game()
+
 	_resume_game()
-	_show_save_notification("Game Saved")
+	_show_save_notification("Game Saved" if save_ok else "Save Failed")
 	await get_tree().create_timer(1.2).timeout
 
 	if save_notification_panel.has_method("hide_message"):
@@ -150,15 +159,19 @@ func _on_save_button_pressed() -> void:
 
 
 func _on_save_and_exit_button_pressed() -> void:
-	# Aquí después irá: guardar y luego salir al menú.
-	get_tree().paused = false
-	GameManager.is_dialogue_active = false
-	is_menu_open = false
-	get_tree().change_scene_to_file(menu_scene_path)
+	var save_ok: bool = SaveManager.save_game()
+
+	if not save_ok:
+		_show_pause_menu()
+		_show_save_notification("Save Failed")
+		await get_tree().create_timer(1.2).timeout
+
+		if save_notification_panel.has_method("hide_message"):
+			save_notification_panel.call("hide_message")
+		return
+
+	_return_to_menu()
 
 
 func _on_exit_without_saving_button_pressed() -> void:
-	get_tree().paused = false
-	GameManager.is_dialogue_active = false
-	is_menu_open = false
-	get_tree().change_scene_to_file(menu_scene_path)
+	_return_to_menu()

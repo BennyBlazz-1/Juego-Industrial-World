@@ -171,7 +171,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_4vp3x"]
 resource_name = "act1"
-length = 40.0
+length = 45.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -263,7 +263,7 @@ tracks/7/path = NodePath("Path2D/PathFollow2D:progress_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(36.566666, 36.966667),
+"times": PackedFloat32Array(42.5667, 42.9667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -275,14 +275,14 @@ tracks/8/path = NodePath("Papel:texto")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(6, 6.1, 13, 13.1, 22, 22.1, 30, 30.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(6, 6.1, 13, 13.1, 22, 22.1, 30, 30.1, 36, 36.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["", "Bienvenido a Industrial World.
 Hoy comenzarás tu entrenamiento dentro de una planta industrial.", "", "En este recorrido aprenderás inglés aplicado a situaciones reales
 de almacén, producción y trabajo dentro de la planta.", "", "Cada edificio representa una etapa distinta.
-Completa actividades, responde correctamente y avanza al siguiente reto.", "", "Tu entrenamiento está por comenzar.
-Pulsa C para ver los controles.
+Completa actividades, responde correctamente y avanza al siguiente reto.", "", "Presiona C para ver los controles
+Presiona ESC para abrir el menú de pausa", "", "Tu entrenamiento está por comenzar.
 Dirígete con el supervisor para empezar."]
 }
 tracks/9/type = "value"
@@ -292,7 +292,7 @@ tracks/9/path = NodePath("Papel:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 6, 36),
+"times": PackedFloat32Array(0, 6, 42),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -304,7 +304,7 @@ tracks/10/path = NodePath("ColorRect:color")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 2, 38, 39),
+"times": PackedFloat32Array(0, 2, 44, 45),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]

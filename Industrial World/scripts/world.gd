@@ -68,6 +68,8 @@ func place_player_at_spawn() -> void:
 	elif spawn_name == "spawn_from_nivel2":
 		player.global_position = spawn_from_nivel2.global_position
 
+	SaveManager.apply_pending_loaded_state(self)
+
 
 func apply_supervisor_world_state() -> void:
 	if supervisor_root == null:
@@ -78,7 +80,7 @@ func apply_supervisor_world_state() -> void:
 		supervisor_root.global_position = SUPERVISOR_INITIAL_WORLD_POSITION
 
 		if supervisor_sprite != null:
-			supervisor_sprite.play("back_idle")
+			supervisor_sprite.play("front_idle")
 	elif GameManager.final_supervisor_dialogue_enabled:
 		supervisor_root.visible = true
 		supervisor_root.global_position = FINAL_SUPERVISOR_WORLD_POSITION
