@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://c5jaoiv5ru4er"]
+
+[ext_resource type="Texture2D" uid="uid://clmg3wb2bo8fn" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02b.png" id="1_rhk4v"]
+[ext_resource type="FontFile" uid="uid://3h0ltdnyvx5s" path="res://art/tilesets/ComicRelief-Bold.ttf" id="2_ydhqb"]
+[ext_resource type="Texture2D" uid="uid://bd0l3drltsw31" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Button02a.png" id="3_2ifml"]
+[ext_resource type="Texture2D" uid="uid://cj2ss1vkuniwa" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_1.png" id="4_cbimc"]
+[ext_resource type="Texture2D" uid="uid://c0ce54lwb7fil" path="res://art/04_TabletBook/04_TabletBook/Sprites Animated/UI_TabletBookAnim_Button02a_3.png" id="5_cqrbv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o1viq"]
+texture = ExtResource("1_rhk4v")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6t1y3"]
+font = ExtResource("2_ydhqb")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vte3"]
+font = ExtResource("2_ydhqb")
+font_size = 19
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mmcry"]
+texture = ExtResource("3_2ifml")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y4p0a"]
+texture = ExtResource("4_cbimc")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wae7x"]
+texture = ExtResource("5_cqrbv")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhk4v"]
+texture = ExtResource("3_2ifml")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydhqb"]
+texture = ExtResource("4_cbimc")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ifml"]
+texture = ExtResource("5_cqrbv")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbimc"]
+texture = ExtResource("3_2ifml")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cqrbv"]
+texture = ExtResource("4_cbimc")
+texture_margin_top = 10.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6t1y3"]
+texture = ExtResource("5_cqrbv")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+
+[node name="ExitConfirmationPanel" type="CanvasLayer" unique_id=1244904439]
+
+[node name="PanelRoot" type="Control" parent="." unique_id=2044946305]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="PanelRoot" unique_id=856126882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.68235296)
+
+[node name="MainPanel" type="Panel" parent="PanelRoot" unique_id=1678497302]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 159.0
+offset_right = 826.0
+offset_bottom = 519.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_o1viq")
+
+[node name="TitleLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=176209152]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 500.0
+offset_bottom = 66.0
+text = "Exit Game"
+label_settings = SubResource("LabelSettings_6t1y3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=294031503]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 450.0
+offset_bottom = 125.0
+text = "What would you like to do before leaving?"
+label_settings = SubResource("LabelSettings_0vte3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveAndExitButton" type="Button" parent="PanelRoot/MainPanel" unique_id=1607595176]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 135.0
+offset_right = 395.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.38675672, 0.3867566, 0.38675654, 1)
+theme_override_colors/font_hover_color = Color(0.19076231, 0.19076234, 0.19076225, 1)
+theme_override_fonts/font = ExtResource("2_ydhqb")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_mmcry")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y4p0a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wae7x")
+text = "SAVE AND EXIT
+"
+
+[node name="ExitWithoutSavingButton" type="Button" parent="PanelRoot/MainPanel" unique_id=1627191077]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 195.0
+offset_right = 395.0
+offset_bottom = 245.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
+theme_override_colors/font_hover_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("2_ydhqb")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_rhk4v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ydhqb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2ifml")
+text = "EXIT WITHOUT SAVING"
+
+[node name="CancelButton" type="Button" parent="PanelRoot/MainPanel" unique_id=538998030]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 255.0
+offset_right = 395.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
+theme_override_colors/font_hover_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("2_ydhqb")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_cbimc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cqrbv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6t1y3")
+text = "CANCEL"

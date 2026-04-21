@@ -47,6 +47,8 @@ func place_player_at_spawn() -> void:
 	if spawn_name == "spawn_from_world":
 		player.global_position = spawn_from_world.global_position
 
+	SaveManager.apply_pending_loaded_state(self)
+
 
 func start_nivel_2_timer_if_needed() -> void:
 	if timer_started:
@@ -150,3 +152,24 @@ func format_time(total_seconds: int) -> String:
 	var minutes: int = total_seconds / 60
 	var seconds: int = total_seconds % 60
 	return "%d:%02d" % [minutes, seconds]
+
+
+func get_scene_save_data() -> Dictionary:
+	return {
+		"elapsed_time": elapsed_time,
+		"timer_running": timer_running,
+		"timer_started": timer_started,
+		"final_time_seconds": final_time_seconds
+	}
+
+
+func apply_scene_save_data(data: Dictionary) -> void:
+	elapsed_time = float(data.get("elapsed_time", 0.0))
+	timer_running = bool(data.get("timer_running", false))
+	timer_started = bool(data.get("timer_started", false))
+	final_time_seconds = int(data.get("final_time_seconds", 0))
+
+	if GameManager.nivel_2_passed:
+		load_completed_state()
+	else:
+		update_timer_label()

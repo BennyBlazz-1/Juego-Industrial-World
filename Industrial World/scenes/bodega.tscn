@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://be7w075j3c8qy" path="res://art/04_TabletBook/04_TabletBook/Sprites/UI_TabletBook_Banner02a.png" id="32_gsh3y"]
 [ext_resource type="PackedScene" uid="uid://c632qe06lq3in" path="res://scenes/result_panel.tscn" id="33_c3obm"]
 [ext_resource type="PackedScene" uid="uid://c70m0pcnyffly" path="res://scenes/control_panel.tscn" id="34_c3obm"]
+[ext_resource type="PackedScene" uid="uid://cv4otwfmswu2m" path="res://scenes/game_menu_controller.tscn" id="35_rio7j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_viw4v"]
 texture = ExtResource("1_cu11h")
@@ -3695,6 +3696,8 @@ test_mode = false
 is_final_level = true
 
 [node name="ControlPanel" parent="." unique_id=1623279706 instance=ExtResource("34_c3obm")]
+
+[node name="GameMenuController" parent="." unique_id=925185965 instance=ExtResource("35_rio7j")]
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]
 [connection signal="body_entered" from="intro_station" to="intro_station" method="_on_body_entered"]

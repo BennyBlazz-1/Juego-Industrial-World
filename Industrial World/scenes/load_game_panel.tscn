@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bl51d14s6xjxc"]
+
+[node name="LoadGamePanel" type="CanvasLayer" unique_id=739309357]
+
+[node name="PanelRoot" type="Control" parent="." unique_id=518223966]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DimBackground" type="ColorRect" parent="PanelRoot" unique_id=486200077]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainPanel" type="Panel" parent="PanelRoot" unique_id=446803884]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="PanelRoot/MainPanel" unique_id=472206219]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SavePreviewPanel" type="Panel" parent="PanelRoot/MainPanel" unique_id=1514085066]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveNameLabel" type="Label" parent="PanelRoot/MainPanel/SavePreviewPanel" unique_id=412269626]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SaveDateLabel" type="Label" parent="PanelRoot/MainPanel/SavePreviewPanel" unique_id=666496365]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SaveProgressLabel" type="Label" parent="PanelRoot/MainPanel/SavePreviewPanel" unique_id=775243805]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SaveCharacterLabel" type="Label" parent="PanelRoot/MainPanel/SavePreviewPanel" unique_id=1814252911]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="PanelRoot/MainPanel" unique_id=668707848]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button2" type="Button" parent="PanelRoot/MainPanel" unique_id=744466878]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

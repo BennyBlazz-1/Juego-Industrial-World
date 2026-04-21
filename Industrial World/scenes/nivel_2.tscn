@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://c632qe06lq3in" path="res://scenes/result_panel.tscn" id="42_ps7l8"]
 [ext_resource type="PackedScene" uid="uid://x20qw8l7q3fb" path="res://scenes/tutorial_panel.tscn" id="44_3g43v"]
 [ext_resource type="PackedScene" uid="uid://c70m0pcnyffly" path="res://scenes/control_panel.tscn" id="45_3g43v"]
+[ext_resource type="PackedScene" uid="uid://cv4otwfmswu2m" path="res://scenes/game_menu_controller.tscn" id="46_81j0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47vl3"]
 texture = ExtResource("1_ko3cp")
@@ -9109,7 +9110,6 @@ scale = Vector2(1, 0.99999994)
 position = Vector2(659, 817)
 
 [node name="TimerUI" type="CanvasLayer" parent="." unique_id=612935228]
-visible = false
 
 [node name="PanelRoot" type="Control" parent="TimerUI" unique_id=760412149]
 layout_mode = 3
@@ -9144,5 +9144,7 @@ test_mode = false
 [node name="TutorialPanel" parent="." unique_id=1717304724 instance=ExtResource("44_3g43v")]
 
 [node name="ControlPanel" parent="." unique_id=1623279706 instance=ExtResource("45_3g43v")]
+
+[node name="GameMenuController" parent="." unique_id=925185965 instance=ExtResource("46_81j0s")]
 
 [connection signal="body_entered" from="area_scene1" to="area_scene1" method="_on_body_entered"]

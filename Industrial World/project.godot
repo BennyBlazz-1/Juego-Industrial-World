@@ -17,17 +17,27 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Industial World"
 run/main_scene="uid://mv24lrs8d8fu"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://art/icon.svg"
+boot_splash/stretch_mode=0
+boot_splash/image="uid://b6fo7rlodfajh"
+config/icon="uid://cwslrldhi7q0c"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
 GameManager="*uid://dyl1u02lmu1oj"
 Global="*uid://bnpaslewbemdu"
+SaveManager="*uid://cpwlkcvbh20pi"
 
 [dialogue_manager]
 
 runtime/balloon_path="res://scenes/dialogue/balloon.tscn"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -56,3 +66,4 @@ locale/translations_pot_files=PackedStringArray("res://dialogues/first_dialogue.
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/msaa_2d=3

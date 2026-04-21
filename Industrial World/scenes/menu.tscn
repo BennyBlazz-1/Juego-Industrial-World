@@ -53,6 +53,27 @@ expand_margin_right = 30.0
 expand_margin_bottom = 114.0
 modulate_color = Color(0.80784315, 0.07450981, 0, 1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g3eks"]
+load_path = "res://.godot/imported/Pixel art red glowing button (1).png-ee2176029a10fabe9fe04291e9114c6b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v86rl"]
+texture = SubResource("CompressedTexture2D_g3eks")
+expand_margin_left = 30.0
+expand_margin_top = 90.0
+expand_margin_right = 30.0
+expand_margin_bottom = 114.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13sgg"]
+texture = ExtResource("5_i6lef")
+expand_margin_left = 30.0
+expand_margin_top = 90.0
+expand_margin_right = 30.0
+expand_margin_bottom = 114.0
+modulate_color = Color(0.80784315, 0.07450981, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6lef"]
+font = ExtResource("3_v86rl")
+
 [node name="menu" type="Control" unique_id=186389351]
 layout_mode = 3
 anchors_preset = 15
@@ -62,59 +83,83 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ytvr")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1862866066]
-layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 686.0
-
-[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=791401745]
-layout_mode = 0
-offset_right = 1160.0
-offset_bottom = 701.0
-texture = ExtResource("2_g3eks")
-expand_mode = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1482032924]
-clip_contents = true
+[node name="Background" type="TextureRect" parent="." unique_id=1570266341]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = 91.0
-offset_right = 132.0
-offset_bottom = 257.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+texture = ExtResource("2_g3eks")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ButtonsArea" type="Control" parent="." unique_id=238551976]
+anchors_preset = 0
+offset_left = 416.0
+offset_top = 325.0
+offset_right = 736.0
+offset_bottom = 595.0
+
+[node name="CenterContainer" type="CenterContainer" parent="ButtonsArea" unique_id=350072390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsArea/CenterContainer" unique_id=1482032924]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 34
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=609378128]
-custom_minimum_size = Vector2(200, 60)
+[node name="NewGameButton" type="Button" parent="ButtonsArea/CenterContainer/VBoxContainer" unique_id=609378128]
+custom_minimum_size = Vector2(260, 58)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_v86rl")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_70i5f")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_mj5lg")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ufwb2")
-text = "play"
+text = "NEW GAME"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=801800769]
-custom_minimum_size = Vector2(200, 60)
+[node name="LoadGameButton" type="Button" parent="ButtonsArea/CenterContainer/VBoxContainer" unique_id=801800769]
+custom_minimum_size = Vector2(260, 58)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_v86rl")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_6cdou")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7jp70")
-text = "exit"
+text = "LOAD GAME"
+
+[node name="ExitButton" type="Button" parent="ButtonsArea/CenterContainer/VBoxContainer" unique_id=1302563030]
+custom_minimum_size = Vector2(260, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v86rl")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_v86rl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover = SubResource("StyleBoxTexture_13sgg")
+text = "EXIT"
 
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=291358028]
 stream = ExtResource("6_g3eks")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[node name="VersionLabel" type="Label" parent="." unique_id=639557724]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 615.0
+offset_right = 240.0
+offset_bottom = 638.0
+text = "Version 1.0"
+label_settings = SubResource("LabelSettings_i6lef")
+
+[connection signal="pressed" from="ButtonsArea/CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ButtonsArea/CenterContainer/VBoxContainer/LoadGameButton" to="." method="_on_button_2_pressed"]

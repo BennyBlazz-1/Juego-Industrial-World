@@ -10,7 +10,7 @@ var player: Node2D
 
 
 func _ready() -> void:
-	if not GameManager.level1_passed:
+	if not GameManager.level1_passed and not SaveManager.is_loading_game:
 		GameManager.reset_level1()
 
 	crear_player()
@@ -46,6 +46,8 @@ func place_player_at_spawn() -> void:
 		player.global_position = spawn_from_world.global_position
 	else:
 		player.global_position = spawn_from_world.global_position
+
+	SaveManager.apply_pending_loaded_state(self)
 
 
 func update_score_label() -> void:
