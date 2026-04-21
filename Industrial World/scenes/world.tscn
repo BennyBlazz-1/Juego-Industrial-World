@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://c5fnytwnaqifq" path="res://scripts/sign_interaction.gd" id="25_munwf"]
 [ext_resource type="AudioStream" uid="uid://dcy0xx5ysa8o4" path="res://Musica/Brain Empty.ogg" id="25_xgqkh"]
 [ext_resource type="FontFile" uid="uid://cbomchx7yqdap" path="res://art/tilesets/Inter_18pt-Medium.ttf" id="26_munwf"]
+[ext_resource type="Script" uid="uid://d24atujvab62r" path="res://scripts/supervisor_office_door_trigger.gd" id="27_37qwj"]
 [ext_resource type="PackedScene" uid="uid://c70m0pcnyffly" path="res://scenes/control_panel.tscn" id="27_ts3gi"]
 [ext_resource type="PackedScene" uid="uid://bkfjhi6g2cwl6" path="res://scenes/credits_panel.tscn" id="28_0nbtd"]
 
@@ -358,6 +359,9 @@ font_size = 13
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_navra"]
+size = Vector2(20, 28)
+
 [node name="world" type="Node2D" unique_id=1874219532]
 y_sort_enabled = true
 position = Vector2(0, 1)
@@ -528,6 +532,13 @@ offset_bottom = 524.0
 text = "Press E to read"
 label_settings = SubResource("LabelSettings_fh13f")
 horizontal_alignment = 1
+
+[node name="SupervisorOfficeDoorTrigger" type="Area2D" parent="." unique_id=769795842]
+script = ExtResource("27_37qwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SupervisorOfficeDoorTrigger" unique_id=1666628237]
+position = Vector2(1297, 976)
+shape = SubResource("RectangleShape2D_navra")
 
 [node name="ControlPanel" parent="." unique_id=1623279706 instance=ExtResource("27_ts3gi")]
 

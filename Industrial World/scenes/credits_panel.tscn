@@ -35,15 +35,21 @@ font = ExtResource("1_eu0ln")
 font_size = 17
 font_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_p2eol"]
+font = ExtResource("3_ixq8b")
+font_size = 20
+
 [sub_resource type="LabelSettings" id="LabelSettings_70qtj"]
 font = ExtResource("3_ixq8b")
 font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_ixq8b"]
 font = ExtResource("1_eu0ln")
+font_size = 18
 
 [sub_resource type="LabelSettings" id="LabelSettings_d30og"]
 font = ExtResource("1_eu0ln")
+font_size = 18
 
 [node name="CreditsPanel" type="CanvasLayer" unique_id=1599235183]
 script = ExtResource("1_pfpt8")
@@ -142,14 +148,14 @@ horizontal_alignment = 1
 
 [node name="Label_DevelopedBy_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=2093610877]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_3" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1806988595]
 layout_mode = 2
-text = "Jared Alvarez Esparza
-Bryan Joel Lazaro Vasquez
-Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_GameDesign_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1364670528]
 layout_mode = 2
@@ -159,14 +165,14 @@ horizontal_alignment = 1
 
 [node name="Label_GameDesign_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=2064810363]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_4" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1038343294]
 layout_mode = 2
-text = "Jared Alvarez Esparza
-Bryan Joel Lazaro Vasquez
-Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_Programming_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1934356585]
 layout_mode = 2
@@ -176,30 +182,31 @@ horizontal_alignment = 1
 
 [node name="Label_Programming_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=173173259]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_5" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1441750640]
 layout_mode = 2
-text = "Jared Alvarez Esparza
-Bryan Joel Lazaro Vasquez
-Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_UI_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=693200389]
 layout_mode = 2
 text = "UI / UX Design:"
+label_settings = SubResource("LabelSettings_p2eol")
 horizontal_alignment = 1
 
 [node name="Label_UI_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=705276711]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_6" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=804890129]
 layout_mode = 2
-text = "Jared Alvarez Esparza
-Bryan Joel Lazaro Vasquez
-Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_Dialogue_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=28493477]
 layout_mode = 2
@@ -209,14 +216,14 @@ horizontal_alignment = 1
 
 [node name="Label_Dialogue_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=222021876]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_7" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=664161500]
 layout_mode = 2
-text = "Jared Alvarez Esparza
-Bryan Joel Lazaro Vasquez
-Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_LevelDesign_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=660574278]
 layout_mode = 2
@@ -226,14 +233,14 @@ horizontal_alignment = 1
 
 [node name="Label_LevelDesign_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1447952151]
 layout_mode = 2
+text = "Jared Alvarez Esparza
+Bryan Joel Lazaro Vasquez
+Uriel Alejandro Sanchez Valencia"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_8" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=109282096]
 layout_mode = 2
-text = "Jared Alvarez Esparza
-Bryan Joel Lazaro Vasquez
-Uriel Alejandro Sanchez Valencia"
 
 [node name="Label_Art_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=127855356]
 layout_mode = 2
@@ -243,14 +250,14 @@ horizontal_alignment = 1
 
 [node name="Label_Art_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1532844415]
 layout_mode = 2
-text = "Integrated and adapted assets"
+text = "Integrated and adapted assets
+El Espriteador
+@el_espriteador"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_9" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1518080853]
 layout_mode = 2
-text = "El Espriteador
-@el_espriteador"
 
 [node name="Label_Music_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=272977647]
 layout_mode = 2
@@ -260,13 +267,13 @@ horizontal_alignment = 1
 
 [node name="Label_Music_Name" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=1661457741]
 layout_mode = 2
+text = "Not Jam Music Pack by Not Jam
+SomeWhatGood: Lofi by Flowerhead"
 label_settings = SubResource("LabelSettings_dnnwk")
 horizontal_alignment = 1
 
 [node name="Label_Space_10" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=2030230401]
 layout_mode = 2
-text = "Not Jam Music Pack by Not Jam
-SomeWhatGood: Lofi by Flowerhead"
 
 [node name="Label_Thanks_Title" type="Label" parent="PanelRoot/CreditsFrame/ScrollContainer/MarginContainer/CreditsVBox" unique_id=506475981]
 layout_mode = 2
