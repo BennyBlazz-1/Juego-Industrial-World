@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://h1jmt2gsfa7e"
+path="res://.godot/imported/supervisor_office_maintenance.dialogue-1537d6418d88341f0116807978e5b856.tres"
+
+[deps]
+
+source_file="res://dialogues/supervisor_office_maintenance.dialogue"
+dest_files=["res://.godot/imported/supervisor_office_maintenance.dialogue-1537d6418d88341f0116807978e5b856.tres"]
+
+[params]
+
+defaults=true
