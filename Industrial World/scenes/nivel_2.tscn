@@ -9109,7 +9109,6 @@ scale = Vector2(1, 0.99999994)
 position = Vector2(659, 817)
 
 [node name="TimerUI" type="CanvasLayer" parent="." unique_id=612935228]
-visible = false
 
 [node name="PanelRoot" type="Control" parent="TimerUI" unique_id=760412149]
 layout_mode = 3
